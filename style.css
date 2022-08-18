@@ -1,9 +1,13 @@
 body {
     font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
+    margin-right: auto;
+    margin-left: auto;
     min-height: 100vh;
+    max-width: 1200px;
     display: flex;
     flex-flow: column nowrap;
+    background-color: rgb(229, 226, 227);
 }
 
 button {
@@ -28,17 +32,17 @@ ul {
     flex-flow: column nowrap;
     background-color: #1F2937;
     
+    
 }
 
 .header {
-    height: 72px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center;  
 }
 
 .header, .hero-contents, .img-panel-title, .img-panel-main, .quote, .quote-name, .modal {
-    margin: 0px 768px;
+   padding: 32px;
 }
 
 .header-logo {
@@ -54,8 +58,7 @@ ul {
     display: flex;
     align-items: center;
     gap: 64px;
-    margin-top: 64px;
-    margin-bottom: 64px;
+    flex-wrap: wrap;
    
 }
 
@@ -108,12 +111,19 @@ ul {
     align-items: center;
     justify-content: center;
     flex: 1;
+    background-color: white;
 }
 
 .img-panel-title {
     font-weight: 800;
     font-size: 36px;
     color: #1F2937
+}
+
+.img-panel-main {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 36px;
 }
 
 .quote-panel {
@@ -123,7 +133,6 @@ ul {
     align-items: center;
     justify-content: center;
     flex: 1;
-    row-gap: 18px;
 }
 
 .quote {
@@ -138,9 +147,9 @@ ul {
 
 .sign-up-panel {
     display: flex;
-    justify-content: center;
     flex-flow: column nowrap;
-    flex: 1;
+    background-color: white;
+    padding: 32px;
 
 }
 
@@ -148,9 +157,11 @@ ul {
     background-color: #3882F6;
     color: #F9FAF8;
     border-radius: 15px;
-    padding: 48px;
+    padding: 24px;
     display: flex;
     justify-content: space-evenly;
+    align-self: center;
+    gap: 32px;
 
 }
 
