@@ -4,7 +4,7 @@ body {
     margin-right: auto;
     margin-left: auto;
     min-height: 100vh;
-    max-width: 1200px;
+    max-width: 1240px;
     display: flex;
     flex-flow: column nowrap;
     background-color: rgb(229, 226, 227);
@@ -26,6 +26,13 @@ ul {
     gap: 24px
 }
 
+.card img {
+    height: 150px;
+    width: 150px;
+    border: 3px solid #3882F6;
+    border-radius: 8px;
+}
+
 
 .hero {
     display: flex;
@@ -42,16 +49,7 @@ ul {
 }
 
 .header, .hero-contents, .img-panel-title, .img-panel-main, .quote, .quote-name, .modal {
-   padding: 32px;
-}
-
-.header-logo {
-    
-
-}
-
-.header-links {
-
+   margin: 32px;
 }
 
 .hero-contents {
@@ -90,10 +88,6 @@ ul {
     color: #F9FAF8;
 }
 
-.hero-img {
-
-}
-
 .hero-sample {
     height: 300px;
     width: auto;
@@ -106,12 +100,9 @@ ul {
 }
 
 .img-panel {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
     flex: 1;
     background-color: white;
+    text-align: center;
 }
 
 .img-panel-title {
@@ -122,34 +113,41 @@ ul {
 
 .img-panel-main {
     display: flex;
-    flex-flow: row wrap;
-    gap: 36px;
+    justify-content: center;
+    gap: 52px;
+    padding-bottom: 32px;
+}
+
+.card {
+    max-width: 164px;
+    
 }
 
 .quote-panel {
     background-color: #E5E7EB;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
     flex: 1;
+    padding: 36px;
 }
 
 .quote {
     color: #1F2937;
     font-size: 36px;
     font-style: italic;
+    margin-bottom: 0px;
 }
 
 .quote-name {
-    align-self: flex-end;
+    text-align: end;
+    margin-top: 0px;
+    
 }
+
 
 .sign-up-panel {
     display: flex;
     flex-flow: column nowrap;
     background-color: white;
-    padding: 32px;
+    padding: 36px;
 
 }
 
@@ -191,5 +189,6 @@ ul {
     justify-content: center;
     background-color: #1F2937;
     color: #E5E7EB;
-    height: 72px;
+    padding: 36px;
 }
+
