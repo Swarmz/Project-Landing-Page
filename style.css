@@ -116,6 +116,7 @@ ul {
     justify-content: center;
     gap: 52px;
     padding-bottom: 32px;
+    flex-flow: row wrap;
 }
 
 .card {
