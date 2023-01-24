@@ -1,4 +1,12 @@
 body {
+    margin: 0;
+}
+
+.background {
+    background-color: #6E6E6E;
+}
+
+.body-container {
     font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
     margin-right: auto;
@@ -8,8 +16,12 @@ body {
     display: flex;
     flex-flow: column nowrap;
     background-color: #6E6E6E;
-    
 }
+
+img {
+    max-width:100%;
+}
+
 a, a:visited{
     color: #ffffff; 
     text-decoration: none;
