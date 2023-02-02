@@ -30,9 +30,10 @@ img {
 }
 
 a, a:visited{
-    color: #ffffff; 
+    color: inherit;
     text-decoration: none;
 }
+
 a:hover {
     text-decoration: underline;
 }
@@ -242,6 +243,61 @@ ul {
 .modal-text {
     color: #323232;
 
+}
+
+.about-title {
+    text-align: center;
+    padding:32px;
+    border-bottom: 1px solid #323232;
+}
+
+.contents-title {
+    text-align: center;
+}
+
+.contents-top, .contents-bottom {
+    display: flex;
+    justify-content: space-around;
+    padding: 16px;
+    gap: 32px;
+}
+
+.contents-img {
+    flex: 1;
+    max-height: 300px;
+    max-width: 300px;
+    
+}
+
+.contents-text {
+    flex: 1;
+}
+
+.rpsSelection {
+    padding: 25px;
+    margin: 5px;  
+}
+
+.game-screen{
+    border: 5px solid #323232;
+    border-radius: 15px;
+    margin: 32px;
+    padding: 32px;
+    text-align: center;
+
+}
+
+.scoreKeeper, .container {
+    border: 5px solid #323232;
+    border-radius: 15px;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    align-self: center;
+}
+
+#results {
+    padding: 15px;
 }
 
 .footer {
