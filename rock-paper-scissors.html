@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Rock Paper Scissors</title>
+        <link rel="stylesheet" href="style.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+        <div class="background">
+            <div class="body-container">
+                <div class="hero">
+                    <div class="header">
+                        <div class="header-logo">
+                            Rock Paper Scissors
+                        </div>
+                        <div class="header-links">
+                            <ul>
+                                <li><u><a href="./index.html">Home</a></u></li>
+                                <li><u><a href="./about.html">About</a></u></li>
+                                <li><u>Contact</u></li>
+                            </ul>
+                        </div>
+                    </div>
+                <div class="main">
+                    <div class="about-title">
+                        <h1>Rock Paper Scissors</h1>
+                    </div>
+                    <div class="game-screen">
+                        Content goes here
+                    </div>
+                    <div class="container">
+                        <button class="rpsSelection" type="button" id="rock">Rock</button>
+                        <button class="rpsSelection" type="button" id="paper">Paper</button>
+                        <button class="rpsSelection" type="button" id="scissors">Scissors</button>
+                        <div id="results">Click to Play!</div>
+                        <div class="scoreKeeper">
+                            <p id="playerScore">YOU: 0</p>
+                            <p id="computerScore">COMPUTER: 0</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <script>
+
+                    function getComputerChoice() {  // get random choice of RPS for computer
+                        const rockPaperScissors = ["rock", "paper", "scissors"];
+                        const random = rockPaperScissors[Math.floor(Math.random() * rockPaperScissors.length)]; // random select of rock, paper or scissors from rockPaperScissors array
+                        return random;
+                    }
+            
+                    let playerWins = 0;
+                    let computerWins = 0;
+            
+                   function getScore() {
+                        document.getElementById("computerScore").textContent = "COMPUTER: " + computerWins;
+                        document.getElementById("playerScore").textContent = "YOU: " + playerWins;
+                    }
+                    
+                    function playRound(playerSelection) {    // generates player choice via prompt vs random comp choice to determine winner
+                        const computerSelection = getComputerChoice();  // get random comp choice
+                        if (playerWins === 5) {
+                            document.getElementById("results").textContent = "YOU HAVE WON THE MATCH " + playerWins +
+                            " TO " + computerWins;
+                        } else if (computerWins === 5) {
+                            document.getElementById("results").textContent = "YOU HAVE LOST THE MATCH " + computerWins +
+                            " TO " + playerWins;
+                        } else {
+                            if (playerSelection === "rock") {  
+                                if (computerSelection === "paper") {
+                                    document.getElementById("results").textContent = "You lose! Paper beats rock.";
+                                    return computerWins += 1, getScore(); 
+                                }
+                                else if (computerSelection === "scissors") {
+                                    document.getElementById("results").textContent = "You win! Rock beats scissors.";
+                                    return playerWins += 1, getScore();
+                                }
+                                else {
+                                    document.getElementById("results").textContent = "It's a tie! You both chose rock.";
+                                }
+                            }
+                            else if (playerSelection === "paper") {
+                                if (computerSelection === "scissors") {
+                                    document.getElementById("results").textContent = "You lose! Scissors beats paper.";
+                                    return computerWins += 1, getScore();
+                                }
+                                else if (computerSelection === "rock") {
+                                    document.getElementById("results").textContent = "You win! Paper beats rock";
+                                    return playerWins += 1, getScore();
+                                }
+                                else {
+                                    document.getElementById("results").textContent = "It's a tie! You both chose paper.";
+                                }
+                            }
+                            else if (playerSelection === "scissors") {
+                                if (computerSelection === "rock") {
+                                    document.getElementById("results").textContent = "You lose! Rock beats scissors.";
+                                    return computerWins += 1, getScore();
+                                    
+                                }
+                                else if (computerSelection === "paper") {
+                                    document.getElementById("results").textContent = "You win! Scissors beats paper";
+                                    return playerWins += 1, getScore();
+                                }
+                                else {
+                                    document.getElementById("results").textContent = "It's a tie! You both chose scissors.";
+                                }
+                            }
+                            else {
+                                document.getElementById("results").textContent = "Error. Please try again.";
+                            }
+                        }
+                    }
+            
+            
+            
+                    document.getElementById("rock").addEventListener("click", function(){ playRound("rock"); });
+                    document.getElementById("paper").addEventListener("click", function(){ playRound("paper"); });
+                    document.getElementById("scissors").addEventListener("click", function(){ playRound("scissors"); });
+
+                    </script>
+    </body>
+    <div class="footer">
+        Created by Gavin Sutton
+    </div>
+
+    
+</html>
