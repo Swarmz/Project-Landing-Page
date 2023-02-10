@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Etch-a-Sketch</title>
+        <link rel="stylesheet" href="style.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="background">
+            <div class="body-container">
+                <div class="hero">
+                    <div class="header">
+                        <div class="header-logo">
+                            Etch-A-Sketch
+                        </div>
+                        <div class="header-links">
+                            <ul>
+                                <li><u><a href="./index.html">Home</a></u></li>
+                                <li><u><a href="./about.html">About</a></u></li>
+                                <li><u>Contact</u></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="main">
+                        <div class="about-title">
+                            <h1>Etch-a-Sketch</h1>
+                        </div>
+                        <div class="etchasketch-button-container">
+                            <button type="button" class="etchasketch-button" id="btn">Resize Grid</button> 
+                            <button type="button" class="etchasketch-button" id="erase">Erase</button>
+                        </div>
+                        <div class="etchasketch-container"></div>
+                    </div>
+                </div>
+        <script>
+            function createGrid(size) {
+            const container = document.querySelector('.etchasketch-container');
+            for (i = 0; i < size**2; i++) {
+                const content = document.createElement('div');
+                content.classList.add('content');
+                content.style.width = Math.sqrt((512**2)/(size**2)) + 'px';    // calc the required width/height to distribute the boxes evenly in the container
+                content.style.height = Math.sqrt((512**2)/(size**2)) + 'px';
+                content.addEventListener('mouseover', function (e) {
+                    e.target.style.background = 'black';
+                });
+                container.appendChild(content);
+                }
+            }
+
+            function eraseGrid() {
+            const removeContent = document.querySelectorAll('.content');
+            removeContent.forEach(content => {
+                content.remove();
+                });
+            }
+
+            let btn = document.getElementById("btn");
+            btn.addEventListener('click', event => {
+                eraseGrid();
+                getSize();
+            });
+
+            let erase = document.getElementById("erase");
+            erase.addEventListener('click', event => {
+                eraseGrid();
+                createGrid(32);
+            });
+
+            function getSize() {
+                let size = prompt("Enter a number to size your Etch-A-Sketch(16-100)", 16);
+                createGrid(size);
+            }
+
+            createGrid(32);
+        </script>
+
+
+
+
+
+
+
+        <div class="footer">
+            Created by Gavin Sutton
+        </div>
+</div>
+</div>
+</body>                
+</html>
