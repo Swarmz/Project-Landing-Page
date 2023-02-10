@@ -20,8 +20,7 @@ body {
 
 h1 {
     font-size: 4vw;
-    margin-top: 0;
-    margin-bottom: .33em;
+    margin: 0;
 
 }
 
@@ -107,7 +106,7 @@ ul {
 .hero-text {
     display: flex;
     flex-flow: column nowrap;
-    row-gap: 16px;
+    row-gap: 1.5vw;
     flex: 1;
 }
 
@@ -139,7 +138,7 @@ ul {
     flex-flow: column nowrap;
 }
 
-.img-panel {
+#img-panel {
     flex: 1;
     background-color: #DDD0C8;
     text-align: center;
@@ -162,7 +161,11 @@ ul {
 
 .card {
     max-width: 164px;
-    
+}
+
+.card-text {
+    margin: 12px;
+    font-size: 1.2vw;
 }
 
 .quote-panel {
@@ -185,7 +188,7 @@ ul {
     justify-content: space-evenly;
     color: #323232;
     font-size: 18px;
-    font-style: italic;
+    font-weight:bolder;
 
 }
 
@@ -266,7 +269,7 @@ ul {
     flex: 1;
     max-height: 300px;
     max-width: 300px;
-    
+    float: right;
 }
 
 .contents-text {
