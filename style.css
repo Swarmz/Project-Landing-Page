@@ -287,7 +287,7 @@ ul {
 
 }
 
-.scoreKeeper, .container {
+.scoreKeeper, .rps-container {
     border: 5px solid #323232;
     border-radius: 15px;
     text-align: center;
@@ -298,6 +298,33 @@ ul {
 
 #results {
     padding: 15px;
+}
+
+.etchasketch-button { 
+    padding: 25px;
+    margin: 25px;
+}
+
+.etchasketch-container {
+    display: flex;
+    width: 512px;
+    height: 512px;
+    flex-flow: row wrap;
+    border: 5px solid #323232;
+    border-radius: 10px;  
+    margin: 25px; 
+    align-self: center;
+    background-color: #ffffff;
+}
+
+.etchasketch-main {
+    display:flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.etchasketch-button-container {
+    align-self: center;
 }
 
 .footer {
