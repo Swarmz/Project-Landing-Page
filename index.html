@@ -12,16 +12,11 @@
     <div class="body-container">
     <div class="hero">
         <div class="header">
-            <div class="header-logo">
-                Home Page
-            </div>
             <div class="header-links">
-                <ul>
-                    <li><u><a href="./index.html">Home</a></u></li>
-                    <li><u><a href="./about.html">About</a></u></li>
-                    <li><u><a href="#img-panel">Work</a></u></li>
-                    <li id="myEmail" onclick="emailReveal()"><u>Email</u></li>
-                </ul>
+                    <a class="a-header" href="./index.html">Home</a>
+                    <a class="a-header" href="./about.html">About</a>
+                    <a class="a-header" href="#img-panel">Work</a>
+                    <a class="a-header">Email</a>
             </div>
         </div>
         <div class="hero-contents">
@@ -62,7 +57,7 @@
             <div class="quote-panel-title"><h2>Basic Info</h2></div>
             <div class="quote-container">
                 <div class="quote-left"><ul class="quote-list"><li>Nationality</li><li>Age</li><li>Home</li><li>Favorite Food</li></ul></div>
-                <div class="quote-center"><ul class="quote-list"><li>:</li><li>:</li><li>:</li><li>:</li></ul></div>
+                <div class="quote-center"><ul class="quote-list"><li>&#8680;</li><li>&#8680;</li><li>&#8680;</li><li>&#8680;</li></ul></div>
                 <div class="quote-right"><ul class="quote-list"><li>Canadian</li><li>30</li><li>Miyagi, Japan</li><li>Ramen</li></ul></div>
             </div>
             <!-- <div class="quote-name">-Gavin Sutton, website creator</div> -->
@@ -86,12 +81,19 @@
 <script>
     function emailReveal() {
         const x = document.getElementById("myEmail");
-        if (x.innerHTML === "Email") {
-            x.innerHTML = "gavinsutton6511@gmail.com";
+        if (x.innerHTML === "Email") {  
+            x.innerHTML = "gavinsutton6511@gmail.com";      
         } else {
             x.innerHTML = "gavinsutton6511@gmail.com";
         }
     }
+
+    document.querySelectorAll('.a-header').forEach
+    (link => {
+        if(link.href === window.location.href){
+            link.setAttribute('aria-current', 'page')
+        }
+    })
 </script>
 </body>
 </html>
