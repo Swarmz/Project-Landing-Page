@@ -47,6 +47,33 @@ button {
     
 }
 
+.header-links {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.a-header {
+    flex: 1;
+    background-color: #323232;
+    color: #fff;
+    border: 1px solid;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.5s ease-out;
+}
+
+.a-header:hover,
+.a-header:focus {
+  background-color: #fff;
+  color: #323232;
+}
+
+.a-header[aria-current="page"] {
+    text-decoration: underline solid #ffffff 0.3rem;
+    text-underline-offset: 0.5rem;
+}
+
 ul {
     display: flex;
     list-style: none;
@@ -54,6 +81,10 @@ ul {
     padding: 0;
     gap: 24px;
 
+}
+
+ul.quote-list {
+    font-size:24px;
 }
 
 .card img {
@@ -74,13 +105,9 @@ ul {
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     background-color: #323232;
     padding: 32px;
     color:#ffffff;  
-    
 }
 
 .hero-contents, .img-panel-title, .img-panel-main, .quote, .quote-name, .modal, .quote-panel-title, .quote-container {
@@ -185,10 +212,11 @@ ul {
 
 .quote-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     color: #323232;
     font-size: 18px;
     font-weight:bolder;
+    gap: 5vw;
 
 }
 
@@ -199,6 +227,7 @@ ul {
 .quote-list {
     flex-direction: column;
     font-size: 24px;
+    gap: 36px;
 }
 
 .quote-name {
@@ -338,4 +367,6 @@ ul {
     color: #ffffff;
     padding: 36px;
 }
+
+
 
