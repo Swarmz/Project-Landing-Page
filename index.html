@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Landing Page</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link href='https://css.gg/copy.css' rel='stylesheet'>
 </head>
 <body>
     <div class="background">
@@ -16,7 +19,7 @@
                     <a class="a-header" href="./index.html">Home</a>
                     <a class="a-header" href="./about.html">About</a>
                     <a class="a-header" href="#img-panel">Work</a>
-                    <a class="a-header">Email</a>
+                    <a class="a-header"> <span id="myEmail" onclick = emailReveal()>Email</span></a>
             </div>
         </div>
         <div class="hero-contents">
@@ -79,13 +82,22 @@
 </div>
 </div>
 <script>
+    function copyText() {
+    const x = document.getElementById("myEmail");
+    x.select();
+    x.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(x.value);
+    }
+
     function emailReveal() {
         const x = document.getElementById("myEmail");
-        if (x.innerHTML === "Email") {  
-            x.innerHTML = "gavinsutton6511@gmail.com";      
-        } else {
-            x.innerHTML = "gavinsutton6511@gmail.com";
-        }
+        x.outerHTML =
+            '<div class="copy-link">'+ 
+                '<input type="text" id="myEmail" class="copy-link-input" value="gavinsutton6511@gmail.com" readonly>' +
+                '<button type="button" class="copy-link-button" onclick="copyText()">' +
+                    '<span class="material-icons">content_copy</span>'+
+                '</button>'
+            '</div>';
     }
 
     document.querySelectorAll('.a-header').forEach

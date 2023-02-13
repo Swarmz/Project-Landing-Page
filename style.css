@@ -33,10 +33,6 @@ a, a:visited{
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
-}
-
 button {
     background:  #323232;
     color: #ffffff;
@@ -50,6 +46,8 @@ button {
 .header-links {
     display: flex;
     gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
 }
 
 .a-header {
@@ -61,6 +59,7 @@ button {
     text-align: center;
     text-decoration: none;
     transition: all 0.5s ease-out;
+    max-height: 1em;
 }
 
 .a-header:hover,
@@ -72,6 +71,45 @@ button {
 .a-header[aria-current="page"] {
     text-decoration: underline solid #ffffff 0.3rem;
     text-underline-offset: 0.5rem;
+}
+
+.copy-link {
+    --height: 36px;
+    display: flex;
+    max-width: 250px;
+}
+
+.copy-link-input {
+    flex-grow: 1;
+    padding: 0 8px;
+    font-size: 14px;
+    border: 1px solid #323232;
+    border-right: none;
+    outline: none;
+    text-decoration: none;
+}
+
+.copy-link-input:hover {
+    background: #eeeeee;
+}
+
+.copy-link-button {
+    flex-shrink: 0;
+    width: var(--height);
+    height: var(--height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #dddddd;
+    color: #323232;
+    outline: none;
+    border: 1px solid #323232;
+    border-radius: 0px;
+    cursor: pointer;
+}
+
+.copy-link-button:hover {
+    background: #cccccc;
 }
 
 ul {
