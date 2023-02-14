@@ -19,17 +19,17 @@
                     <a class="a-header" href="./index.html">Home</a>
                     <a class="a-header" href="./about.html">About</a>
                     <a class="a-header" href="#img-panel">Work</a>
-                    <a class="a-header"> <span id="myEmail" onclick = emailReveal()>Email</span></a>
+                    <a class="a-header" href="./document/resume.pdf" target="_blank">Resumé</a>
             </div>
         </div>
         <div class="hero-contents">
             <div class="hero-text">
                 <div class="hero-text-title"><h1>Gavin <br> Sutton</h1></div>
                 <div class="hero-text-main">Web Developer based in Miyagi, Japan.</div>
-                <button class="hero-text-button"><a href="./about.html">About Me</a></button>
+                <button class="hero-text-button" onclick="window.location.href='./about.html';">About Me</button>
             </div>
             <div class="hero-img">
-                <img src="./img/self-zoomed.jpg" alt="sample image near top of the page" class="hero-sample">
+                <img src="./img/self-zoomed.jpg" alt="picture of me" class="hero-sample">
             </div>
 
         </div>
@@ -60,7 +60,7 @@
             <div class="quote-panel-title"><h2>Basic Info</h2></div>
             <div class="quote-container">
                 <div class="quote-left"><ul class="quote-list"><li>Nationality</li><li>Age</li><li>Home</li><li>Favorite Food</li></ul></div>
-                <div class="quote-center"><ul class="quote-list"><li>&#8680;</li><li>&#8680;</li><li>&#8680;</li><li>&#8680;</li></ul></div>
+                <div class="quote-center"><ul class="quote-list"><span class="material-icons">east</span><span class="material-icons">east</span><span class="material-icons">east</span><span class="material-icons">east</span></ul></div>
                 <div class="quote-right"><ul class="quote-list"><li>Canadian</li><li>30</li><li>Miyagi, Japan</li><li>Ramen</li></ul></div>
             </div>
             <!-- <div class="quote-name">-Gavin Sutton, website creator</div> -->
@@ -69,9 +69,9 @@
             <div class="modal">
                 <div class="modal-contents">
                     <div class="modal-header">Interested in working together?</div>
-                    <div class="modal-text">Check out my full resume</div>
+                    <div class="modal-text">Send me an email!</div>
                 </div>
-                <button class="modal-button"><a href="./document/resume.pdf" target="_blank">Click Here</a></button>
+                <button id="modal-button"><span id="myEmail">Email</span></button>
             </div>
 
         </div>
@@ -89,7 +89,7 @@
     navigator.clipboard.writeText(x.value);
     }
 
-    function emailReveal() {
+     function emailReveal() {
         const x = document.getElementById("myEmail");
         x.outerHTML =
             '<div class="copy-link">'+ 
@@ -98,7 +98,11 @@
                     '<span class="material-icons">content_copy</span>'+
                 '</button>'
             '</div>';
+        
     }
+
+    const emailButton = document.getElementById("modal-button");
+    emailButton.addEventListener("click", function() {emailReveal()}, {once : true});
 
     document.querySelectorAll('.a-header').forEach
     (link => {
