@@ -39,12 +39,14 @@ button {
     font-weight: bold;
     padding: 8px 16px;
     border-radius: 8px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
         
 }
 
 button:hover {
     cursor:pointer;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    transform: translateY(-3px);
+    
 }
 
 button:active {
@@ -79,6 +81,11 @@ button:active {
 
 .a-header[aria-current="page"] {
     text-decoration: underline solid #ffffff 0.3rem;
+    text-underline-offset: 0.5rem;
+}
+
+.a-header[aria-current="page"]:hover {
+    text-decoration: underline solid #323232 0.3rem;
     text-underline-offset: 0.5rem;
 }
 
@@ -210,6 +217,7 @@ ul.quote-list {
     display: flex;
     flex: 1;
     flex-flow: column nowrap;
+    background-color: #DDD0C8;
 }
 
 #img-panel {
@@ -324,13 +332,21 @@ ul.quote-list {
 
 }
 
-.about-title {
+.main-title {
     text-align: center;
     padding:32px;
     border-bottom: 1px solid #323232;
 }
 
-.contents-title {
+.about-nav {
+    display:flex;
+    justify-content: space-evenly;
+    border-bottom: 1px solid #323232;
+    padding: 2vw;
+    margin: 0;
+}
+
+.about-title {
     text-align: center;
 }
 
@@ -341,16 +357,12 @@ ul.quote-list {
     gap: 32px;
 }
 
-.contents-img {
-    flex: 1;
-    max-height: 300px;
-    max-width: 300px;
-    float: right;
+.about-img {
+    max-height: 200px;
+    max-width: 200px;
 }
 
-.contents-text {
-    flex: 1;
-}
+
 
 .rpsSelection {
     padding: 25px;
