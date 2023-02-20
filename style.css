@@ -4,8 +4,17 @@
 
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
-    [class*="body-container"] {
+    .body-container {
       width: 100%;
+    }
+
+    .header-links > .a-header {
+        border:none;
+    }
+
+    .header > .header-links {
+        gap:0;
+        margin:0;
     }
 }
 
@@ -30,7 +39,7 @@ body {
 }
 
 h1 {
-    font-size: 4vw;
+    font-size: 72px;
     margin: 0;
     color:#323232;
 }
@@ -74,6 +83,7 @@ button:active {
     gap: 0.5rem;
     align-items: center;
     justify-content: center;
+    margin: 32px;
 }
 
 .a-header {
@@ -185,7 +195,6 @@ ul.quote-list {
 
 .header {
     background-color: #323232;
-    padding: 32px;
     color:#ffffff;  
 }
 
@@ -196,7 +205,8 @@ ul.quote-list {
 .hero-contents {
     display: flex;
     justify-content: space-evenly;
-    flex-wrap: wrap;   
+    flex-wrap: wrap;
+    gap: 32px;  
 }
 
 .hero-img {
@@ -206,10 +216,8 @@ ul.quote-list {
 
 }
 
-.hero-text {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-around;
+.hero-text-main {
+    margin:32px 0px;
 }
 
 
@@ -268,7 +276,7 @@ ul.quote-list {
 
 .card-text {
     margin: 12px 0px;
-    font-size: 1.2vw;
+    font-size: 24px;
 }
 
 .quote-panel {
@@ -312,10 +320,10 @@ ul.quote-list {
 }
 
 .sign-up-panel {
-    display: flex;
-    flex-flow: column nowrap;
+    align-self: center;
     background-color: #DDD0C8;
-    padding: 36px;
+    padding: 36px 0px;
+    max-width: 95%;
 
 }
 
@@ -326,9 +334,11 @@ ul.quote-list {
     border-radius: 15px;
     padding: 24px;
     display: flex;
+    flex-flow: row wrap;
     justify-content: space-evenly;
     align-self: center;
     gap: 32px;
+    margin: 32px 0px;
 
 }
 
@@ -346,6 +356,7 @@ ul.quote-list {
 .modal-header {
     font-weight: bold;
     font-size: 18px;
+    white-space: nowrap;
 }
 
 .modal-text {
@@ -373,7 +384,7 @@ ul.quote-list {
     border: 1px solid transparent;
     border-radius: 5%;
     transition: all 0.5s ease-out;
-    width: 15vw;
+    max-width: 300px;
     color: #323232;
 }
 
@@ -407,15 +418,14 @@ ul.quote-list {
     transition: background-color 0.6s ease;
 }
 
-
-
 .about-text {
     color: #323232;
     font-size: 15px;
     text-align: center;
     margin: 3vw;
-    font-size: 1.1vw;
+    font-size: 18px;
 }
+
 .fade {
     animation-name: fade;
     animation-duration: 1.5s;
