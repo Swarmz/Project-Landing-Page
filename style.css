@@ -1,3 +1,14 @@
+* {
+    box-sizing: border-box;
+  }
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="body-container"] {
+      width: 100%;
+    }
+}
+
 body {
     margin: 0;
 }
@@ -21,7 +32,11 @@ body {
 h1 {
     font-size: 4vw;
     margin: 0;
+    color:#323232;
+}
 
+h2 {
+    margin-top: 0;
 }
 
 img {
@@ -70,7 +85,6 @@ button:active {
     text-align: center;
     text-decoration: none;
     transition: all 0.5s ease-out;
-    max-height: 1em;
 }
 
 .a-header:hover,
@@ -129,6 +143,7 @@ button:active {
 .copy-link-button:hover {
     background: #cccccc;
     box-shadow:none;
+    transform: none;
 }
 
 ul {
@@ -180,8 +195,7 @@ ul.quote-list {
 .hero-img {
     max-width: 400px;
     max-height: 300px;
-    border: 5px solid #323232;
-    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
 
 }
 
@@ -209,8 +223,8 @@ ul.quote-list {
 }
 
 .hero-sample {
-    height: 300px;
-    width: auto;
+    max-width: 100%;
+    height: auto;
 }
 
 .main {
@@ -348,7 +362,20 @@ ul.quote-list {
 
 .about-title {
     text-align: center;
+    padding: 32px;
+    border: 1px solid transparent;
+    border-radius: 5%;
+    transition: all 0.5s ease-out;
+    width: 15vw;
+    color: #323232;
 }
+
+.about-title:hover,
+.about-title:focus, .active {
+  background-color: #323232;
+  color:#ffffff;
+}
+
 
 .contents-top, .contents-bottom {
     display: flex;
@@ -362,8 +389,35 @@ ul.quote-list {
     max-width: 200px;
 }
 
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
 
 
+
+.about-text {
+    color: #323232;
+    font-size: 15px;
+    text-align: center;
+    margin: 3vw;
+    font-size: 1.1vw;
+}
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+  
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
 .rpsSelection {
     padding: 25px;
     margin: 5px;  

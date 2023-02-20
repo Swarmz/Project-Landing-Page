@@ -29,22 +29,32 @@
                         <h1>About Me</h1>
                     </div>
                     <div class="about-nav">
-                        <div class="about-title">
+                        <div class="about-title" onclick="currentSlide(1)">
                             <h2>Where I'm From</h2>
                             <img class="about-img" src="./img/canada-flag-circle.png" alt="flag of canada">
                         </div>
-                        <div class="about-title">
+                        <div class="about-title" onclick="currentSlide(2)">
                             <h2>Hobbies and Interests</h2>
                             <img class="about-img" src="./img/hobby-circle.png" alt="various hobbies">
                         </div>
-                        <div class="about-title">
-                            <h2>Example Title</h2>
+                        <div class="about-title" onclick="currentSlide(3)">
+                            <h2>My Life Now</h2>
                             <img class="about-img" src="./img/card1.jpg" alt="">
                         </div>
                     </div>
-                    <div class="about-text">
-
-                    </div>
+                    <div class="slideshow-container">
+                        <div class="mySlides fade">                       
+                            <div class="about-text">Caption Text 1</div>
+                        </div>
+                      
+                        <div class="mySlides fade">                       
+                            <div class="about-text">Caption Text 2</div>
+                        </div>
+                      
+                        <div class="mySlides fade">                       
+                            <div class="about-text">Caption Text 3</div>
+                        </div>
+                      </div>
 
                     <!-- <div class="contents-top">
                         <div class="about-img">
@@ -97,5 +107,31 @@
             link.setAttribute('aria-current', 'page')
         }
     })
+
+    // Default slide shown is 1
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+}
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let cards = document.getElementsByClassName("about-title");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        for (i = 0; i < cards.length; i++) {
+            cards[i].className = cards[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        cards[slideIndex-1].className += " active";
+}
     </script>
 </html>
