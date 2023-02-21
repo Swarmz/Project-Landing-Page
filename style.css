@@ -2,21 +2,7 @@
     box-sizing: border-box;
   }
 
-@media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    .body-container {
-      width: 100%;
-    }
 
-    .header-links > .a-header {
-        border:none;
-    }
-
-    .header > .header-links {
-        gap:0;
-        margin:0;
-    }
-}
 
 body {
     margin: 0;
@@ -41,11 +27,19 @@ body {
 h1 {
     font-size: 72px;
     margin: 0;
-    color:#323232;
+    
 }
 
 h2 {
+    font-size: 48px;
     margin-top: 0;
+    
+}
+
+
+h3 {
+    margin: 0;
+    
 }
 
 img {
@@ -60,10 +54,10 @@ a, a:visited{
 button {
     background:  #323232;
     color: #ffffff;
-    font-weight: bold;
     padding: 8px 16px;
     border-radius: 8px;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    font-size: 16px;
         
 }
 
@@ -116,11 +110,11 @@ button:active {
 .copy-link {
     --height: 36px;
     display: flex;
-    max-width: 250px;
+    justify-content: center;
 }
 
 .copy-link-input {
-    flex-grow: 1;
+    
     padding: 0 8px;
     font-size: 14px;
     border: 1px solid #323232;
@@ -170,9 +164,8 @@ ul.quote-list {
 }
 
 .card img {
-    height: 150px;
-    width: 150px;
-    box-shadow: 10px 10px gray; 
+    box-shadow: 10px 10px gray;
+    margin: 0px 10px 10px 0px; 
 }
 
 .card:hover {
@@ -198,7 +191,7 @@ ul.quote-list {
     color:#ffffff;  
 }
 
-.hero-contents, .img-panel-title, .img-panel-main, .quote, .quote-name, .modal, .quote-panel-title, .quote-container {
+.hero-contents, .img-panel-title, .img-panel-main, .quote, .quote-name, .quote-panel-title, .quote-container, .sign-up-panel {
    margin: 32px;
 }
 
@@ -211,17 +204,16 @@ ul.quote-list {
 
 .hero-img {
     max-width: 400px;
-    max-height: 300px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
 
 }
 
 .hero-text-main {
-    margin:32px 0px;
+    margin: 32px 0px;
+    font-size: 24px;
 }
 
 
-.hero-text-main, .header-links {
+.header-links {
     font-size: 18px;
     
 }
@@ -238,8 +230,8 @@ ul.quote-list {
 }
 
 .hero-sample {
-    max-width: 100%;
-    height: auto;
+
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 50%), 0 6px 20px 0 rgb(0 0 0 / 50%);
 }
 
 .main {
@@ -254,6 +246,7 @@ ul.quote-list {
     background-color: #DDD0C8;
     text-align: center;
     border-bottom: 1px solid #323232;
+    color: #323232;
 }
 
 .img-panel-title {
@@ -265,9 +258,10 @@ ul.quote-list {
 .img-panel-main {
     display: flex;
     justify-content: center;
-    gap: 52px;
+    gap: 24px;
     padding-bottom: 32px;
     flex-flow: row wrap;
+    margin: auto;
 }
 
 .card {
@@ -298,20 +292,22 @@ ul.quote-list {
     display: flex;
     justify-content: center;
     color: #323232;
-    font-size: 18px;
-    font-weight:bolder;
+    font-size: 1em;
     gap: 5vw;
 
 }
 
 .quote-left, .quote-center, .quote-right {
     display: flex;
+    text-align: center;
 }
-
+.quote-center > .quote-list {
+    font-size: 0px;
+}
 .quote-list {
     flex-direction: column;
-    font-size: 24px;
     gap: 36px;
+    white-space: nowrap;
 }
 
 .quote-name {
@@ -322,92 +318,91 @@ ul.quote-list {
 .sign-up-panel {
     align-self: center;
     background-color: #DDD0C8;
-    padding: 36px 0px;
     max-width: 95%;
 
 }
 
 .modal {
-    background-color: #DDD0C8;
-    border: 2px solid #323232;
     color: #323232;
-    border-radius: 15px;
-    padding: 24px;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     justify-content: space-evenly;
     align-self: center;
     gap: 32px;
-    margin: 32px 0px;
-
 }
 
 .modal-contents {
     display: flex;
     flex-flow: column nowrap;
     row-gap: 8px;
+    text-align: center;
 }
 
 #modal-button {
     border: 2px solid #323232;
     background-color: #323232; 
+    font-size: 18px;
+    height: 3em;
+    align-self: center;
+
 }
 
 .modal-header {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 36px;
     white-space: nowrap;
 }
 
 .modal-text {
     color: #323232;
+    font-size: 24px;
 
 }
 
 .main-title {
     text-align: center;
-    padding:32px;
+    padding: 2vw;
     border-bottom: 1px solid #323232;
+    color: #323232;
 }
 
 .about-nav {
     display:flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     border-bottom: 1px solid #323232;
     padding: 2vw;
     margin: 0;
 }
 
-.about-title {
+.about-card {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
     text-align: center;
-    padding: 32px;
+    padding: 2vw;
     border: 1px solid transparent;
     border-radius: 5%;
     transition: all 0.5s ease-out;
-    max-width: 300px;
+    width: 33%;
     color: #323232;
 }
 
-.about-title:hover,
-.about-title:focus, .active {
+.about-card:hover,
+.about-card:focus, .active {
   background-color: #323232;
-  color:#ffffff;
-}
-
-
-.contents-top, .contents-bottom {
-    display: flex;
-    justify-content: space-around;
-    padding: 16px;
-    gap: 32px;
+  color:#ffffff !important;
+  cursor: pointer;
 }
 
 .about-img {
-    max-height: 200px;
-    max-width: 200px;
+    height:50%;
 }
 
-.dot {
+.about-card-text {
+    height:50%;
+}
+
+/* .dot {   dot for underneath slideshow image showing active selection
     cursor: pointer;
     height: 15px;
     width: 15px;
@@ -416,14 +411,13 @@ ul.quote-list {
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
-}
+} */
 
 .about-text {
     color: #323232;
-    font-size: 15px;
     text-align: center;
     margin: 3vw;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .fade {
@@ -495,8 +489,59 @@ ul.quote-list {
     justify-content: center;
     background-color: #323232;
     color: #ffffff;
-    padding: 36px;
+    padding: 2em;
 }
 
 
 
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .body-container {
+      width: 100%;
+    }
+
+    .hero > .header {
+        width: 100%;
+    }
+
+    .header-links > .a-header {
+        border:none;
+        padding: 5vw;
+    }
+
+    .header > .header-links {
+        gap:0;
+        margin:0;
+        
+    }
+
+    h1 {
+        font-size: 28px;
+        margin: 0;
+        font-weight: 600;
+    }
+    
+    h2 {
+        margin-top: 0;
+        font-size: 22px;
+        font-weight: 600;
+    }
+    
+    h3 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    ul.quote-list {
+        font-size: 16px;
+    }
+
+    .footer {
+        padding: 1em;
+    }
+
+    .hero-text-main {
+        font-size: 16px;
+    }
+}
