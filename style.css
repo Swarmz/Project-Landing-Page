@@ -262,10 +262,11 @@ ul.quote-list {
     padding-bottom: 32px;
     flex-flow: row wrap;
     margin: auto;
+    max-width: 95%;
 }
 
 .card {
-    max-width: 164px;
+    max-width: 150px;
 }
 
 .card-text {
