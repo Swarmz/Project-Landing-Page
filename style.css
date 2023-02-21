@@ -545,4 +545,8 @@ ul.quote-list {
     .hero-text-main {
         font-size: 16px;
     }
+
+    .hero-text {
+        text-align: center;
+    }
 }
