@@ -52,24 +52,14 @@ a, a:visited{
 }
 
 button {
-    background:  #323232;
-    color: #ffffff;
     padding: 8px 16px;
     border-radius: 8px;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: #DDD0C8;
+    color: #323232;
+    text-align: center;
+    border: 2px solid #323232;
     font-size: 16px;
-        
-}
-
-button:hover {
-    cursor:pointer;
-    transform: translateY(-3px);
-    
-}
-
-button:active {
-    transform: translateY(3px);
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    transition: all 0.5s ease-out;  
 }
 
 .header-links {
@@ -219,9 +209,18 @@ ul.quote-list {
 }
 
 .hero-text-button {
-    border: none;
-    align-self: flex-start;
-    border: 2px solid #323232; 
+    background-color: #DDD0C8;
+    color: #323232;
+    text-align: center;
+    border: 2px solid #323232;
+    font-size: 16px;
+    transition: all 0.5s ease-out;  
+}
+
+.hero-text-button:hover, .hero-text-button:focus {
+    cursor: pointer;
+    background-color: #323232;
+    color: #fff; 
 }
 
 .header-logo {
@@ -340,13 +339,17 @@ ul.quote-list {
 }
 
 #modal-button {
-    border: 2px solid #323232;
-    background-color: #323232; 
     font-size: 18px;
     height: 3em;
     align-self: center;
-
+    cursor: pointer;
 }
+
+#modal-button:hover, #modal-button:focus {
+    background-color: #323232;
+    color: #ffffff; 
+}
+
 
 .modal-header {
     font-weight: bold;
@@ -391,7 +394,7 @@ ul.quote-list {
 .about-card:hover,
 .about-card:focus, .active {
   background-color: #323232;
-  color:#ffffff !important;
+  color:#ffffff;
   cursor: pointer;
 }
 
@@ -413,6 +416,21 @@ ul.quote-list {
     display: inline-block;
     transition: background-color 0.6s ease;
 } */
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
 
 .about-text {
     color: #323232;
