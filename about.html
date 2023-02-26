@@ -29,6 +29,16 @@
                         <h1>About Me</h1>
                     </div>
                     <div class="about-nav">
+                        <!-- <div class="previous">
+
+                        </div>
+                        <div class="active">
+
+                        </div>
+                        <div class="next">
+
+                        </div> -->
+                        
                         <div class="about-card" onclick="currentSlide(1)">
                             <div class="about-card-text"><h2>Where I'm From</h2></div>
                             <img class="about-img" src="./img/canada-flag-circle.png" alt="flag of canada">
@@ -41,6 +51,8 @@
                             <div class="about-card-text"><h2>My Life Now</h2></div>
                             <img class="about-img" src="./img/flag-of-japan.png" alt="flag of japan">
                         </div>
+                        <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
                     </div>
                     <div class="slideshow-container">
                         <div class="mySlides fade">                       
@@ -75,6 +87,10 @@
     let slideIndex = 1;
     showSlides(slideIndex);
 
+    // Next/previous controls
+    function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
 
     // Thumbnail image controls
     function currentSlide(n) {
@@ -85,9 +101,9 @@
         let i;
         let slides = document.getElementsByClassName("mySlides");
         let cards = document.getElementsByClassName("about-card");
-        if (n > slides.length) {slideIndex = 1}    
-        if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
+        if (n > slides.length) {slideIndex = 1}    // Repeats back to slide 1 after slide 3
+        if (n < 1) {slideIndex = slides.length}     // Goes to slide 3 after using previous control on slide 1
+        for (i = 0; i < slides.length; i++) {       
             slides[i].style.display = "none";  
         }
         for (i = 0; i < cards.length; i++) {

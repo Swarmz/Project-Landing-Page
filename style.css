@@ -371,8 +371,10 @@ ul.quote-list {
 }
 
 .about-nav {
-    display:flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    grid-auto-flow: column dense; 
+    justify-content: center;
     border-bottom: 1px solid #323232;
     padding: 2vw;
     margin: 0;
@@ -387,23 +389,36 @@ ul.quote-list {
     border: 1px solid transparent;
     border-radius: 5%;
     transition: all 0.5s ease-out;
-    width: 33%;
+    
     color: #323232;
+    opacity: 30%;
 }
 
 .about-card:hover,
-.about-card:focus, .active {
-  background-color: #323232;
-  color:#ffffff;
+.about-card:focus {
   cursor: pointer;
 }
 
+.active {
+    cursor: pointer;
+    grid-column: 2;
+    opacity: 1;
+}
+
+/* .previous {
+    float: left;
+}
+
+.next {
+    float: right;
+} */
+
 .about-img {
-    height:50%;
+    height: 50%;
 }
 
 .about-card-text {
-    height:50%;
+    height: 40%;
 }
 
 /* .dot {   dot for underneath slideshow image showing active selection
@@ -448,6 +463,12 @@ ul.quote-list {
     from {opacity: .4}
     to {opacity: 1}
 }
+
+@keyframes fadeout {
+    from {opacity: 1}
+    to {opacity: .4}
+}
+
 .rpsSelection {
     padding: 25px;
     margin: 5px;  
