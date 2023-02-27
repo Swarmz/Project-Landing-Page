@@ -371,57 +371,36 @@ ul.quote-list {
 }
 
 .about-nav {
-    display: grid;
-    grid-template-columns: repeat(3, 33%);
-    grid-auto-flow: column dense; 
-    justify-content: center;
+    position: relative;
+    margin: 0;
     border-bottom: 1px solid #323232;
     padding: 2vw;
-    margin: 0;
+}
+
+.mySlides {
+    display: none;
 }
 
 .about-card {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column nowrap;
     justify-content: center;
     text-align: center;
     padding: 2vw;
-    border: 1px solid transparent;
-    border-radius: 5%;
     transition: all 0.5s ease-out;
-    
     color: #323232;
-    opacity: 30%;
+    margin: auto;
+    width: 50%;    
 }
-
-.about-card:hover,
-.about-card:focus {
-  cursor: pointer;
-}
-
-.active {
-    cursor: pointer;
-    grid-column: 2;
-    opacity: 1;
-}
-
-/* .previous {
-    float: left;
-}
-
-.next {
-    float: right;
-} */
 
 .about-img {
-    height: 50%;
+    align-self: center;
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
 }
 
-.about-card-text {
-    height: 40%;
-}
-
-/* .dot {   dot for underneath slideshow image showing active selection
+.dot {   /*dot for underneath slideshow image showing active selection */
     cursor: pointer;
     height: 15px;
     width: 15px;
@@ -430,16 +409,15 @@ ul.quote-list {
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
-} */
+}
 
 .prev, .next {
     cursor: pointer;
     position: absolute;
     top: 50%;
     width: auto;
-    margin-top: -22px;
     padding: 16px;
-    color: white;
+    color: #323232;
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
@@ -447,11 +425,31 @@ ul.quote-list {
     user-select: none;
 }
 
+.next {
+    right: 10%;
+    border-radius: 5%;
+}
+
+.prev {
+    left: 10%;
+    border-radius: 5%;
+}
+  
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: #323232;
+    color: #ffffff;
+}
+
 .about-text {
     color: #323232;
     text-align: center;
     margin: 3vw;
     font-size: 16px;
+}
+
+.active {
+    background-color: #717171;
 }
 
 .fade {
@@ -462,11 +460,6 @@ ul.quote-list {
 @keyframes fade {
     from {opacity: .4}
     to {opacity: 1}
-}
-
-@keyframes fadeout {
-    from {opacity: 1}
-    to {opacity: .4}
 }
 
 .rpsSelection {
@@ -587,5 +580,13 @@ ul.quote-list {
 
     .hero-text {
         text-align: center;
+    }
+
+    .about-card {
+        width: 80%
+    }
+    .about-img {
+        width: 50%;
+        
     }
 }

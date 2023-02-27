@@ -29,41 +29,39 @@
                         <h1>About Me</h1>
                     </div>
                     <div class="about-nav">
-                        <!-- <div class="previous">
-
-                        </div>
-                        <div class="active">
-
-                        </div>
-                        <div class="next">
-
-                        </div> -->
-                        
-                        <div class="about-card" onclick="currentSlide(1)">
+                        <div class="about-card mySlides fade">
                             <div class="about-card-text"><h2>Where I'm From</h2></div>
                             <img class="about-img" src="./img/canada-flag-circle.png" alt="flag of canada">
                         </div>
-                        <div class="about-card" onclick="currentSlide(2)">
+                        <div class="about-card mySlides fade">
                             <div class="about-card-text"><h2>Hobbies & Interests</h2></div>
                             <img class="about-img" src="./img/hobbies-icon.png" alt="various hobbies">
                         </div>
-                        <div class="about-card" onclick="currentSlide(3)">
+                        <div class="about-card mySlides fade">
                             <div class="about-card-text"><h2>My Life Now</h2></div>
                             <img class="about-img" src="./img/flag-of-japan.png" alt="flag of japan">
                         </div>
-                        <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        
+                        <div style="text-align:center">
+                            <span class="dot" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                        </div>
                     </div>
+                    
+  
                     <div class="slideshow-container">
-                        <div class="mySlides fade">                       
+                        <div class="">                       
                             <div class="about-text">Caption Text 1</div>
                         </div>
                       
-                        <div class="mySlides fade">                       
+                        <div class="">                       
                             <div class="about-text">Caption Text 2</div>
                         </div>
                       
-                        <div class="mySlides fade">                       
+                        <div class="">                       
                             <div class="about-text">Caption Text 3</div>
                         </div>
                       </div>
@@ -83,13 +81,12 @@
         }
     })
 
-    // Default slide shown is 1
     let slideIndex = 1;
-    showSlides(slideIndex);
+        showSlides(slideIndex);
 
     // Next/previous controls
     function plusSlides(n) {
-    showSlides(slideIndex += n);
+        showSlides(slideIndex += n);
 }
 
     // Thumbnail image controls
@@ -100,17 +97,37 @@
     function showSlides(n) {
         let i;
         let slides = document.getElementsByClassName("mySlides");
-        let cards = document.getElementsByClassName("about-card");
-        if (n > slides.length) {slideIndex = 1}    // Repeats back to slide 1 after slide 3
-        if (n < 1) {slideIndex = slides.length}     // Goes to slide 3 after using previous control on slide 1
-        for (i = 0; i < slides.length; i++) {       
-            slides[i].style.display = "none";  
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
         }
-        for (i = 0; i < cards.length; i++) {
-            cards[i].className = cards[i].className.replace(" active", "");
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
         }
-        slides[slideIndex-1].style.display = "block";  
-        cards[slideIndex-1].className += " active";
+        slides[slideIndex-1].style.display = "flex";
+        dots[slideIndex-1].className += " active";
 }
+//     function showSlides(n) {
+//         let i;
+//         let slides = document.getElementsByClassName("mySlides");
+//         let cards = document.getElementsByClassName("about-card");
+//         let dots = document.getElementsByClassName("dot");
+//         if (n > slides.length) {slideIndex = 1}    // Repeats back to slide 1 after slide 3
+//         if (n < 1) {slideIndex = slides.length}     // Goes to slide 3 after using previous control on slide 1
+//         for (i = 0; i < slides.length; i++) {       
+//             slides[i].style.display = "none";  
+//         }
+//         for (i = 0; i < cards.length; i++) {
+//             cards[i].className = cards[i].className.replace(" active", "");
+//         }
+//         for (i = 0; i < dots.length; i++) {
+//             dots[i].className = dots[i].className.replace(" active", "");
+//         }
+//         slides[slideIndex-1].style.display = "block";  
+//         cards[slideIndex-1].className += " active";
+//         dots[slideIndex-1].className += " active";
+// }
     </script>
 </html>
