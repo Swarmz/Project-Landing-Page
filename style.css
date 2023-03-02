@@ -590,9 +590,13 @@ ul.quote-list {
     .about-card {
         width: 80%
     }
+
     .about-img {
         width: 50%;
         height: 150px;
-        
+    }
+
+    .hero-text-button, #modal-button {
+        font-size: 14px;
     }
 }
