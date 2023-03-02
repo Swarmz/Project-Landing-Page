@@ -19,7 +19,7 @@
                     <a class="a-header" href="./index.html">Home</a>
                     <a class="a-header" href="./about.html">About</a>
                     <a class="a-header" href="#img-panel">Work</a>
-                    <a class="a-header" href="./document/resume.pdf" target="_blank">Resumé</a>
+                    <a class="a-header" href="./document/resume.pdf" target="_blank">Resumé <span class="material-icons inline-material-icons">file_download</span></a>
             </div>
         </div>
         <div class="hero-contents">
@@ -96,7 +96,7 @@
     navigator.clipboard.writeText(x.value);
     }
 
-     function emailReveal() {
+    function emailReveal() {
         const x = document.getElementById("myEmail");
         x.outerHTML =
             '<div class="copy-link">'+ 
