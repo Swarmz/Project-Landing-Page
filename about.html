@@ -54,15 +54,15 @@
   
                     <div class="slideshow-container">
                         <div class="">                       
-                            <div class="about-text">Caption Text 1</div>
+                            <div class="about-text textSlides fade">Caption Text 1</div>
                         </div>
                       
                         <div class="">                       
-                            <div class="about-text">Caption Text 2</div>
+                            <div class="about-text textSlides fade">Caption Text 2</div>
                         </div>
                       
                         <div class="">                       
-                            <div class="about-text">Caption Text 3</div>
+                            <div class="about-text textSlides fade">Caption Text 3</div>
                         </div>
                       </div>
                 </div>
@@ -96,38 +96,21 @@
 
     function showSlides(n) {
         let i;
+        let textSlides = document.getElementsByClassName("textSlides");
         let slides = document.getElementsByClassName("mySlides");
         let dots = document.getElementsByClassName("dot");
         if (n > slides.length) {slideIndex = 1}
         if (n < 1) {slideIndex = slides.length}
         for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
+            textSlides[i].style.display ="none";
         }
         for (i = 0; i < dots.length; i++) {
             dots[i].className = dots[i].className.replace(" active", "");
         }
         slides[slideIndex-1].style.display = "flex";
+        textSlides[slideIndex-1].style.display = "block";
         dots[slideIndex-1].className += " active";
 }
-//     function showSlides(n) {
-//         let i;
-//         let slides = document.getElementsByClassName("mySlides");
-//         let cards = document.getElementsByClassName("about-card");
-//         let dots = document.getElementsByClassName("dot");
-//         if (n > slides.length) {slideIndex = 1}    // Repeats back to slide 1 after slide 3
-//         if (n < 1) {slideIndex = slides.length}     // Goes to slide 3 after using previous control on slide 1
-//         for (i = 0; i < slides.length; i++) {       
-//             slides[i].style.display = "none";  
-//         }
-//         for (i = 0; i < cards.length; i++) {
-//             cards[i].className = cards[i].className.replace(" active", "");
-//         }
-//         for (i = 0; i < dots.length; i++) {
-//             dots[i].className = dots[i].className.replace(" active", "");
-//         }
-//         slides[slideIndex-1].style.display = "block";  
-//         cards[slideIndex-1].className += " active";
-//         dots[slideIndex-1].className += " active";
-// }
     </script>
 </html>
