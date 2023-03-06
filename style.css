@@ -60,8 +60,8 @@ button {
     transition: all 0.5s ease-out;  
 }
 
-.out-of-service {
-    opacity: 60%;
+.out-of-service * {
+    opacity: 0.6;
     cursor: not-allowed;
 }
 
@@ -306,7 +306,7 @@ ul.quote-list {
 
 #modal-button {
     font-size: 18px;
-    height: 3em;
+    min-height: 3em;
     min-width: 20%;
     align-self: center;
     cursor: pointer;
@@ -563,6 +563,7 @@ ul.quote-list {
     visibility: visible;
 }
 
+
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
     .body-container {
@@ -629,6 +630,6 @@ ul.quote-list {
     }
 
     .hero-text-button, #modal-button {
-        font-size: 14px;
+        font-size: 16px;
     }
 }
