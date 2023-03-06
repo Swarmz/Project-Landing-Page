@@ -400,7 +400,7 @@ ul.quote-list {
     transition: all 0.5s ease-out;
     color: #323232;
     margin: auto;
-    width: 50%;    
+    min-width: 60%;    
 }
 
 .about-img {
@@ -453,9 +453,9 @@ ul.quote-list {
 
 .about-text {
     color: #323232;
-    text-align: center;
     margin: 3vw;
     font-size: 16px;
+    line-height: 1.6
 }
 
 .active {
@@ -571,7 +571,11 @@ ul.quote-list {
 
 
 @media only screen and (max-width: 768px) {
-    /* For mobile phones: */
+    /* For mobile */
+    html {
+        scroll-behavior: smooth;
+    }
+
     .body-container {
       width: 100%;
     }
