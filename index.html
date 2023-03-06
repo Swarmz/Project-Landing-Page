@@ -16,10 +16,10 @@
     <div class="hero">
         <div class="header">
             <div class="header-links">
-                    <a class="a-header" href="./index.html">Home</a>
-                    <a class="a-header" href="./about.html">About</a>
-                    <a class="a-header out-of-service tooltip"><!-- href="./index.html#img-panel"-->Work<span class="tooltiptext">Temporarily Disabled</span></a>
-                    <a class="a-header" href="./document/resume.pdf" target="_blank">Resumé <span class="material-icons inline-material-icons">file_download</span></a>
+                    <a class="a-header prevent-select" href="./index.html">Home</a>
+                    <a class="a-header prevent-select" href="./about.html">About</a>
+                    <a class="a-header prevent-select" href="./index.html#img-panel">Work</a>
+                    <a class="a-header prevent-select" href="./document/resume.pdf" target="_blank">Resumé <span class="material-icons inline-material-icons">file_download</span></a>
             </div>
         </div>
         <div class="hero-contents">
@@ -38,26 +38,26 @@
         <div id="img-panel">
             <div class="img-panel-title"><h2>My Work</h2></div>
             <div class="img-panel-main">
-                <a href="./rock-paper-scissors.html">
-                    <div class="card">
-                        <img src="./img/rps.jpg" alt="">
+                <a class="out-of-service tooltip"> <!-- href="./rock-paper-scissors.html">--> <span class="tooltiptext">Unavailable</span> 
+                    <div style="opacity:0.6;" class="card">
+                        <img src="./img/rps.jpg" alt="hands displaying rock, paper, and scissors">
                         <div class="card-text"><h3>Rock Paper Scissors</h3></div>
                     </div>
                 </a>
-                <a>
-                    <div class="card">
+                <a class="out-of-service tooltip"> <!-- href="./calculator.html"--> <span class="tooltiptext">Unavailable</span>
+                    <div style="opacity:0.6;" class="card">
                         <img src="./img/calculator.jpg" alt="">
                         <div class="card-text"><h3>Calculator</h3></div>
                     </div>
                 </a>
-                <a href="./etchasketch.html">
-                    <div class="card">
+                <a class="out-of-service tooltip"> <!-- href="./etch-a-sketch.html"--> <span class="tooltiptext">Unavailable</span>
+                    <div style="opacity:0.6;" class="card">
                         <img src="./img/img-panel-pen.jpg" alt="">
                         <div class="card-text"><h3>Etch-A-Sketch</h3></div>
                     </div>
                 </a>
-                <a>
-                    <div class="card">
+                <a class="out-of-service tooltip"> <!-- href="./example.html"--> <span class="tooltiptext">Unavailable</span>
+                    <div style="opacity:0.6;" class="card">
                         <img src="./img/under_construction.jpg" alt="">
                         <div class="card-text"><h3>Coming Soon</h3></div>
                     </div>
