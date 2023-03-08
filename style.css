@@ -341,7 +341,6 @@ ul.quote-list {
 }
 
 .copy-link-input {
-    
     padding: 0 8px;
     font-size: 18px;
     border: 1px solid #323232;
@@ -352,7 +351,6 @@ ul.quote-list {
 
 .copy-link-input:hover {
     background: #eeeeee;
-    
 }
 
 .copy-link-button {
@@ -368,7 +366,6 @@ ul.quote-list {
     border: 1px solid #323232;
     border-radius: 0px;
     cursor: pointer;
-    
 }
 
 .copy-link-button:hover {
@@ -384,11 +381,18 @@ ul.quote-list {
     color: #323232;
 }
 
+.about-main {
+    display: flex;
+    flex: 1;
+    flex-flow: row nowrap;
+    background-color: #DDD0C8;
+}
 .about-nav {
     position: relative;
     margin: 0;
-    border-bottom: 1px solid #323232;
     padding: 2vw;
+    flex: 1;  
+    align-self: flex-start; 
 }
 
 .mySlides {
@@ -400,7 +404,7 @@ ul.quote-list {
     flex-flow: column nowrap;
     justify-content: center;
     text-align: center;
-    padding: 2vw;
+    padding-bottom: 2vw;
     transition: all 0.5s ease-out;
     color: #323232;
     margin: auto;
@@ -455,11 +459,17 @@ ul.quote-list {
     color: #ffffff;
 }
 
-.about-text {
+.textSlides {
     color: #323232;
-    margin: 3vw;
     font-size: 16px;
-    line-height: 1.6
+    line-height: 1.6;
+    padding: 1vw;
+    max-width: 60%;
+    margin: 2vw;
+    border: 3px solid #323232;
+    flex: 1;  
+    align-self: flex-start; 
+    box-shadow: 6px 4px;
 }
 
 .about-text-img {
@@ -468,7 +478,7 @@ ul.quote-list {
     margin-bottom: 8px;
     max-width: 200px;
     float: left;
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
 .active {
