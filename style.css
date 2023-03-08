@@ -662,8 +662,11 @@ ul.quote-list {
     }
 
     .textSlides {
+        align-self: center;
         border: none;
         box-shadow: none;
+        padding: 0;
+        margin: 0;
     }
 
     .about-card {
