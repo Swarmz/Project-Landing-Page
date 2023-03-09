@@ -4,6 +4,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-y: scroll;
 }
 
 body {
@@ -387,6 +388,7 @@ ul.quote-list {
     flex-flow: row nowrap;
     background-color: #DDD0C8;
 }
+
 .about-nav {
     position: relative;
     margin: 0;
