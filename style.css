@@ -149,7 +149,7 @@ ul.quote-list {
     color:#ffffff;  
 }
 
-.hero-contents, .img-panel-title, .img-panel-main, .quote-panel, .sign-up-panel {
+.hero-contents, .quote-panel, .sign-up-panel, #img-panel {
    padding: 32px;
 }
 
@@ -212,7 +212,7 @@ ul.quote-list {
     flex: 1;
     background-color: #DDD0C8;
     text-align: center;
-    border-bottom: 1px solid #323232;
+    border-top: 1px solid #323232;
     color: #323232;
 }
 
@@ -220,6 +220,7 @@ ul.quote-list {
     font-weight: 800;
     font-size: 36px;
     color: #323232;
+    text-decoration: underline;
 }
 
 .img-panel-main {
@@ -627,6 +628,15 @@ ul.quote-list {
         border-right: 2px solid #323232;
         flex: 1;
     }
+
+    #img-panel {
+        border-top: 10px solid #323232;
+    }
+
+    .img-panel-main {
+        max-width: 60%;
+        gap: 0;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -667,6 +677,10 @@ ul.quote-list {
         margin: 0;
         font-size: 18px;
         font-weight: 600;
+    }
+
+    .card {
+        max-width: 100px;
     }
 
     ul.quote-list {
