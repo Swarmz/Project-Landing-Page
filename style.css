@@ -21,7 +21,7 @@ body {
     margin-right: auto;
     margin-left: auto;
     min-height: 100vh;
-    max-width: 120vh;
+    max-width: 140vh;
     display: flex;
     flex-flow: column nowrap;
     background-color: #6E6E6E;
@@ -34,7 +34,8 @@ h1 {
 
 h2 {
     font-size: 48px;
-    margin-top: 0; 
+    margin-top: 0;
+    margin-bottom: 32px;
 }
 
 
@@ -139,7 +140,7 @@ ul.quote-list {
     flex-flow: column nowrap;
     background-color: #DDD0C8;
     color:  #323232;
-    border-bottom: 1px solid #323232;
+    border-bottom: 10px solid #323232;
     
 }
 
@@ -148,8 +149,8 @@ ul.quote-list {
     color:#ffffff;  
 }
 
-.hero-contents, .img-panel-title, .img-panel-main, .quote, .quote-name, .quote-panel-title, .quote-container, .sign-up-panel {
-   margin: 32px;
+.hero-contents, .img-panel-title, .img-panel-main, .quote-panel, .sign-up-panel {
+   padding: 32px;
 }
 
 .hero-contents {
@@ -225,7 +226,6 @@ ul.quote-list {
     display: flex;
     justify-content: space-evenly;
     gap: 24px;
-    padding-bottom: 32px;
     flex-flow: row wrap;
     margin: auto;
     max-width: 95%;
@@ -243,7 +243,6 @@ ul.quote-list {
 .quote-panel {
     flex: 1;
     background-color: #DDD0C8;
-    padding-bottom: 32px;
     border-bottom: 1px solid #323232;
 }
 
@@ -252,6 +251,7 @@ ul.quote-list {
     font-size: 36px;
     color: #323232;
     text-align: center;
+    text-decoration: underline;
 }
 
 .quote-container {
@@ -268,6 +268,10 @@ ul.quote-list {
     text-align: center;
 }
 
+.quote-right {
+    font-style: italic;
+}
+
 .quote-center > .quote-list {
     font-size: 0px;
 }
@@ -276,11 +280,6 @@ ul.quote-list {
     flex-direction: column;
     gap: 36px;
     white-space: nowrap;
-}
-
-.quote-name {
-    text-align: end;
-    margin-top: 0px;
 }
 
 .sign-up-panel {
@@ -295,14 +294,13 @@ ul.quote-list {
     display: flex;
     flex-flow: column wrap;
     justify-content: space-evenly;
-    align-self: center;
     gap: 32px;
+    text-align: center;
 }
 
 .modal-contents {
     display: flex;
     flex-flow: column nowrap;
-    row-gap: 8px;
     text-align: center;
 }
 
@@ -324,6 +322,7 @@ ul.quote-list {
     font-weight: bold;
     font-size: 36px;
     white-space: nowrap;
+    text-decoration: underline;
 }
 
 .modal-text {
@@ -601,6 +600,33 @@ ul.quote-list {
     user-select: none; /* Standard syntax */
 }
 
+@media only screen and (min-width: 769px) {
+    /*For larger screens to display index as horizontal layout*/
+    .main {
+        flex-flow: row nowrap;
+    }
+
+    .sign-up-panel {
+        align-self: auto;
+        justify-content: center;
+        display: flex;
+        flex: 1;
+    }
+
+    .modal {
+        justify-content: space-between;
+    }
+
+    .modal-header {
+        white-space: normal;
+    }
+
+    .quote-panel {
+        border-bottom: none;
+        border-right: 5px solid #323232;
+        flex: 1;
+    }
+}
 
 @media only screen and (max-width: 768px) {
     /* For mobile */
