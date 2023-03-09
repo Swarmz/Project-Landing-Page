@@ -4,7 +4,7 @@
 
 html {
     scroll-behavior: smooth;
-    overflow-y: scroll;
+    
 }
 
 body {
@@ -30,19 +30,16 @@ body {
 h1 {
     font-size: 72px;
     margin: 0;
-    
 }
 
 h2 {
     font-size: 48px;
-    margin-top: 0;
-    
+    margin-top: 0; 
 }
 
 
 h3 {
-    margin: 0;
-    
+    margin: 0;  
 }
 
 img {
@@ -317,7 +314,7 @@ ul.quote-list {
     cursor: pointer;
 }
 
-#modal-button:hover, #modal-button:focus {
+#modal-button:hover, #modal-button:active {
     background-color: #323232;
     color: #ffffff; 
 }
@@ -397,7 +394,7 @@ ul.quote-list {
     align-self: flex-start; 
 }
 
-.mySlides {
+.img-slides {
     display: none;
 }
 
@@ -461,19 +458,27 @@ ul.quote-list {
     color: #ffffff;
 }
 
-.textSlides {
+.text-slides {
     color: #323232;
     font-size: 16px;
     line-height: 1.6;
     padding: 1vw;
     max-width: 95%;
+    max-height: 60vh;
+    overflow-y: auto;
+    overflow-x: hidden;
     margin: 2vw;
     margin-left: 0;
     border: 3px solid #323232;
     flex: 1;  
     align-self: flex-start; 
-    /* box-shadow: 6px 4px;*/
     box-shadow: 8px 4px 8px 4px rgb(0 0 0 / 50%); 
+}
+
+.about-card-text {
+    color: #323232;
+    font-size: 48px;
+    margin: 8px;
 }
 
 .about-text-img {
@@ -663,12 +668,17 @@ ul.quote-list {
         border-bottom: 1px solid #323232;
     }
 
-    .textSlides {
+    .text-slides {
         align-self: center;
         border: none;
         box-shadow: none;
         padding: 0;
         margin: 0;
+        max-height: none;
+    }
+
+    .about-card-text {
+        font-size: 22px;
     }
 
     .about-card {
