@@ -55,8 +55,8 @@ a, a:visited{
 button {
     padding: 8px 16px;
     border-radius: 8px;
-    background-color: #DDD0C8;
-    color: #323232;
+    background-color: #323232;
+    color: #fff;
     text-align: center;
     border: 2px solid #323232;
     font-size: 16px;
@@ -177,18 +177,18 @@ ul.quote-list {
 }
 
 .hero-text-button {
-    background-color: #DDD0C8;
-    color: #323232;
+    background-color: #323232;
+    color: #fff;
     text-align: center;
     border: 2px solid #323232;
     font-size: 18px;
-    transition: all 0.5s ease-out;  
+    transition: all 0.5s ease-out;
 }
 
 .hero-text-button:hover, .hero-text-button:focus {
     cursor: pointer;
-    background-color: #323232;
-    color: #fff; 
+    background-color: #fff;
+    color: #323232; 
 }
 
 .header-logo {
@@ -313,8 +313,8 @@ ul.quote-list {
 }
 
 #modal-button:hover, #modal-button:active {
-    background-color: #323232;
-    color: #ffffff; 
+    background-color: #fff;
+    color: #323232; 
 }
 
 
@@ -548,7 +548,7 @@ ul.quote-list {
 }
 
 .etchasketch-main {
-    display:flex;
+    display: flex;
     flex-flow: column nowrap;
     align-items: center;
 }
