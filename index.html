@@ -35,11 +35,13 @@
     </div>
     <div class="main">
         <div class="quote-panel">
-            <div class="quote-panel-title"><h2>Basic Info</h2></div>
-            <div class="quote-container">
-                <div class="quote-left"><ul class="quote-list"><li>Nationality</li><li>Age</li><li>Home</li><li>Favorite Food</li></ul></div>
-                <div class="quote-center"><ul class="quote-list"><li><span class="material-icons">east</span></li><li><span class="material-icons">east</span></li><li><span class="material-icons">east</span></li><li><span class="material-icons">east</span></li></ul></div>
-                <div class="quote-right"><ul class="quote-list"><li>Canadian</li><li>30</li><li>Miyagi</li><li>Ramen</li></ul></div>
+            <div class="quote-panel-container">
+                <div class="quote-panel-title"><h2>Basic Info</h2></div>
+                <div class="quote-container">
+                    <div class="quote-left"><ul class="quote-list"><li>Nationality</li><li>Age</li><li>Home</li><li>Favorite Food</li></ul></div>
+                    <div class="quote-center"><ul class="quote-list"><li><span class="material-icons">east</span></li><li><span class="material-icons">east</span></li><li><span class="material-icons">east</span></li><li><span class="material-icons">east</span></li></ul></div>
+                    <div class="quote-right"><ul class="quote-list"><li>Canadian</li><li>30</li><li>Miyagi</li><li>Ramen</li></ul></div>
+                </div>
             </div>
         </div>
         <div class="sign-up-panel">
@@ -48,31 +50,30 @@
                 <div class="modal-text"><h3>Send me an email!</h3></div>
                 <button id="modal-button"><span id="myEmail">Email</span></button>
             </div>
-
         </div>
-        </div>
+    </div>
         <div id="img-panel">
             <div class="img-panel-title"><h2>My Work</h2></div>
             <div class="img-panel-main">
-                <a class="out-of-service tooltip" href="./rock-paper-scissors.html"><span class="tooltiptext">Unavailable</span> 
+                <a class="out-of-service tooltip" onclick="document.getElementById('id01').style.display='block'"><span class="tooltiptext">Unavailable</span> 
                     <div style="opacity:0.6;" class="card">
                         <img src="./img/rps.jpg" alt="hands displaying rock, paper, and scissors">
                         <div class="card-text"><h3>Rock Paper Scissors</h3></div>
                     </div>
                 </a>
-                <a class="out-of-service tooltip" href="./calculator.html"><span class="tooltiptext">Unavailable</span>
+                <a class="out-of-service tooltip" onclick="document.getElementById('id01').style.display='block'"><span class="tooltiptext">Unavailable</span>
                     <div style="opacity:0.6;" class="card">
                         <img src="./img/calculator.jpg" alt="">
                         <div class="card-text"><h3>Calculator</h3></div>
                     </div>
                 </a>
-                <a class="out-of-service tooltip" href="./etch-a-sketch.html"><span class="tooltiptext">Unavailable</span>
+                <a class="out-of-service tooltip" onclick="document.getElementById('id01').style.display='block'"><span class="tooltiptext">Unavailable</span>
                     <div style="opacity:0.6;" class="card">
                         <img src="./img/img-panel-pen.jpg" alt="">
                         <div class="card-text"><h3>Etch-A-Sketch</h3></div>
                     </div>
                 </a>
-                <a class="out-of-service tooltip" href="./example.html"><span class="tooltiptext">Unavailable</span>
+                <a class="out-of-service tooltip" onclick="document.getElementById('id01').style.display='block'"><span class="tooltiptext">Unavailable</span>
                     <div style="opacity:0.6;" class="card">
                         <img src="./img/under_construction.jpg" alt="">
                         <div class="card-text"><h3>Coming Soon</h3></div>
@@ -80,9 +81,18 @@
                 </a>
             </div>
         </div>
-      
+    
     <div class="footer">
         Created by Gavin Sutton
+    </div>
+</div>
+<!-- Hidden popup element-->
+<div id="id01" class="popup-error">
+    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Popup">&times;</span>
+    <div class="popup-content">
+        <div class="container">
+            <p>Sorry, this is currently unavailable.</p>
+        </div>
     </div>
 </div>
 </div>
@@ -115,6 +125,17 @@
             link.setAttribute('aria-current', 'page')
         }
     })
+
+
+    var popup = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the popup, close it
+    window.onclick = function(event) {
+    if (event.target == popup) {
+        popup.style.display = "none";
+    }
+}
+
 </script>
 </body>
 </html>
