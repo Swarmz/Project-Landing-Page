@@ -17,11 +17,11 @@ document.querySelectorAll('.a-header').forEach
 
 var popup = document.getElementById('id01');
 // When the user clicks anywhere outside of the popup, close it
-window.onclick = function(event) {
+window.addEventListener('click', function(event) {
     if (event.target == popup) {
         popup.style.display = "none";
     }
-}
+})
 
 // Toggle the dropdown content on click
 function dropdownToggle() {
@@ -29,11 +29,11 @@ function dropdownToggle() {
 }
 
 // Closes the dropdown if the user clicks outside of it
-window.onclick = function(e) {
-    if (!e.target.matches('.dropbtn')) {
+window.addEventListener('click', function(event) {
+    if (!event.target.matches('.dropbtn')) {
     var myDropdown = document.getElementById("myDropdown");
         if (myDropdown.classList.contains('show')) {
         myDropdown.classList.remove('show');
         }
     }
-}
+})
