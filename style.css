@@ -743,10 +743,6 @@ ul.quote-list {
         font-size: 16px;
     }
 
-    #modal-button {
-        max-width: 100%;
-    }
-
     .copy-link-input {
         max-width: 90%;
     }
@@ -796,7 +792,7 @@ ul.quote-list {
         height: 150px;
     }
 
-    .hero-text-button, #modal-button {
+    .hero-text-button {
         font-size: 16px;
     }
 
