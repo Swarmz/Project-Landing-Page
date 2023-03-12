@@ -420,7 +420,7 @@ ul.quote-list {
     position: absolute;
     top: 50%;
     width: auto;
-    padding: 16px;
+    padding: 32px;
     color: #323232;
     font-weight: bold;
     font-size: 18px;
@@ -866,5 +866,17 @@ ul.quote-list {
         border: 1px solid #888;
         width: 80%;
         font-size: 24px;
+    }
+
+    .prev, .next {
+        top: 35%;
+    }
+
+    .prev {
+        left: 1%;
+    }
+
+    .next {
+        right: 1%;
     }
 }
