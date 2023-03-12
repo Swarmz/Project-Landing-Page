@@ -60,7 +60,8 @@ button {
     text-align: center;
     border: 2px solid #323232;
     font-size: 16px;
-    transition: all 0.5s ease-out;  
+    transition: all 0.5s ease-out; 
+    font-family: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', sans-serif; 
 }
 
 .out-of-service * {
@@ -87,8 +88,8 @@ button {
     transition: all 0.5s ease-out;
 }
 
-.a-header:hover,
-.a-header:focus {
+.a-header:hover, .a-header:focus,
+.dropbtn:hover, .dropbtn:focus {
   background-color: #fff;
   color: #323232;
 }
@@ -104,6 +105,7 @@ button {
 }
 
 .inline-material-icons {
+    pointer-events: none; /* allows onclick function to work for nav button */
     vertical-align: bottom;
     font-size: 18px !important;
 }
@@ -633,7 +635,52 @@ ul.quote-list {
 .close:focus {
     cursor: pointer;
 }
+
+.dropbtn {
+    flex: 1;
+    background-color: #323232;
+    color: white;
+    padding: 2.5rem 1.5rem;
+    font-size: 18px;
+    border: 1px solid white;
+    cursor: pointer;
+    border-radius: 0;
+    transition: all 0.5s ease-out;
+} 
+
+.dropdown {
+    position: relative;
+    display: flex;
+    flex: 1;
+}
   
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #323232;
+    width: 100%;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    text-align: center;
+    margin-top: 1px; /* allow border to be shown on top */
+}
+  
+.dropdown-content a {
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 2.5rem 1.5rem;
+    text-decoration: none;
+    display: block;
+    margin-top: -1px; /* prevent border overlap */
+}
+  
+.dropdown-content a:hover {
+    color: #323232;
+    background-color: #fff;
+}
+  
+.show {display:block;}
 
 @media only screen and (min-width: 769px) {
     /*For larger screens to display index as horizontal layout*/
@@ -649,6 +696,7 @@ ul.quote-list {
     }
 
     .modal {
+        flex: 1;
         padding: 32px;
         justify-content: space-between;
         box-shadow: inset 3px -3em 3em 0px rgb(0 0 0 / 10%), 0 0 0 2px #323232, 0.3em 0.3em 1em rgb(0 0 0 / 30%);
@@ -715,6 +763,22 @@ ul.quote-list {
         gap: 0;
         margin: 0;
         
+    }
+
+    .dropbtn {
+        border: none;
+        padding: 5vw 1vw;
+        font-size: 16px;
+    }
+
+    .dropdown-content > a {
+        border: none;
+        padding: 5vw 2vw;
+        font-size: 16px;
+    }
+
+    .dropdown-content {
+        margin-top: 0;
     }
 
     h1 {

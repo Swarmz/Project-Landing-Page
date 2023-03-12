@@ -1,3 +1,4 @@
+// Email copy 
 function copyText() {
     const x = document.getElementById("myEmail");
     x.select();
@@ -5,7 +6,7 @@ function copyText() {
     navigator.clipboard.writeText(x.value);
 }
 
-
+// Underline current page in nav
 document.querySelectorAll('.a-header').forEach
     (link => {
         if(link.href === window.location.href){
@@ -22,3 +23,17 @@ window.onclick = function(event) {
     }
 }
 
+// Toggle the dropdown content on click
+function dropdownToggle() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Closes the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+    if (!e.target.matches('.dropbtn')) {
+    var myDropdown = document.getElementById("myDropdown");
+        if (myDropdown.classList.contains('show')) {
+        myDropdown.classList.remove('show');
+        }
+    }
+}
