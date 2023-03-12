@@ -4,7 +4,7 @@
 
 html {
     scroll-behavior: smooth;
-    
+    overflow-y: scroll;
 }
 
 body {
@@ -451,10 +451,12 @@ ul.quote-list {
     border-radius: 5%;
 }
   
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-    background-color: #323232;
-    color: #ffffff;
+/* disabled for incompatible devices */
+@media (hover: hover) {
+    .prev:hover, .next:hover {
+        background-color: #323232;
+        color: #ffffff;
+    }
 }
 
 .text-slides {
