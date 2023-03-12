@@ -3,18 +3,6 @@ function copyText() {
     x.select();
     x.setSelectionRange(0, 99999);
     navigator.clipboard.writeText(x.value);
-    }
-
-function emailReveal() {
-    const x = document.getElementById("myEmail");
-    x.outerHTML =
-        '<div class="copy-link">'+ 
-            '<input type="text" id="myEmail" class="copy-link-input" value="gavinsutton6511@gmail.com" readonly>' +
-            '<button type="button" class="copy-link-button" onclick="copyText()">' +
-                '<span class="material-icons">content_copy</span>'+
-            '</button>'
-        '</div>';
-    
 }
 
 
@@ -34,6 +22,3 @@ window.onclick = function(event) {
     }
 }
 
-
-const emailButton = document.getElementById("modal-button");
-emailButton.addEventListener("click", function() {emailReveal()}, {once : true});

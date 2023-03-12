@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Landing Page</title>
     <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 </head>
@@ -48,10 +49,15 @@
             <div class="modal">
                 <div class="modal-header"><h2>Let's work together!</h2></div>
                 <div class="modal-text"><h3>Send me an email!</h3></div>
-                <button id="modal-button"><span id="myEmail">Email</span></button>
+                <div class="copy-link">
+                    <input type="text" id="myEmail" class="copy-link-input" value="gavinsutton6511@gmail.com" readonly>
+                    <button type="button" class="copy-link-button" onclick="copyText()">
+                        <span class="material-icons">content_copy</span>
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
+        </div>
         <div id="img-panel">
             <div class="img-panel-title"><h2>My Work</h2></div>
             <div class="img-panel-main">
@@ -81,7 +87,6 @@
                 </a>
             </div>
         </div>
-    
     <div class="footer">
         Created by Gavin Sutton
     </div>
@@ -96,6 +101,5 @@
     </div>
 </div>
 </div>
-<script src="index.js"></script>
 </body>
 </html>

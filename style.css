@@ -304,20 +304,6 @@ ul.quote-list {
     text-align: center;
 }
 
-#modal-button {
-    font-size: 18px;
-    min-height: 3em;
-    min-width: 20%;
-    align-self: center;
-    cursor: pointer;
-}
-
-#modal-button:hover, #modal-button:active {
-    background-color: #fff;
-    color: #323232; 
-}
-
-
 .modal-header {
     font-weight: bold;
     font-size: 36px;
