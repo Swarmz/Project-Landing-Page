@@ -88,8 +88,7 @@ button {
     transition: all 0.5s ease-out;
 }
 
-.a-header:hover, .a-header:focus,
-.dropbtn:hover, .dropbtn:focus {
+.a-header:focus {
   background-color: #fff;
   color: #323232;
 }
@@ -445,6 +444,10 @@ ul.quote-list {
         background-color: #323232;
         color: #ffffff;
     }
+    .a-header:hover, .dropbtn:hover {
+        background-color: #fff;
+        color: #323232;
+    }
 }
 
 .text-slides {
@@ -660,10 +663,9 @@ ul.quote-list {
     background-color: #323232;
     width: 100%;
     overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     text-align: center;
-    margin-top: 1px; /* allow border to be shown on top */
+    top: 100%; /* drops below the 'more' button */
 }
   
 .dropdown-content a {
