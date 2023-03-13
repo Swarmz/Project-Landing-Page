@@ -1,4 +1,4 @@
-* {
+*, *::before, *::after {
     box-sizing: border-box;
 }
 
@@ -389,7 +389,7 @@ ul.quote-list {
     flex-flow: column nowrap;
     justify-content: center;
     text-align: center;
-    padding-bottom: 2vw;
+    padding-bottom: 4vw;
     transition: all 0.5s ease-out;
     color: #323232;
     margin: auto;
@@ -417,7 +417,7 @@ ul.quote-list {
 .prev, .next {
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    top: 100%;
     width: auto;
     padding: 32px;
     color: #323232;
@@ -640,6 +640,7 @@ ul.quote-list {
 }
 
 .dropbtn {
+    position: relative;
     flex: 1;
     background-color: #323232;
     color: white;
@@ -649,6 +650,7 @@ ul.quote-list {
     cursor: pointer;
     border-radius: 0;
     transition: all 0.5s ease-out;
+    text-align: center;
 } 
 
 .dropdown {
@@ -662,10 +664,11 @@ ul.quote-list {
     position: absolute;
     background-color: #323232;
     width: 100%;
-    overflow: auto;
+    overflow: hidden;
     z-index: 1;
     text-align: center;
     top: 100%; /* drops below the 'more' button */
+    right: 0%;
 }
   
 .dropdown-content a {
@@ -674,7 +677,7 @@ ul.quote-list {
     padding: 2.5rem 1.5rem;
     text-decoration: none;
     display: block;
-    margin-top: -1px; /* prevent border overlap */
+    margin-bottom: -1px; /* prevent border overlap */
 }
   
 .dropdown-content a:hover {
@@ -774,13 +777,13 @@ ul.quote-list {
     }
 
     .dropdown-content > a {
-        border: none;
         padding: 5vw 2vw;
         font-size: 16px;
     }
 
     .dropdown-content {
         margin-top: 0;
+        width: 150%;
     }
 
     h1 {
