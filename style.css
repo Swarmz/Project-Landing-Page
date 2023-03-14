@@ -438,7 +438,7 @@ ul.quote-list {
     border-radius: 5%;
 }
   
-/* disabled for incompatible devices */
+/* disable hover for incompatible devices */
 @media (hover: hover) {
     .prev:hover, .next:hover {
         background-color: #323232;
@@ -496,6 +496,7 @@ ul.quote-list {
     to {opacity: 1}
 }
 
+/* ROCK PAPER SCISSORS GAME */
 .rpsSelection {
     padding: 25px;
     margin: 5px;  
@@ -507,7 +508,6 @@ ul.quote-list {
     margin: 32px;
     padding: 32px;
     text-align: center;
-
 }
 
 .scoreKeeper, .rps-container {
@@ -522,33 +522,42 @@ ul.quote-list {
 #results {
     padding: 15px;
 }
+/* END OF ROCK PAPER SCISSORS GAME */
 
-.etchasketch-button { 
+/* ETCHASKETCH GAME */
+.etchasketch-button {
+    border-radius: 0;
     padding: 25px;
     margin: 25px;
 }
 
 .etchasketch-container {
+    margin: auto;
+    box-sizing: content-box;
     display: flex;
     width: 512px;
     height: 512px;
     flex-flow: row wrap;
     border: 5px solid #323232;
-    border-radius: 10px;  
-    margin: 25px; 
     align-self: center;
     background-color: #ffffff;
 }
 
 .etchasketch-main {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
+    background-color: #DDD0C8;
 }
 
 .etchasketch-button-container {
-    align-self: center;
+    margin: auto;
+    width: 50%;
 }
+
+.grid-size-button {
+    border-radius: 0;
+    padding: 5px;
+    margin: 5px;
+}
+/* END OF ETCHASKETCH GAME */
 
 .footer {
     display: flex;

@@ -1,41 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Etch-a-Sketch</title>
-        <link rel="stylesheet" href="style.css">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div class="background">
-            <div class="body-container">
-                <div class="hero">
-                    <div class="header">
-                        <div class="header-logo">
-                            Etch-A-Sketch
-                        </div>
-                        <div class="header-links">
-                            <ul>
-                                <li><u><a href="./index.html">Home</a></u></li>
-                                <li><u><a href="./about.html">About</a></u></li>
-                                <li><u><a href="./index.html#img-panel">Work</a></u></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="main">
-                        <div class="about-title">
-                            <h1>Etch-a-Sketch</h1>
-                        </div>
-                        <div class="etchasketch-button-container">
-                            <button type="button" class="etchasketch-button" id="btn">Resize Grid</button> 
-                            <button type="button" class="etchasketch-button" id="erase">Erase</button>
-                        </div>
-                        <div class="etchasketch-container"></div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etcha-A-Sketch</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+<body>
+    <div class="background">
+    <div class="body-container">
+    <div class="hero">
+        <div class="header">
+            <div class="header-links">
+                <a class="a-header prevent-select" href="./index.html">Home</a>
+                <a class="a-header prevent-select" href="./about.html">About</a>
+                <a class="a-header prevent-select" href="./index.html#img-panel">Work</a>
+                <div class="dropbtn prevent-select" onclick="dropdownToggle()">More<span class="material-icons inline-material-icons prevent-select">expand_more</span>
+                    <div class="dropdown-content" id="myDropdown">
+                        <a class="prevent-select" href="./document/resume.pdf" target="_blank">Resumé<span class="material-icons inline-material-icons">file_download</span></a>
+                        <a class="prevent-select" href="https://github.com/Swarmz/project-landing-page" target="_blank">My GitHub <span class="material-icons inline-material-icons">open_in_new</span></a>
+                        <a class="prevent-select" href="https://www.theodinproject.com/about" target="_blank">The Odin Project <span class="material-icons inline-material-icons">open_in_new</span></a>
                     </div>
                 </div>
-        <script>
-            function createGrid(size) {
+            </div>
+        </div>
+    </div>
+    <div class="etchasketch-main">
+        <div class="main-title">
+            <h1>Etch-a-Sketch</h1>
+        </div>
+        <div class="etchasketch-button-container">
+            <button type="button" class="grid-size-button" onclick="rememberGridSize(this.value)" value="16" id="grid16">Size 16</button>
+            <button type="button" class="grid-size-button" onclick="rememberGridSize(this.value)" value="32" id="grid32">Size 32</button>
+            <button type="button" class="grid-size-button" onclick="rememberGridSize(this.value)" value="64" id="grid64">Size 64</button>
+            <button type="button" class="etchasketch-button" id="erase">Erase</button>
+        </div>
+        <div class="etchasketch-container"></div>
+    </div>
+    <div class="footer">
+        Created by Gavin Sutton
+    </div>
+</div>
+</div>
+    <script>
+        function createGrid(size) {
+            eraseGrid();
             const container = document.querySelector('.etchasketch-container');
             for (i = 0; i < size**2; i++) {
                 const content = document.createElement('div');
@@ -46,46 +59,51 @@
                     e.target.style.background = 'black';
                 });
                 container.appendChild(content);
-                }
             }
+        }
 
-            function eraseGrid() {
+        function eraseGrid() {
             const removeContent = document.querySelectorAll('.content');
             removeContent.forEach(content => {
                 content.remove();
                 });
-            }
+        }
 
-            let btn = document.getElementById("btn");
-            btn.addEventListener('click', event => {
-                eraseGrid();
-                getSize();
-            });
+        //store the previously used grid size
+        let storeGridSize;
+        function rememberGridSize(value) {
+            storeGridSize = value;
+            return storeGridSize;
+        }
 
-            let erase = document.getElementById("erase");
-            erase.addEventListener('click', event => {
-                eraseGrid();
-                createGrid(32);
-            });
+        // return to original grid size after erasing
+        function eraseAndReturn(){
+            eraseGrid();
+            createGrid(storeGridSize);
+        }
 
-            function getSize() {
-                let size = prompt("Enter a number to size your Etch-A-Sketch(16-100)", 16);
-                createGrid(size);
-            }
+        let erase = document.getElementById("erase");
+        erase.addEventListener('click', event => {
+            eraseAndReturn();
+        });
 
-            createGrid(32);
-        </script>
+        document.getElementById("grid16").addEventListener('click', function(){ createGrid(16); });
+        document.getElementById("grid32").addEventListener('click', function(){ createGrid(32); });
+        document.getElementById("grid64").addEventListener('click', function(){ createGrid(64); });
 
+        createGrid(0); // set initial size
 
+        /////////////// DEPRECATED ///////////////
+        // let btn = document.getElementById("btn");
+        // btn.addEventListener('click', event => {
+        //     eraseGrid();
+        //     getSize();
+        // });
 
-
-
-
-
-        <div class="footer">
-            Created by Gavin Sutton
-        </div>
-</div>
-</div>
+        // function getSize() {
+        //     let size = prompt("Enter a number to size your Etch-A-Sketch(16-100)", 16);
+        //     createGrid(size);
+        // }
+    </script>
 </body>                
 </html>
