@@ -525,38 +525,100 @@ ul.quote-list {
 /* END OF ROCK PAPER SCISSORS GAME */
 
 /* ETCHASKETCH GAME */
-.etchasketch-button {
-    border-radius: 0;
+.etchasketch-main * {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.etchasketch-main .main-title h1 {
+    font-size: 48px;
+}
+
+.erase-button {
+    position: absolute;
+    top: 52%;
+    left: 20%;
     padding: 25px;
-    margin: 25px;
+    width: 10%;
+    cursor: pointer;
+    color: #fff;
+    background-color: blue;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    transition: none;
+    font-size: 18px;
+}
+
+.erase-button:hover {
+    background-color: darkblue;
+}
+
+.erase-button:active {
+  background-color: darkblue;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
 .etchasketch-container {
-    margin: auto;
+    margin: 32px auto;
     box-sizing: content-box;
     display: flex;
     width: 512px;
     height: 512px;
     flex-flow: row wrap;
-    border: 5px solid #323232;
+    border: 10px solid red;
     align-self: center;
-    background-color: #ffffff;
+    background-color: lightgray;
 }
 
 .etchasketch-main {
-    background-color: #DDD0C8;
+    background-color: white;
 }
 
-.etchasketch-button-container {
-    margin: auto;
+.grid-button-container {
+    text-align: center;
+    margin: 32px auto;
     width: 50%;
+    font-size: 24px;
 }
 
 .grid-size-button {
-    border-radius: 0;
+    border-radius: 15px;
+    font-size: 18px;
     padding: 5px;
     margin: 5px;
+    color: black;
+    background-color: yellow;
+    transition: none;
 }
+
+.grid-size-button:hover, .grid-size-button:active {
+    background-color:darkorange;
+    cursor: pointer;
+}
+
+.grid-size-button:active {
+    transform: translateY(4px);
+}
+
+.color-container {
+    position: absolute;
+    font-size: 18px;
+    top: 52%;
+    right: 18%;
+    text-align: center;
+    background-color: green;
+    width: 12%;
+    padding: 9px 18px;
+    border-radius: 18px;
+    color: white;
+}
+
+#color-picker {
+    margin: 5px;
+    cursor: pointer;
+}
+
 /* END OF ETCHASKETCH GAME */
 
 .footer {
@@ -573,7 +635,6 @@ ul.quote-list {
 .tooltip {
     position: relative;
     display: inline-block;
-    
 }
   
 /* Tooltip text */
@@ -672,12 +733,12 @@ ul.quote-list {
     display: none;
     position: absolute;
     background-color: #323232;
-    width: 100%;
+    width: 100.3%;
     overflow: hidden;
     z-index: 1;
     text-align: center;
     top: 100%; /* drops below the 'more' button */
-    right: 0%;
+    right: -0.2%;
 }
   
 .dropdown-content a {

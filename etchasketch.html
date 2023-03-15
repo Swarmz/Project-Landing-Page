@@ -7,8 +7,7 @@
     <title>Etcha-A-Sketch</title>
     <link rel="stylesheet" href="style.css">
     <script src="index.js" defer></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <div class="background">
@@ -33,11 +32,16 @@
         <div class="main-title">
             <h1>Etch-a-Sketch</h1>
         </div>
-        <div class="etchasketch-button-container">
+        <div class="grid-button-container">
+            <p>Please choose a grid size before beginning</p>
             <button type="button" class="grid-size-button" onclick="rememberGridSize(this.value)" value="16" id="grid16">Size 16</button>
             <button type="button" class="grid-size-button" onclick="rememberGridSize(this.value)" value="32" id="grid32">Size 32</button>
             <button type="button" class="grid-size-button" onclick="rememberGridSize(this.value)" value="64" id="grid64">Size 64</button>
-            <button type="button" class="etchasketch-button" id="erase">Erase</button>
+        </div>
+        <button type="button" class="erase-button" id="erase">Erase</button>
+        <div class="color-container">
+            <label for="color-picker">Select a color</label><br>
+            <input type="color" id="color-picker" name="color-picker" value="#000000">
         </div>
         <div class="etchasketch-container"></div>
     </div>
@@ -56,7 +60,7 @@
                 content.style.width = Math.sqrt((512**2)/(size**2)) + 'px';    // calc the required width/height to distribute the boxes evenly in the container
                 content.style.height = Math.sqrt((512**2)/(size**2)) + 'px';
                 content.addEventListener('mouseover', function (e) {
-                    e.target.style.background = 'black';
+                    e.target.style.background = document.getElementById("color-picker").value;
                 });
                 container.appendChild(content);
             }
