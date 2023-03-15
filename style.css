@@ -954,4 +954,8 @@ ul.quote-list {
     .next {
         right: 1%;
     }
+
+    #etchasketch-link { /* disabled due to mobile imcompatibility */
+        display: none;
+    }
 }
