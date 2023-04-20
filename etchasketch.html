@@ -33,17 +33,21 @@
             <h1>Etch-a-Sketch</h1>
         </div>
         <div class="grid-button-container">
-            <p>Please choose a grid size before beginning</p>
+            <p>Please choose a size before beginning</p>
             <button type="button" class="grid-size-button" onclick="rememberGridSize(this.value)" value="16" id="grid16">Size 16</button>
             <button type="button" class="grid-size-button" onclick="rememberGridSize(this.value)" value="32" id="grid32">Size 32</button>
             <button type="button" class="grid-size-button" onclick="rememberGridSize(this.value)" value="64" id="grid64">Size 64</button>
         </div>
-        <button type="button" class="erase-button" id="erase">Erase</button>
-        <div class="color-container">
-            <label for="color-picker">Select a color</label><br>
-            <input type="color" id="color-picker" name="color-picker" value="#000000">
+        <div class="main-container">
+            <div class="controls">
+                <div class="color-container">
+                    <label for="color-picker"></label>
+                    <input type="color" id="color-picker" name="color-picker" value="#000000">
+                </div>
+                <button type="button" class="erase-button" id="erase">Erase</button>
+            </div>
+            <div class="etchasketch-container"></div>
         </div>
-        <div class="etchasketch-container"></div>
     </div>
     <div class="footer">
         Created by Gavin Sutton

@@ -527,52 +527,70 @@ ul.quote-list {
 /* ETCHASKETCH GAME */
 .etchasketch-main * {
     font-family: 'Times New Roman', Times, serif;
+    color: #323232;
+}
+
+.etchasketch-main {
+    background-color: #ededed;
+    display: flex;
+    flex-flow: column;
+    flex: 1;
 }
 
 .etchasketch-main .main-title h1 {
     font-size: 48px;
 }
 
+.main-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 50px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+    width: 200px;
+    padding: 32px;
+}
+
 .erase-button {
-    position: absolute;
-    top: 52%;
-    left: 20%;
     padding: 25px;
-    width: 10%;
+    width: 150px;
     cursor: pointer;
-    color: #fff;
-    background-color: blue;
-    border: none;
-    border-radius: 15px;
+    color: black;
+    background-color: #ededed;
+    border: 1px solid #323232;
+    border-radius: 0px;
     box-shadow: 0 9px #999;
     transition: none;
-    font-size: 18px;
+    font-size: 24px;
 }
 
 .erase-button:hover {
-    background-color: darkblue;
+    background-color: orange;
 }
 
 .erase-button:active {
-  background-color: darkblue;
+  background-color: orange;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
 
 .etchasketch-container {
-    margin: 32px auto;
+    margin: 32px;
     box-sizing: content-box;
     display: flex;
     width: 512px;
     height: 512px;
     flex-flow: row wrap;
-    border: 10px solid red;
+    border: 1px solid #323232;
     align-self: center;
     background-color: lightgray;
-}
-
-.etchasketch-main {
-    background-color: white;
 }
 
 .grid-button-container {
@@ -583,17 +601,18 @@ ul.quote-list {
 }
 
 .grid-size-button {
-    border-radius: 15px;
+    border-radius: 0px;
     font-size: 18px;
     padding: 5px;
     margin: 5px;
-    color: black;
-    background-color: yellow;
+    color: #323232;
+    border: 1px solid #323232;
+    background-color: #ededed;
     transition: none;
 }
 
 .grid-size-button:hover, .grid-size-button:active {
-    background-color:darkorange;
+    background-color:orange;
     cursor: pointer;
 }
 
@@ -602,21 +621,22 @@ ul.quote-list {
 }
 
 .color-container {
-    position: absolute;
-    font-size: 18px;
-    top: 52%;
-    right: 18%;
-    text-align: center;
-    background-color: green;
-    width: 12%;
-    padding: 9px 18px;
-    border-radius: 18px;
-    color: white;
+    width: 72px;
+    height: 48px;
+    background-color: #ededed;
+    border-radius: 0px;
+    border: 1px solid #323232;
+    overflow: hidden;
 }
 
 #color-picker {
-    margin: 5px;
     cursor: pointer;
+    display: block;
+    outline: none;
+    border: none;
+    width: 200%;
+    height: 200%;
+    transform: translateX(-10px) translateY(-10px);
 }
 
 /* END OF ETCHASKETCH GAME */
