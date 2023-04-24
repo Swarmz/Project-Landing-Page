@@ -95,6 +95,17 @@
             eraseAndReturn();
         });
 
+        // Add visual toggle to which grid size button is selected
+        let buttons = document.querySelectorAll('.grid-size-button');
+        buttons.forEach((item) => {
+            item.addEventListener('click', function buttonClicked(event) {
+                buttons.forEach((element) => {
+                    element.classList.remove("grid-size-button-selected");
+                });
+                event.target.classList.add("grid-size-button-selected");
+            });
+        })
+
         document.getElementById("grid16").addEventListener('click', function(){ createGrid(16); });
         document.getElementById("grid32").addEventListener('click', function(){ createGrid(32); });
         document.getElementById("grid64").addEventListener('click', function(){ createGrid(64); });
