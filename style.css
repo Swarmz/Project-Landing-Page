@@ -542,20 +542,19 @@ ul.quote-list {
 }
 
 .main-container {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 50px;
+    display: grid;
+    grid-template-columns: 1fr repeat(1, auto) 1fr;
+    justify-items: center;
 }
 
 .controls {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: flex-end;
     gap: 20px;
     width: 200px;
     padding: 32px;
+    margin-left: auto;
 }
 
 .erase-button {
@@ -577,7 +576,7 @@ ul.quote-list {
 
 .erase-button:active {
   background-color: darkgray;
-  box-shadow: 0 5px #666;
+  box-shadow: 0 5px #323232;
   transform: translateY(4px);
 }
 
