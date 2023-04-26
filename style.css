@@ -1010,7 +1010,7 @@ ul.quote-list {
         right: 1%;
     }
 
-    #etchasketch-link { /* disabled due to mobile imcompatibility */
+    #disable-mobile-link { /* disabled due to mobile imcompatibility */
         display: none;
     }
 }
