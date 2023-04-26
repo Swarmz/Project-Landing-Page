@@ -31,6 +31,7 @@
     <div class="rps-main">
         <h1 class="rps-title">Rock Paper Scissors</h1>
         <div class="rps-container">
+            <div id="results">&darr; Click to Play! &darr;</div>
             <div class="rps-button-container">
                 <button class="rpsSelection" type="button" id="rock">
                     <img class="rps-icons" src="./img/rock.png" alt="rock">
@@ -42,7 +43,7 @@
                     <img class="rps-icons" src="./img/scissors.png" alt="paper">
                 </button>
             </div>
-            <div id="results">&uarr; Click to Play! &uarr;</div>
+            
             <div class="scoreNames">
                 <p id="playerName">YOU</p>
                 <p id="computerName">COMPUTER</p>
@@ -72,13 +73,6 @@
         
         function playRound(playerSelection) {    // generates player choice via prompt vs random comp choice to determine winner
             const computerSelection = getComputerChoice();  // get random comp choice
-            if (playerWins === 5) {
-                document.getElementById("results").textContent = "YOU HAVE WON THE MATCH " + playerWins +
-                " TO " + computerWins;
-            } else if (computerWins === 5) {
-                document.getElementById("results").textContent = "YOU HAVE LOST THE MATCH " + computerWins +
-                " TO " + playerWins;
-            } else {
                 if (playerSelection === "rock") {  
                     if (computerSelection === "paper") {
                         document.getElementById("results").textContent = "You lose! Paper beats rock.";
@@ -123,13 +117,34 @@
                     document.getElementById("results").textContent = "Error. Please try again.";
                 }
             }
+        
+        function winner() {
+            if (playerWins > computerWins) {
+                document.getElementById("results").textContent = "YOU HAVE WON THE MATCH " + playerWins +
+                    " TO " + computerWins;
+            } else {
+                document.getElementById("results").textContent = "YOU HAVE LOST THE MATCH " + computerWins +
+                    " TO " + playerWins;
+            }
         }
+        
+        // to do
+        // function replay() {
+        //      display pop up
+        //      if (retryButton = true) {
+        //          close pop up
+        //          id="results">&darr; Click to Play! &darr;
+        //          playerWins = 0;
+        //          computerWins = 0;
+            
 
 
+        //     }
+        // }
 
-        document.getElementById("rock").addEventListener("click", function(){ playRound("rock"); });
-        document.getElementById("paper").addEventListener("click", function(){ playRound("paper"); });
-        document.getElementById("scissors").addEventListener("click", function(){ playRound("scissors"); });
+        document.getElementById("rock").addEventListener("click", function(){ playRound("rock"); if(playerWins === 5 || computerWins === 5) {winner();} });
+        document.getElementById("paper").addEventListener("click", function(){ playRound("paper"); if(playerWins === 5 || computerWins === 5) {winner();}  });
+        document.getElementById("scissors").addEventListener("click", function(){ playRound("scissors"); if(playerWins === 5 || computerWins === 5) {winner();}  });
 
     </script>
 
