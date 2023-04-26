@@ -497,29 +497,65 @@ ul.quote-list {
 }
 
 /* ROCK PAPER SCISSORS GAME */
-.rpsSelection {
-    padding: 25px;
-    margin: 5px;  
+.rps-main {
+    background-color: black;
+    color: white;
+    flex: 1;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-.game-screen{
-    border: 5px solid #323232;
-    border-radius: 15px;
-    margin: 32px;
-    padding: 32px;
+.rps-container {
+    font-size:  24px;
+    
+}
+
+.rps-title {
     text-align: center;
+    margin: 24px;
 }
 
-.scoreKeeper, .rps-container {
-    border: 5px solid #323232;
-    border-radius: 15px;
+.rps-button-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    padding: 24px;
+}
+
+.rpsSelection {
+    all: unset;
+    margin: 24px;
+    border: none;
+    padding: 0px;
+    cursor: pointer;
+    transition: 0.2s;
+    width: 150px;
+    height: 150px;
+}
+
+.rps-icons {
+    width: 150px;
+}
+
+.rpsSelection:hover, .rpsSelection:active {
+    box-shadow: 0px 0px 35px yellow;    
+}
+
+.scorePoints, .scoreNames {
+    display: flex;
+    flex-flow: row;
     text-align: center;
     padding: 10px;
-    margin: 10px;
-    align-self: center;
+    justify-content: center;   
+}
+
+#playerName, #computerName, #computerScore, #playerScore {
+    margin: 24px;
+    font-size: 48px;
+    width: 15rem;
 }
 
 #results {
+    text-align: center;
     padding: 15px;
 }
 /* END OF ROCK PAPER SCISSORS GAME */

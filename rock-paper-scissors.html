@@ -1,128 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Rock Paper Scissors</title>
-        <link rel="stylesheet" href="style.css">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-
-    <body>
-        <div class="background">
-            <div class="body-container">
-                <div class="hero">
-                    <div class="header">
-                        <div class="header-logo">
-                            Rock Paper Scissors
-                        </div>
-                        <div class="header-links">
-                            <ul>
-                                <li><u><a href="./index.html">Home</a></u></li>
-                                <li><u><a href="./about.html">About</a></u></li>
-                                <li><u><a href="./index.html#img-panel">Work</a></u></li>
-                            </ul>
-                        </div>
-                    </div>
-                <div class="main">
-                    <div class="about-title">
-                        <h1>Rock Paper Scissors</h1>
-                    </div>
-                    <div class="game-screen">
-                        Content goes here
-                    </div>
-                    <div class="rps-container">
-                        <button class="rpsSelection" type="button" id="rock">Rock</button>
-                        <button class="rpsSelection" type="button" id="paper">Paper</button>
-                        <button class="rpsSelection" type="button" id="scissors">Scissors</button>
-                        <div id="results">Click to Play!</div>
-                        <div class="scoreKeeper">
-                            <p id="playerScore">YOU: 0</p>
-                            <p id="computerScore">COMPUTER: 0</p>
-                        </div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="background">
+    <div class="body-container">
+    <div class="hero">
+        <div class="header">
+            <div class="header-links">
+                <a class="a-header prevent-select" href="./index.html">Home</a>
+                <a class="a-header prevent-select" href="./about.html">About</a>
+                <a class="a-header prevent-select" href="./index.html#img-panel">Work</a>
+                <div class="dropbtn prevent-select" onclick="dropdownToggle()">More<span class="material-icons inline-material-icons prevent-select">expand_more</span>
+                    <div class="dropdown-content" id="myDropdown">
+                        <a class="prevent-select" href="./document/resume.pdf" target="_blank">Resumé<span class="material-icons inline-material-icons">file_download</span></a>
+                        <a class="prevent-select" href="https://github.com/Swarmz/project-landing-page" target="_blank">My GitHub <span class="material-icons inline-material-icons">open_in_new</span></a>
+                        <a class="prevent-select" href="https://www.theodinproject.com/about" target="_blank">The Odin Project <span class="material-icons inline-material-icons">open_in_new</span></a>
                     </div>
                 </div>
-                </div>
-                <script>
+            </div>
+        </div>
+    </div>
+    <div class="rps-main">
+        <h1 class="rps-title">Rock Paper Scissors</h1>
+        <div class="rps-container">
+            <div class="rps-button-container">
+                <button class="rpsSelection" type="button" id="rock">
+                    <img class="rps-icons" src="./img/rock.png" alt="rock">
+                </button>
+                <button class="rpsSelection" type="button" id="paper">
+                    <img class="rps-icons" src="./img/paper.png" alt="paper">
+                </button>
+                <button class="rpsSelection" type="button" id="scissors">
+                    <img class="rps-icons" src="./img/scissors.png" alt="paper">
+                </button>
+            </div>
+            <div id="results">&uarr; Click to Play! &uarr;</div>
+            <div class="scoreNames">
+                <p id="playerName">YOU</p>
+                <p id="computerName">COMPUTER</p>
+            </div>
+            <div class="scorePoints">
+                <p id="playerScore">0</p>
+                <p id="computerScore">0</p>
+            </div>
+        </div>
+    </div>
+                
+    <script>
 
-                    function getComputerChoice() {  // get random choice of RPS for computer
-                        const rockPaperScissors = ["rock", "paper", "scissors"];
-                        const random = rockPaperScissors[Math.floor(Math.random() * rockPaperScissors.length)]; // random select of rock, paper or scissors from rockPaperScissors array
-                        return random;
-                    }
-            
-                    let playerWins = 0;
-                    let computerWins = 0;
-            
-                   function getScore() {
-                        document.getElementById("computerScore").textContent = "COMPUTER: " + computerWins;
-                        document.getElementById("playerScore").textContent = "YOU: " + playerWins;
-                    }
-                    
-                    function playRound(playerSelection) {    // generates player choice via prompt vs random comp choice to determine winner
-                        const computerSelection = getComputerChoice();  // get random comp choice
-                        if (playerWins === 5) {
-                            document.getElementById("results").textContent = "YOU HAVE WON THE MATCH " + playerWins +
-                            " TO " + computerWins;
-                        } else if (computerWins === 5) {
-                            document.getElementById("results").textContent = "YOU HAVE LOST THE MATCH " + computerWins +
-                            " TO " + playerWins;
-                        } else {
-                            if (playerSelection === "rock") {  
-                                if (computerSelection === "paper") {
-                                    document.getElementById("results").textContent = "You lose! Paper beats rock.";
-                                    return computerWins += 1, getScore(); 
-                                }
-                                else if (computerSelection === "scissors") {
-                                    document.getElementById("results").textContent = "You win! Rock beats scissors.";
-                                    return playerWins += 1, getScore();
-                                }
-                                else {
-                                    document.getElementById("results").textContent = "It's a tie! You both chose rock.";
-                                }
-                            }
-                            else if (playerSelection === "paper") {
-                                if (computerSelection === "scissors") {
-                                    document.getElementById("results").textContent = "You lose! Scissors beats paper.";
-                                    return computerWins += 1, getScore();
-                                }
-                                else if (computerSelection === "rock") {
-                                    document.getElementById("results").textContent = "You win! Paper beats rock";
-                                    return playerWins += 1, getScore();
-                                }
-                                else {
-                                    document.getElementById("results").textContent = "It's a tie! You both chose paper.";
-                                }
-                            }
-                            else if (playerSelection === "scissors") {
-                                if (computerSelection === "rock") {
-                                    document.getElementById("results").textContent = "You lose! Rock beats scissors.";
-                                    return computerWins += 1, getScore();
-                                    
-                                }
-                                else if (computerSelection === "paper") {
-                                    document.getElementById("results").textContent = "You win! Scissors beats paper";
-                                    return playerWins += 1, getScore();
-                                }
-                                else {
-                                    document.getElementById("results").textContent = "It's a tie! You both chose scissors.";
-                                }
-                            }
-                            else {
-                                document.getElementById("results").textContent = "Error. Please try again.";
-                            }
-                        }
-                    }
-            
-            
-            
-                    document.getElementById("rock").addEventListener("click", function(){ playRound("rock"); });
-                    document.getElementById("paper").addEventListener("click", function(){ playRound("paper"); });
-                    document.getElementById("scissors").addEventListener("click", function(){ playRound("scissors"); });
+        function getComputerChoice() {  // get random choice of RPS for computer
+            const rockPaperScissors = ["rock", "paper", "scissors"];
+            const random = rockPaperScissors[Math.floor(Math.random() * rockPaperScissors.length)]; // random select of rock, paper or scissors from rockPaperScissors array
+            return random;
+        }
 
-                    </script>
+        let playerWins = 0;
+        let computerWins = 0;
 
-    
+        function getScore() {
+            document.getElementById("computerScore").textContent = computerWins;
+            document.getElementById("playerScore").textContent = playerWins;
+        }
+        
+        function playRound(playerSelection) {    // generates player choice via prompt vs random comp choice to determine winner
+            const computerSelection = getComputerChoice();  // get random comp choice
+            if (playerWins === 5) {
+                document.getElementById("results").textContent = "YOU HAVE WON THE MATCH " + playerWins +
+                " TO " + computerWins;
+            } else if (computerWins === 5) {
+                document.getElementById("results").textContent = "YOU HAVE LOST THE MATCH " + computerWins +
+                " TO " + playerWins;
+            } else {
+                if (playerSelection === "rock") {  
+                    if (computerSelection === "paper") {
+                        document.getElementById("results").textContent = "You lose! Paper beats rock.";
+                        return computerWins += 1, getScore(); 
+                    }
+                    else if (computerSelection === "scissors") {
+                        document.getElementById("results").textContent = "You win! Rock beats scissors.";
+                        return playerWins += 1, getScore();
+                    }
+                    else {
+                        document.getElementById("results").textContent = "It's a tie! You both chose rock.";
+                    }
+                }
+                else if (playerSelection === "paper") {
+                    if (computerSelection === "scissors") {
+                        document.getElementById("results").textContent = "You lose! Scissors beats paper.";
+                        return computerWins += 1, getScore();
+                    }
+                    else if (computerSelection === "rock") {
+                        document.getElementById("results").textContent = "You win! Paper beats rock";
+                        return playerWins += 1, getScore();
+                    }
+                    else {
+                        document.getElementById("results").textContent = "It's a tie! You both chose paper.";
+                    }
+                }
+                else if (playerSelection === "scissors") {
+                    if (computerSelection === "rock") {
+                        document.getElementById("results").textContent = "You lose! Rock beats scissors.";
+                        return computerWins += 1, getScore();
+                        
+                    }
+                    else if (computerSelection === "paper") {
+                        document.getElementById("results").textContent = "You win! Scissors beats paper";
+                        return playerWins += 1, getScore();
+                    }
+                    else {
+                        document.getElementById("results").textContent = "It's a tie! You both chose scissors.";
+                    }
+                }
+                else {
+                    document.getElementById("results").textContent = "Error. Please try again.";
+                }
+            }
+        }
+
+
+
+        document.getElementById("rock").addEventListener("click", function(){ playRound("rock"); });
+        document.getElementById("paper").addEventListener("click", function(){ playRound("paper"); });
+        document.getElementById("scissors").addEventListener("click", function(){ playRound("scissors"); });
+
+    </script>
+
     <div class="footer">
         Created by Gavin Sutton
     </div>
