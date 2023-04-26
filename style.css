@@ -511,7 +511,8 @@ ul.quote-list {
 
 .rps-title {
     text-align: center;
-    margin: 24px;
+    padding: 24px;
+    border-bottom: solid white 3px;
 }
 
 .rps-button-container {
@@ -556,7 +557,7 @@ ul.quote-list {
 
 #results {
     text-align: center;
-    padding: 15px;
+    padding: 36px;
 }
 /* END OF ROCK PAPER SCISSORS GAME */
 
