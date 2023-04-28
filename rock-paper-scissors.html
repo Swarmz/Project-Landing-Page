@@ -126,8 +126,17 @@
                 document.getElementById("results").textContent = "YOU HAVE LOST THE MATCH " + computerWins +
                     " TO " + playerWins;
             }
+            setTimeout(scoreReset, 3000);
         }
         
+        function scoreReset() {
+            playerWins = 0;
+            computerWins = 0;
+            document.getElementById("computerScore").textContent = computerWins;
+            document.getElementById("playerScore").textContent = playerWins;
+            document.getElementById("results").textContent = "Play again!"
+        }
+
         // to do
         // function replay() {
         //      display pop up
