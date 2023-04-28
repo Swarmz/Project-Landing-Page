@@ -1014,4 +1014,20 @@ ul.quote-list {
     #disable-mobile-link { /* disabled due to mobile imcompatibility */
         display: none;
     }
+
+    /* rock paper scissors */
+    #playerName, #computerName {
+        font-size: 24px;
+    }
+
+    .rpsSelection {
+        width: 75px;
+        height: 75px;
+    }
+
+    .rps-icons {
+        max-width:fit-content;
+        height: 100%;
+    }
+
 }
