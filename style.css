@@ -141,7 +141,6 @@ ul.quote-list {
     flex-flow: column nowrap;
     background-color: #DDD0C8;
     color:  #323232;
-    border-bottom: 10px solid #323232;
     
 }
 
@@ -188,7 +187,7 @@ ul.quote-list {
 
 .hero-text-button:hover, .hero-text-button:focus {
     cursor: pointer;
-    background-color: #fff;
+    background-color: #DDD0C8;
     color: #323232; 
 }
 
