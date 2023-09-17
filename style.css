@@ -374,6 +374,7 @@ ul.quote-list {
 }
 
 .about-main {
+    gap: 16px;
     display: flex;
     flex: 1;
     flex-flow: row nowrap;
@@ -464,7 +465,6 @@ ul.quote-list {
     line-height: 1.6;
     padding: 1vw;
     max-width: 95%;
-    max-height: 60vh;
     overflow-y: auto;
     overflow-x: hidden;
     margin: 2vw;
