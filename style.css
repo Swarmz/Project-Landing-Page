@@ -155,7 +155,7 @@ ul.quote-list {
     flex-flow: column nowrap;
     background-color: #DDD0C8;
     color:  #323232;
-    
+    margin-top: 32px;
 }
 
 .header {
@@ -163,7 +163,6 @@ ul.quote-list {
     justify-content: center;
     background-color: #323232;
     color:#ffffff;  
-    margin-bottom: 32px;
 }
 
 .hero-contents, .quote-panel, .sign-up-panel, #img-panel {
@@ -576,7 +575,7 @@ ul.quote-list {
 }
 
 .etchasketch-main {
-    background-color: #ededed;
+    background-color: #fff;
     display: flex;
     flex-flow: column;
     flex: 1;
