@@ -12,8 +12,6 @@
 </head>
 <body>
     <div class="background">
-    <div class="body-container">
-    <div class="hero">
         <div class="header">
             <div class="header-links">
                 <a class="a-header prevent-select" href="./index.html">Home</a>
@@ -28,6 +26,8 @@
                 </div>
             </div>
         </div>
+    <div class="body-container">  
+    <div class="hero"> 
         <div class="hero-contents">
             <div class="hero-text">
                 <div class="hero-text-title"><h1>Gavin <br> Sutton</h1></div>
@@ -48,18 +48,6 @@
                     <div class="quote-left"><ul class="quote-list"><li>Nationality</li><li>Age</li><li>Home</li><li>Favorite Food</li></ul></div>
                     <div class="quote-center"><ul class="quote-list"><li><span class="material-icons">east</span></li><li><span class="material-icons">east</span></li><li><span class="material-icons">east</span></li><li><span class="material-icons">east</span></li></ul></div>
                     <div class="quote-right"><ul class="quote-list"><li>Canadian</li><li>30</li><li>Miyagi</li><li>Ramen</li></ul></div>
-                </div>
-            </div>
-        </div>
-        <div class="sign-up-panel">
-            <div class="modal">
-                <div class="modal-header"><h2>Let's work together!</h2></div>
-                <div class="modal-text"><h3>Send me an email!</h3></div>
-                <div class="copy-link">
-                    <input type="text" id="myEmail" class="copy-link-input" value="gavinsutton6511@gmail.com" readonly>
-                    <button type="button" class="copy-link-button" onclick="copyText()">
-                        <span class="material-icons">content_copy</span>
-                    </button>
                 </div>
             </div>
         </div>
@@ -99,10 +87,24 @@
                 </a>
             </div>
         </div>
-    <div class="footer">
-        Created by Gavin Sutton<br>
-        Images provided by freepik.com
-    </div>
+        <div class="sign-up-panel">
+            <div class="modal">
+                <div class="modal-header"><h2>Let's work together!</h2></div>
+                <div class="modal-text"><h3>Send me an email!</h3></div>
+                <div class="copy-link">
+                    <input type="text" id="myEmail" class="copy-link-input" value="gavinsutton6511@gmail.com" readonly>
+                    <button type="button" class="copy-link-button" onclick="copyText()">
+                        <span class="material-icons">content_copy</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    
+</div>
+<div class="footer">
+    Created by Gavin Sutton<br>
+    Images provided by freepik.com
+</div>
 <!-- Hidden popup element-->
 <div id="id01" class="popup-error">
     <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Popup">&times;</span>
@@ -111,8 +113,6 @@
             <p>Sorry, this is currently unavailable.</p>
         </div>
     </div>
-</div>
-</div>
 </div>
 </body>
 </html>
