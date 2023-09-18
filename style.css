@@ -81,7 +81,25 @@ button {
 
 .out-of-service * {
     cursor: not-allowed;
-    
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 10%;
+}
+
+.sticky + .body-container {
+    padding-top: 102px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    background-color: #323232;
+    color:#ffffff;  
+    z-index: 1;
 }
 
 .header-links {
@@ -160,13 +178,6 @@ ul.quote-list {
     background-color: #DDD0C8;
     color:  #323232;
     margin-top: 32px;
-}
-
-.header {
-    display: flex;
-    justify-content: center;
-    background-color: #323232;
-    color:#ffffff;  
 }
 
 .hero-contents, .quote-panel, .sign-up-panel, #img-panel {
@@ -1039,6 +1050,10 @@ ul.quote-list {
     .rps-icons {
         max-width:fit-content;
         height: 100%;
+    }
+
+    .sticky {
+        height: 5%;
     }
 
 }
