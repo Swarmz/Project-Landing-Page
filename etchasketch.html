@@ -9,7 +9,7 @@
     <script src="index.js" defer></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
+<body id="etchasketch-page">
     <div class="background">
     <div class="hero">
         <div class="header">
@@ -41,12 +41,17 @@
         <div class="main-container">
             <div class="controls">
                 <div class="color-container">
-                    <label for="color-picker"></label>
+                    <label for="color-picker">Color</label>
                     <input type="color" id="color-picker" name="color-picker" value="#000000">
                 </div>
                 <button type="button" class="erase-button" id="erase">Erase</button>
             </div>
             <div class="etchasketch-container"></div>
+            <div class="instructions-container">
+                <h3>What is this?</h3>
+                <p>Hover your mouse over the play area to create squares.</p>
+                <p>You can draw anything you want.</p>
+            </div>
         </div>
     </div>
     </div>
@@ -54,6 +59,8 @@
         Created by Gavin Sutton
     </div>
 </div>
+
+
     <script>
         function createGrid(size) {
             eraseGrid();

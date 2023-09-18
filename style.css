@@ -25,6 +25,10 @@ body {
     background-color: #DDD0C8;
 }
 
+#etchasketch-page .background {
+    background-color: #fff;
+}
+
 .body-container {
     animation: fadeInAnimation ease 1.5s;
     animation-iteration-count: 1;
@@ -294,8 +298,6 @@ ul.quote-list {
 .sign-up-panel {
     align-self: center;
     background-color: #DDD0C8;
-    max-width: 95%;
-
 }
 
 .modal {
@@ -645,8 +647,8 @@ ul.quote-list {
 
 .grid-size-button {
     border-radius: 0px;
-    font-size: 18px;
-    padding: 5px;
+    font-size: 24px;
+    padding: 18px;
     margin: 5px;
     color: #323232;
     border: 1px solid #323232;
@@ -664,12 +666,14 @@ ul.quote-list {
 }
 
 .color-container {
-    width: 72px;
-    height: 48px;
+    width: 150px;
+    height: 88px;
     background-color: #ededed;
     border-radius: 0px;
     border: 1px solid #323232;
     overflow: hidden;
+    text-align: center;
+    font-size: 18px;
 }
 
 #color-picker {
@@ -679,7 +683,7 @@ ul.quote-list {
     border: none;
     width: 200%;
     height: 200%;
-    transform: translateX(-10px) translateY(-10px);
+    transform: translateX(-10px);
 }
 
 /* END OF ETCHASKETCH GAME */
