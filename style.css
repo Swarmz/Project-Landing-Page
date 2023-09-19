@@ -791,6 +791,59 @@ ul.quote-list {
     color: darkgray;
 }
 
+/*background*/
+.welcome-popup {
+    display: block;
+    position: fixed;
+    cursor: pointer;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    padding-top: 50px;
+    text-align: center;
+}
+  
+/* Popup Content/Box */
+.welcome-popup-content {
+    position: relative;
+    background-color: #fff;
+    margin: 5% auto 15% auto;
+    border: 1px solid #888;
+    max-width: 1200px;
+    font-size: 36px;
+    top: 20%;
+    text-align: center;
+}
+
+.language-selector-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 32px;
+    width: 50%;
+    margin: auto;
+    
+}
+
+.selector-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    border: 1px solid black;
+    text-align: center;
+    line-height: normal;
+}
+
+.selector-box:hover {
+    background-color: black;
+    color: white;
+}
+
 .dropbtn {
     position: relative;
     flex: 1;
