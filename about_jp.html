@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ストーリー</title>
+        <script src="about.js" defer></script>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    </head>
+    <body>
+        <div class="background">
+            <div class="header">
+                <div class="header-links">
+                    <a class="a-header prevent-select" href="./index_jp.html">ホーム</a>
+                    <a class="a-header prevent-select" href="./about_jp.html">ストーリー</a>
+                    <a class="a-header prevent-select" href="./index_jp.html#img-panel">自作</a>
+                    <div class="dropbtn prevent-select" onclick="dropdownToggle()">その他<span class="material-icons inline-material-icons prevent-select">expand_more</span>
+                        <div class="dropdown-content" id="myDropdown">
+                            <a class="prevent-select" href="./document/resume.pdf" target="_blank">履歴書<span class="material-icons inline-material-icons">file_download</span></a>
+                            <a class="prevent-select" href="https://github.com/Swarmz/project-landing-page" target="_blank">My GitHub <span class="material-icons inline-material-icons">open_in_new</span></a>
+                            <a class="prevent-select" href="https://www.theodinproject.com/about" target="_blank">The Odin Project <span class="material-icons inline-material-icons">open_in_new</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="body-container">
+                <div class="about-main">
+                    <!-- <div class="main-title">
+                        <h1>About Me</h1>
+                    </div> -->
+                    <div class="about-nav">
+                        <div class="about-card img-slides fade">
+                            <div class="about-card-text">出身</div>
+                            <img class="about-img" src="./img/canada-flag-circle.png" alt="flag of canada">
+                        </div>
+                        <div class="about-card img-slides fade">
+                            <div class="about-card-text">好きなこと</div>
+                            <img class="about-img" src="./img/hobbies-icon.png" alt="various hobbies">
+                        </div>
+                        <div class="about-card img-slides fade">
+                            <div class="about-card-text">今の生活</div>
+                            <img class="about-img" src="./img/flag-of-japan.png" alt="flag of japan">
+                        </div>
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        
+                        <div style="text-align:center">
+                            <span class="dot" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                        </div>
+                    </div>
+                        <div class="text-slides fade">
+                            <p><img class="about-text-img" src="./img/victoria.jpg" alt="side of an old building">                     
+                            1993年1月26日、ブリティッシュ・コロンビア州ビクトリア生まれ。人口約35万人のこの街は、静かな雰囲気と庭園で知られ、多くの人が引退のために訪れる場所である。海を渡れば活気あふれるバンクーバーがあり、そこではさまざまな意味でまったく異なる雰囲気を味わうことができる。若い世代にとって、ビクトリアは少し退屈な場所だと言われている。私もその考えには賛成だが、私が一生を快適に過ごせる場所であることは間違いない。私は一人っ子で、中流家庭で育った。父と母は私が幼い頃に離婚し、父との思い出は写真を見たことくらいしかない。母は北アイルランドのベルファスト生まれ。そう、北と南があり、違う国なのだ。とにかく、母は20代で単身カナダに渡った。時間はかかったけど、結局ビクトリアに落ち着いた。 </p>
+                        </div>
+                        <div class="text-slides fade">                       
+                            <p><img class="about-text-img" src="./img/playstation-controller.jpg" alt="a playstation controller on a desk">
+                            コーヒー、アルコール、ビデオゲームだ。私のことを依存症的な性格だと言う人もいるかもしれないが、そういう人に言いたいのは、たぶんその通りだということだ。幼い頃からゲームに夢中で、おそらく父がゲーム好きだったことに起因しているのだろう。実際、父がコンピューターに向かっている間、私は父の膝の上に座って『コマンド・アンド・コンカー』をプレイしていた。大きくなってからも、私は間違いなくこれらのゲームシリーズが大好きだった。今日に至るまで、私はまだ新しいゲームで魅惑的な体験をしているし、これからも長く楽しめることを願っている。</p>
+                            <p><img class="about-text-img" src="./img/coffee.jpg" alt="a coffee cup and coffee beans">
+                            私の他の2つの悪癖、つまり "好きな飲み物 "に関しては、ご想像の通り、最近好きになったものだ。多くの人がそうであるように、コーヒーとアルコールは間違いなく後天的な嗜好品であり、今日に至るまで私はそのすべてを楽しもうとしている最中である。アルコールと違って、コーヒーは飲むことと淹れることの2つの愛がある。シンプルな手順で味の多くの側面をコントロールできることは、私にとって非常に満足のいくプロセスだ。失敗して苦かったり、水っぽかったりしたときに、自分の力の大きさがよくわかる。大好きなだけに、意外かもしれないが、私は1日1杯、朝にしか飲まない傾向がある。たった1杯？そう、なぜなら。。。</p>
+                            <p><img class="about-text-img" src="./img/beer.jpg" alt="a glass of beer">
+                            夜は飲むためにある！カナダにいた頃は、私はあまり酒を飲まなかった。しかし、日本の巨大なアルコール文化を無視することはできない。すべてはビールから始まり、気がつけば私は酒造りの仕事を考えている。スピリッツ、ワイン、ビールの味を理解するようになった自分に正直驚いている。</p>
+                        </div>
+                        <div class="text-slides fade">                       
+                            <p><img class="about-text-img" src="./img/about-japan1.jpg" alt="picture in japan">
+                            初めて日本を訪れたのは2016年の8月だったが、正式に移住したのは2年後の2018年5月だった。日本は、センセーショナルな見出しのニュースや「奇抜な」風習をしばしば見せつけられるので、私にとっても、多くの西洋人にとっても、常に魅力的な国だと思う。もちろん、これは双方向の話であり、西洋文化について日本人に見せられるものすべてが、実際の西洋人にとって普通であるとは限らないからだ。ともあれ、私はこの国に興味があり、自分自身で探検するつもりだった。付け加えるなら、私は一人ではなかったし、日本に来た目的は探検だけではなかった。今の妻、花子が日本に来た主な理由だ。もともと私の故郷ビクトリアで出会った私たちは、2年間の遠距離恋愛を経て、ようやく日本で再会した。</p>                           
+                        </div>
+                </div>
+            </div>
+            <div class="footer">
+                ギャビン・サットン作<br>
+                画像はfreepik.comより提供
+            </div>
+        </div>
+    </body>
+</html>
