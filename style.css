@@ -766,27 +766,29 @@ ul.quote-list {
   
 /* Popup Content/Box */
 .popup-content {
+    position: relative;
     background-color: #fff;
     margin: 5% auto 15% auto;
     border: 1px solid #888;
     max-width: 50%;
     font-size: 36px;
+    top: 20%;
 }
   
 /* The (x) button */
 .close {
     position: absolute;
-    right: 3rem;
-    top: 1rem;
+    line-height: 56px;
+    right: 0;
     font-size: 6rem;
     font-weight: bold;
-    color: #fff;
+    color: lightgray;
 }
   
 .close:hover,
 .close:focus {
     cursor: pointer;
-    color: #717171;
+    color: darkgray;
 }
 
 .dropbtn {
@@ -1018,8 +1020,12 @@ ul.quote-list {
         background-color: #fff;
         margin: 5% auto 15% auto;
         border: 1px solid #888;
-        width: 80%;
+        max-width: 90%;
         font-size: 24px;
+    }
+
+    .close{
+        font-size: 5rem;
     }
 
     .prev, .next {
