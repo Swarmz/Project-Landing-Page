@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サットン・ギャビンLP</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+<body>
+    <div class="background">
+        <div class="header" id="index-header">
+            <div class="header-links">
+                <a class="a-header prevent-select" href="./index.html">ホーム</a>
+                <a class="a-header prevent-select" href="./about.html">ストーリ</a>
+                <a class="a-header prevent-select" href="./index.html#img-panel">自作</a>
+                <div class="dropbtn prevent-select" onclick="dropdownToggle()">その他<span class="material-icons inline-material-icons prevent-select">expand_more</span>
+                    <div class="dropdown-content" id="myDropdown">
+                        <a class="prevent-select" href="./document/resume.pdf" target="_blank">履歴書<span class="material-icons inline-material-icons">file_download</span></a>
+                        <a class="prevent-select" href="https://github.com/Swarmz/project-landing-page" target="_blank">GitHub <span class="material-icons inline-material-icons">open_in_new</span></a>
+                        <a class="prevent-select" href="https://www.theodinproject.com/about" target="_blank">The Odin Project <span class="material-icons inline-material-icons">open_in_new</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="body-container">  
+    <div class="hero"> 
+        <div class="hero-contents">
+            <div class="hero-text">
+                <div class="hero-text-title"><h1>サットン <br> ギャビン</h1></div>
+                <div class="hero-text-main">フロントエンド・エンジニア</div>
+                <button class="hero-text-button" onclick="window.location.href='./about.html';">私のストーリ</button>
+            </div>
+            <div class="hero-img">
+                <img src="./img/self-zoomed.jpg" alt="picture of me" class="hero-sample">
+            </div>
+
+        </div>
+    </div>
+    <div class="main">
+        <div class="quote-panel">
+            <div class="quote-panel-container">
+                <div class="quote-panel-title"><h2>私について</h2></div>
+                <div class="quote-container">
+                    <div class="quote-left"><ul class="quote-list"><li>国</li><li>歳</li><li>住</li><li>好食物</li></ul></div>
+                    <div class="quote-center"><ul class="quote-list"><li><span class="material-icons">east</span></li><li><span class="material-icons">east</span></li><li><span class="material-icons">east</span></li><li><span class="material-icons">east</span></li></ul></div>
+                    <div class="quote-right"><ul class="quote-list"><li>カナダ人</li><li>30</li><li>宮城県</li><li>ラーメン</li></ul></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div id="img-panel">
+            <div class="img-panel-title"><h2>自作</h2></div>
+            <div class="img-panel-main">
+                <a href="etchasketch.html" id="disable-mobile-link">
+                    <div class="card">
+                        <img src="./img/img-panel-pen.jpg" alt="">
+                        <div class="card-text"><h3>描く</h3></div>
+                    </div>
+                </a>
+                <a href="rock-paper-scissors.html">  
+                    <div class="card">
+                        <img src="./img/rps.jpg" alt="hands displaying rock, paper, and scissors">
+                        <div class="card-text"><h3>じゃん拳</h3></div>
+                    </div>
+                </a>
+                <a href="https://phenomenalgavinsutton6511.wordpress.com/" target="_blank">  
+                    <div class="card">
+                        <img src="./img/ramenWebsiteIcon.jpg" alt="bowl of ramen">
+                        <div class="card-text"><h3 style="white-space: nowrap;">らーめん山田</h3></div>
+                    </div>
+                </a>
+                <a class="out-of-service tooltip" onclick="document.getElementById('id01').style.display='block'"><span class="tooltiptext">Unavailable</span>
+                    <div style="opacity:0.6;" class="card">
+                        <img src="./img/calculator.jpg" alt="">
+                        <div class="card-text"><h3>電卓</h3></div>
+                    </div>
+                </a>
+                <a class="out-of-service tooltip" onclick="document.getElementById('id01').style.display='block'"><span class="tooltiptext">Unavailable</span>
+                    <div style="opacity:0.6;" class="card">
+                        <img src="./img/under_construction.jpg" alt="">
+                        <div class="card-text"><h3>発展中</h3></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="sign-up-panel">
+            <div class="modal">
+                <div class="modal-header"><h2>あなたのビジョンを共に実現しましょう。</h2></div>
+                <div class="modal-text"><h3>お気軽にお問い合わせください。</h3></div>
+                <div class="copy-link">
+                    <input type="text" id="myEmail" class="copy-link-input" value="gavinsutton6511@gmail.com" readonly>
+                    <button type="button" class="copy-link-button" onclick="copyText()">
+                        <span class="material-icons">content_copy</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    
+</div>
+<div class="footer">
+    ギャビン・サットン作<br>
+    画像はfreepik.comより提供
+</div>
+<!-- Hidden popup element-->
+<div id="id01" class="popup-error">
+    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Popup">&times;</span>
+    <div class="popup-content">
+        <div class="container">
+            <p>申し訳ございませんが、<br>こちらは現在使用できません。</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
