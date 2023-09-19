@@ -769,16 +769,16 @@ ul.quote-list {
     background-color: #fff;
     margin: 5% auto 15% auto;
     border: 1px solid #888;
-    width: 30%;
+    max-width: 50%;
     font-size: 36px;
 }
   
 /* The (x) button */
 .close {
     position: absolute;
-    right: 35px;
-    top: 15px;
-    font-size: 40px;
+    right: 3rem;
+    top: 1rem;
+    font-size: 6rem;
     font-weight: bold;
     color: #fff;
 }
@@ -786,6 +786,7 @@ ul.quote-list {
 .close:hover,
 .close:focus {
     cursor: pointer;
+    color: #717171;
 }
 
 .dropbtn {
