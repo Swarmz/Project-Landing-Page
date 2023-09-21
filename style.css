@@ -315,7 +315,7 @@ ul.quote-list {
     display: flex;
     flex-flow: column wrap;
     justify-content: space-evenly;
-    gap: 32px;
+    
     text-align: center;
 }
 
@@ -1121,6 +1121,14 @@ ul.quote-list {
 
     .welcome-popup-content {
         padding: 0px;
+    }
+
+    .modal-text {
+        font-size: 16px;
+    }
+
+    .card-text {
+        font-size: 16px;
     }
 
 }
