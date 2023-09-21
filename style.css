@@ -307,7 +307,6 @@ ul.quote-list {
 }
 
 .sign-up-panel {
-    align-self: center;
     background-color: #DDD0C8;
 }
 
@@ -811,22 +810,24 @@ ul.quote-list {
 /* Popup Content/Box */
 .welcome-popup-content {
     position: relative;
+    color: #323232;
     background-color: #fff;
     margin: 5% auto 15% auto;
+    padding: 32px;
     border: 1px solid #888;
-    max-width: 1200px;
-    font-size: 36px;
+    max-width: fit-content;
+    font-size: 24px;
     top: 20%;
     text-align: center;
+    border-radius: 8px;
 }
 
 .language-selector-container {
     display: flex;
-    justify-content: space-around;
-    padding: 32px;
-    width: 50%;
-    margin: auto;
-    
+    justify-content: center;
+    gap: 5rem;
+    margin: 24px;
+    min-width: 150px;
 }
 
 .selector-box{
@@ -835,12 +836,14 @@ ul.quote-list {
     align-items: center;
     padding: 8px;
     border: 1px solid black;
+    border-radius: 3px;
     text-align: center;
     line-height: normal;
+    font-size: 24px;
 }
 
 .selector-box:hover {
-    background-color: black;
+    background-color: darkgray;
     color: white;
 }
 
@@ -1114,6 +1117,10 @@ ul.quote-list {
 
     .sticky {
         height: 5%;
+    }
+
+    .welcome-popup-content {
+        padding: 0px;
     }
 
 }
