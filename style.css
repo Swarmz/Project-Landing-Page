@@ -86,8 +86,8 @@ button {
 
 .sticky {
     position: fixed;
-    top: 0;
     width: 100%;
+    top: 0;
 }
 
 .sticky + .body-container {
@@ -1116,11 +1116,12 @@ ul.quote-list {
     }
 
     .sticky {
-        height: 5%;
+       
     }
 
     .welcome-popup-content {
         padding: 0px;
+        width: 90%;
     }
 
     .modal-text {
