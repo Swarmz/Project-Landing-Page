@@ -13,15 +13,6 @@ body {
     font-family: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-@keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
 .background {
     background-color: #DDD0C8;
 }
@@ -31,9 +22,6 @@ body {
 }
 
 .body-container {
-    animation: fadeInAnimation ease 1.5s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
     margin: 0;
     margin-right: auto;
     margin-left: auto;
@@ -294,6 +282,13 @@ ul.quote-list {
 
 .quote-right {
     font-style: italic;
+    transform: translateX(1500%);
+    -webkit-transform: translateX(1500%);
+}
+
+.quote-left {
+    transform: translateX(-1500%);
+    -webkit-transform: translateX(-1500%);
 }
 
 .quote-center > .quote-list {
@@ -505,14 +500,48 @@ ul.quote-list {
     background-color: #717171;
 }
 
+/* fade for about page cards */
 .fade {
     animation-name: fade;
     animation-duration: 0.5s;
 }
-  
+
+.slide-in {
+    animation: slide-in 2s forwards;
+    -webkit-animation: slide-in 2s forwards;
+    animation-delay: 2s;
+}
+
+.div-fade-in {
+    animation: fadeInAnimation linear 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    visibility: visible !important;
+}
+
+/* fade for about page cards */
 @keyframes fade {
     from {opacity: .4}
     to {opacity: 1}
+}
+
+/* fade animation for index elements */
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* slide in animation */
+@keyframes slide-in {
+    100% { transform: translateX(0%); }
+}
+
+@-webkit-keyframes slide-in {
+    100% { -webkit-transform: translateX(0%); }
 }
 
 /* ROCK PAPER SCISSORS GAME */
@@ -918,6 +947,7 @@ ul.quote-list {
     .quote-panel-container {
         padding: 32px;
         box-shadow:  0 0 0 2px #323232, 0.3em 0.3em 1em rgb(0 0 0 / 30%);
+        visibility: hidden;
     }
 
     .modal-header {

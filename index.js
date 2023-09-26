@@ -56,3 +56,12 @@ function myFunction() {
     header.classList.remove("sticky");
   }
 }
+
+
+// Beginning animations for index
+function closeAndStart() {
+    document.getElementById('welcome').style.display='none';
+    document.getElementById('quote-left').classList.add('slide-in');
+    document.getElementById('quote-right').classList.add('slide-in');
+    document.getElementById('quote-panel-container').classList.add('div-fade-in');
+}
