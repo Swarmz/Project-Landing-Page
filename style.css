@@ -78,6 +78,10 @@ button {
     top: 0;
 }
 
+.shrink{
+    size: 50%;
+}
+
 .sticky + .body-container {
     padding-top: 102px;
 }
@@ -513,7 +517,7 @@ ul.quote-list {
 }
 
 .div-fade-in {
-    animation: fadeInAnimation linear 3s;
+    animation: fadeInAnimation ease-in 3s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     visibility: visible !important;
@@ -1143,10 +1147,6 @@ ul.quote-list {
     .rps-icons {
         max-width:fit-content;
         height: 100%;
-    }
-
-    .sticky {
-       
     }
 
     .welcome-popup-content {
