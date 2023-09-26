@@ -740,6 +740,26 @@ ul.quote-list {
     color: #ffffff;
     padding: 2em;
     font-size: 12px;
+    gap: 12px;
+}
+
+.language-select-box {
+    font-size: 16px;
+    display: flex;
+    flex-flow: column;
+    gap: 8px;
+    text-align: center;
+}
+
+.language-options {
+    border: 1px solid white;
+    border-radius: 6px;
+}
+
+.language-options:hover {
+    cursor: pointer;
+    background-color: white;
+    color: #323232; 
 }
 
 /* Tooltip container */
