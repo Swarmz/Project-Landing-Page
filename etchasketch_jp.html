@@ -30,10 +30,10 @@
     <div class="body-container">
     <div class="etchasketch-main">
         <div class="main-title">
-            <h1>Etch-a-Sketch</h1>
+            <h1>描く</h1>
         </div>
         <div class="grid-button-container">
-            <p>Please choose a size before beginning</p>
+            <p>始める前にサイズをお選びください。</p>
             <button type="button" class="grid-size-button" onclick="rememberGridSize(this.value)" value="16" id="grid16">Size 16</button>
             <button type="button" class="grid-size-button" onclick="rememberGridSize(this.value)" value="32" id="grid32">Size 32</button>
             <button type="button" class="grid-size-button" onclick="rememberGridSize(this.value)" value="64" id="grid64">Size 64</button>
@@ -41,16 +41,16 @@
         <div class="main-container">
             <div class="controls">
                 <div class="color-container">
-                    <label for="color-picker">Color</label>
+                    <label for="color-picker">色選択</label>
                     <input type="color" id="color-picker" name="color-picker" value="#000000">
                 </div>
-                <button type="button" class="erase-button" id="erase">Erase</button>
+                <button type="button" class="erase-button" id="erase">すべて消去</button>
             </div>
             <div class="etchasketch-container"></div>
             <div class="instructions-container">
-                <h3>What is this?</h3>
-                <p>Hover your mouse over the play area to create squares.</p>
-                <p>You can draw anything you want.</p>
+                <h3>説明</h3>
+                <p>マウスをプレイエリアの上に置くと、絵が描かれます。</p>
+                <p>何を描いてもいい。</p>
             </div>
         </div>
     </div>
