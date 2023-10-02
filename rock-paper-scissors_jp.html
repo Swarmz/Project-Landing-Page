@@ -29,9 +29,9 @@
     </div>
     <div class="body-container">
     <div class="rps-main">
-        <h1 class="rps-title">Rock Paper Scissors</h1>
+        <h1 class="rps-title">じゃん拳</h1>
         <div class="rps-container">
-            <div id="results">&darr; Click to Play! &darr;</div>
+            <div id="results">&darr; クリックして開始 &darr;</div>
             <div class="rps-button-container">
                 <button class="rpsSelection" type="button" id="rock">
                     <img class="rps-icons" src="./img/rock.png" alt="rock">
@@ -54,7 +54,19 @@
             </div>
         </div>
     </div>
-                
+</div>
+<div class="footer">
+    ギャビン・サットン作<br>
+    画像はfreepik.comより提供
+    <div class="language-select-box">
+        <div>Select Language</div>
+        <div class="language-options">
+            <a href="./rock-paper-scissors.html">English</a>
+        </select>
+        </div>
+    </div>
+</div>
+</div>            
     <script>
 
         function getComputerChoice() {  // get random choice of RPS for computer
@@ -156,19 +168,7 @@
         document.getElementById("scissors").addEventListener("click", function(){ playRound("scissors"); if(playerWins === 5 || computerWins === 5) {winner();}  });
 
     </script>
-    </div>
-    <div class="footer">
-        ギャビン・サットン作<br>
-        画像はfreepik.comより提供
-        <div class="language-select-box">
-            <div>Select Language</div>
-            <div class="language-options">
-                <a href="./rock-paper-scissors.html">English</a>
-            </select>
-            </div>
-        </div>
-    </div>
-</div>
+
 </body>
     
 </html>
