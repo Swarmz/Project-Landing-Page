@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+</head>
+<body>
+    <div class="background">
+    <div class="hero">
+        <div class="header">
+            <div class="header-links">
+                <a class="a-header prevent-select" href="./index.html">Home</a>
+                <a class="a-header prevent-select" href="./about.html">About</a>
+                <a class="a-header prevent-select" href="./index.html#img-panel">Work</a>
+                <div class="dropbtn prevent-select" onclick="dropdownToggle()">More<span class="material-icons inline-material-icons prevent-select">expand_more</span>
+                    <div class="dropdown-content" id="myDropdown">
+                        <a class="prevent-select" href="./document/resume.pdf" target="_blank">Resumé<span class="material-icons inline-material-icons">file_download</span></a>
+                        <a class="prevent-select" href="https://github.com/Swarmz/project-landing-page" target="_blank">My GitHub <span class="material-icons inline-material-icons">open_in_new</span></a>
+                        <a class="prevent-select" href="https://www.theodinproject.com/about" target="_blank">The Odin Project <span class="material-icons inline-material-icons">open_in_new</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="body-container">
+        <div class="main-title">
+            <h1 style="font-family: 'Audiowide';">Calculator</h1>
+        </div>
+        <div id="calculator">
+            <div id="display-screen">
+                <span id="display-numbers"></span>
+            </div>
+            <div id="button-panel"> 
+                <button id="7" class="number-button">7</button>
+                <button id="8" class="number-button">8</button>
+                <button id="9" class="number-button">9</button>
+                <button id="divide" class="operator-button">/</button>
+                <button id="4" class="number-button">4</button>
+                <button id="5" class="number-button">5</button>
+                <button id="6" class="number-button">6</button>
+                <button id="multiply" class="operator-button">x</button>
+                <button id="1" class="number-button">1</button>
+                <button id="2" class="number-button">2</button>
+                <button id="3" class="number-button">3</button>
+                <button id="subtract" class="operator-button">-</button>
+                <button id="clear">C</button>
+                <button id="0" class="number-button">0</button>
+                <button id="equals">=</button>
+                <button id="addition" class="operator-button">+</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        Created by Gavin Sutton<br>
+        Images provided by freepik.com
+        <div class="language-select-box">
+            <div>言語を選ぶ</div>
+            <div class="language-options">
+                <a href="./etchasketch_jp.html">日本語</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    ///////////         CURRENT LOGIC       //////////////
+/*  First number is assigned to the array num2
+    upon an operation button press num2 array is moved into num1 array
+    the second number received is assigned to num2 array
+    upon pressing equals both arrays join() and the result is displayed as a number
+*/
+
+// display and store into num variables
+const displayNumber = function() {
+    let buttonValue = this.textContent;
+    displaySection.textContent = displaySection.textContent.concat(buttonValue);
+    num2.push(buttonValue);
+}
+
+// display and store into operator variable
+const displayOperator = function() {
+    let buttonValue = this.textContent;
+    displaySection.textContent = ' ' + buttonValue + ' ';
+    operator = buttonValue;
+    if (num1.length === 0) {num1 = num2, num2 = [];} // passes to num1 on first calculation, 2nd operation and on will already have num1 value 
+    else calculate(), displaySection.textContent = parseInt(num1.join("")) + ' ' + operator + ' '; // allows multiple operations in a row
+}
+
+// called when equals is pressed
+const calculate = function() {
+    if (num1.length && num2.length !== 0){
+        num2 = parseInt(num2.join(""));
+        num1 = parseInt(num1.join(""));
+        operate([num1, num2], operator);
+        num2 = []; // reset num2 for new input
+        num1 = Array.from(String(num1)); // need to return to an array for further operations *see bottom for further info
+    } else; // prevent operations happening without two numbers
+}
+
+
+// sets display blank
+const clearButton = function() {
+    document.getElementById("display-numbers").textContent = "";
+    num1 = [];
+    num2 = [];
+    operator = undefined;
+}
+
+const add = function(a,b) {
+    num1 = a+b;
+    displaySection.textContent = num1;
+};
+  
+const subtract = function(a,b) {
+    num1 = a-b;
+    displaySection.textContent = num1;
+};
+  
+const multiply = function(a,b) {
+    num1 = a*b;
+    displaySection.textContent = num1;
+};
+
+const divide = function(a,b) {
+    if (b !== 0) {num1 = a/b;
+    displaySection.textContent = num1;}
+    else clearButton(), displaySection.textContent = "Nice Try :)";
+};
+
+const operate = function([num1,num2],operator) {
+    switch (operator) {
+        case '+':
+            add(num1,num2);
+            break;
+        case '-':
+            subtract(num1,num2);
+            break;
+        case 'x':
+            multiply(num1,num2);
+            break;
+        case '/':
+            divide(num1,num2);
+            break;
+        default:
+            displaySection.textContent = 'error';
+    }
+};
+
+// gives the numbered buttons their onclick functionality
+document.querySelectorAll(".number-button").forEach(function(button){
+    button.addEventListener("click", displayNumber);
+});
+
+// gives the operator buttons their onclick functionality
+document.querySelectorAll(".operator-button").forEach(function(button){
+    button.addEventListener("click", displayOperator);
+});
+
+document.getElementById('equals').addEventListener("click", calculate);
+
+document.getElementById("clear").addEventListener("click", clearButton);
+
+
+let displaySection = document.getElementById("display-numbers");
+let num1 = [];
+let num2 = [];
+let operator; // can be assigned the values 'addition', 'subtraction', 'multiplication', 'division'
+
+
+// * num1 = Array.from(String(num1), Number);
+// * this was the original operation but ran into problems when converting a negative string back into a negative number, the '-' string was assigned NaN in the new array
+
+
+</script>
+</body>
+</html>

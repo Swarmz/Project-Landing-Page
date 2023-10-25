@@ -731,6 +731,73 @@ ul.quote-list {
 
 /* END OF ETCHASKETCH GAME */
 
+/* START OF CALCULATOR */
+
+#calculator {
+    background-color: black;
+    max-width: 525px;
+    text-align: center;
+    padding: 16px;
+    border: solid 0px transparent;
+    border-radius: 16px;
+    align-self: center;
+    margin: 2vw;
+}
+
+#display-screen {
+    background-color: rgb(218, 216, 216);
+    border: 3px solid rgb(51, 51, 51);
+    min-height: 82px;
+    padding: 16px;
+    margin: 16px;
+    font-family: 'Audiowide', sans-serif;
+}
+
+#display-numbers{
+    font-size: 36px;
+    float: left;
+}
+
+#button-panel {
+    margin: 16px;
+    padding: 16px;
+}
+
+.number-button, .operator-button, #clear, #equals {
+    color: white;
+    font-size: 48px;
+    width: 84px;
+    height: 84px;
+    padding: 16px;
+    margin: 8px;
+    line-height:0%;
+    font-family: 'Audiowide', sans-serif;
+    transition: none;
+}
+
+.number-button:hover, .operator-button:hover, #clear:hover, #equals:hover {
+    cursor: pointer;
+    border: 3px solid white;
+}
+
+.number-button:active, .operator-button:active, #clear:active, #equals:active {
+    transform: scale(0.9);
+}
+
+.number-button {
+    background-color: rgb(94, 94, 94);
+}
+
+.operator-button, #equals {
+    background-color: orange;
+}
+
+#clear {  
+    background-color: darkgray;
+}
+
+/* END OF CALCULATOR */
+
 .footer {
     text-align: center;
     display: flex;
