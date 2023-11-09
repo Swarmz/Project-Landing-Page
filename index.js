@@ -40,7 +40,7 @@ window.addEventListener('click', function(event) {
 
 
 // When the user scrolls the page, execute myFunction
-window.onscroll = function() {myFunction()};
+// window.onscroll = function() {stickyNav()}; // temp disable sticky header
 
 // Get the header
 let header = document.getElementById("index-header");
@@ -49,11 +49,12 @@ let header = document.getElementById("index-header");
 let sticky = header.offsetTop;
 
 // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
+function stickyNav() {
   if (window.scrollY > sticky) {
-    header.classList.add("sticky");
+    header.classList.add("sticky","shrink");
   } else {
-    header.classList.remove("sticky");
+    header.classList.remove("sticky","shrink");
+
   }
 }
 

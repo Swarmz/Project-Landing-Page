@@ -78,8 +78,8 @@ button {
     top: 0;
 }
 
-.shrink{
-    size: 50%;
+.shrink{ /* for making header smaller on scroll */
+    margin: 8px;
 }
 
 .sticky + .body-container {
