@@ -58,6 +58,25 @@ function stickyNav() {
   }
 }
 
+function splashScreen() {
+    document.getElementById("welcome-box").classList.add("show");
+}
+// Once the window is loaded...
+window.addEventListener("load", function(){
+
+    // Check localStorage to see if the splash screen 
+    // has NOT already been displayed
+    if(!localStorage.getItem("language-check")){
+ 
+      // Splash has not been displayed, so show it:
+      splashScreen();
+ 
+      // Store a value in localStorage to denote that the splash screen
+      // has now been displayed
+      localStorage.setItem("language-check", "true");
+    
+    } else closeAndStart();
+ });
 
 // Beginning animations for index
 function closeAndStart() {

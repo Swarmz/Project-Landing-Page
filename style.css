@@ -942,6 +942,10 @@ ul.quote-list {
     border-radius: 8px;
 }
 
+#welcome {
+    display: none;
+}
+
 .language-selector-container {
     display: flex;
     justify-content: center;
