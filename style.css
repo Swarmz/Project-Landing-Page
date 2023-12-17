@@ -937,7 +937,7 @@ ul.quote-list {
 }
 
 #welcome {
-    display: none;
+    display: block;
 }
 
 .language-selector-container {

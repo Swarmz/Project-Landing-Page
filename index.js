@@ -43,35 +43,35 @@ window.addEventListener('click', function(event) {
 // window.onscroll = function() {stickyNav()}; // temp disable sticky header
 
 // Get the header
-let header = document.getElementById("index-header");
+// let header = document.getElementById("index-header");
 
 // Get the offset position of the navbar
-let sticky = header.offsetTop;
+// let sticky = header.offsetTop;
 
 // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function stickyNav() {
-  if (window.scrollY > sticky) {
-    header.classList.add("sticky","shrink");
-  } else {
-    header.classList.remove("sticky","shrink");
+// function stickyNav() {
+//   if (window.scrollY > sticky) {
+//     header.classList.add("sticky","shrink");
+//   } else {
+//     header.classList.remove("sticky","shrink");
 
-  }
-}
+//   }
+// }
 
 function splashScreen() {
-    document.getElementById("welcome-box").classList.add("show");
+    document.getElementById("welcome").classList.add("show");
 }
 // Once the window is loaded...
-window.addEventListener("load", function(){
+document.addEventListener("DOMContentLoaded", function(){
 
-    // Check localStorage to see if the splash screen 
+    // Check sessionStorage to see if the splash screen 
     // has NOT already been displayed
     if(!localStorage.getItem("language-check")){
  
       // Splash has not been displayed, so show it:
       splashScreen();
  
-      // Store a value in localStorage to denote that the splash screen
+      // Store a value in sessionStorage to denote that the splash screen
       // has now been displayed
       localStorage.setItem("language-check", "true");
     
@@ -85,3 +85,4 @@ function closeAndStart() {
     document.getElementById('quote-right').classList.add('slide-in');
     document.getElementById('quote-panel-container').classList.add('div-fade-in');
 }
+
