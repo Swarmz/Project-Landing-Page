@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>じゃん拳</title>
+    <title>じゃんけん</title>
     <link rel="stylesheet" href="style.css">
     <script src="index_jp.js" defer></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -16,7 +16,7 @@
             <div class="header-links">
                 <a class="a-header prevent-select" href="./index_jp.html">ホーム</a>
                 <a class="a-header prevent-select" href="./about_jp.html">ストーリー</a>
-                <a class="a-header prevent-select" href="./index_jp.html#img-panel">自作</a>
+                <a class="a-header prevent-select" href="./index_jp.html#img-panel">製作物</a>
                 <div class="dropbtn prevent-select" onclick="dropdownToggle()">その他<span class="material-icons inline-material-icons prevent-select">expand_more</span>
                     <div class="dropdown-content" id="myDropdown">
                         <a class="prevent-select" href="https://github.com/Swarmz/project-landing-page" target="_blank">GitHub <span class="material-icons inline-material-icons">open_in_new</span></a>
@@ -28,7 +28,7 @@
     </div>
     <div class="body-container">
     <div class="rps-main">
-        <h1 class="rps-title">じゃん拳</h1>
+        <h1 class="rps-title">じゃんけん</h1>
         <div class="rps-container">
             <div id="results">&darr; クリックして開始 &darr;</div>
             <div class="rps-button-container">
@@ -86,58 +86,58 @@
             const computerSelection = getComputerChoice();  // get random comp choice
                 if (playerSelection === "rock") {  
                     if (computerSelection === "paper") {
-                        document.getElementById("results").textContent = "You lose! Paper beats rock.";
+                        document.getElementById("results").textContent = "負け";
                         return computerWins += 1, getScore(); 
                     }
                     else if (computerSelection === "scissors") {
-                        document.getElementById("results").textContent = "You win! Rock beats scissors.";
+                        document.getElementById("results").textContent = "勝ち";
                         return playerWins += 1, getScore();
                     }
                     else {
-                        document.getElementById("results").textContent = "It's a tie! You both chose rock.";
+                        document.getElementById("results").textContent = "あいこ";
                     }
                 }
                 else if (playerSelection === "paper") {
                     if (computerSelection === "scissors") {
-                        document.getElementById("results").textContent = "You lose! Scissors beats paper.";
+                        document.getElementById("results").textContent = "負け";
                         return computerWins += 1, getScore();
                     }
                     else if (computerSelection === "rock") {
-                        document.getElementById("results").textContent = "You win! Paper beats rock";
+                        document.getElementById("results").textContent = "勝ち";
                         return playerWins += 1, getScore();
                     }
                     else {
-                        document.getElementById("results").textContent = "It's a tie! You both chose paper.";
+                        document.getElementById("results").textContent = "あいこ";
                     }
                 }
                 else if (playerSelection === "scissors") {
                     if (computerSelection === "rock") {
-                        document.getElementById("results").textContent = "You lose! Rock beats scissors.";
+                        document.getElementById("results").textContent = "負け";
                         return computerWins += 1, getScore();
                         
                     }
                     else if (computerSelection === "paper") {
-                        document.getElementById("results").textContent = "You win! Scissors beats paper";
+                        document.getElementById("results").textContent = "勝ち";
                         return playerWins += 1, getScore();
                     }
                     else {
-                        document.getElementById("results").textContent = "It's a tie! You both chose scissors.";
+                        document.getElementById("results").textContent = "あいこ";
                     }
                 }
                 else {
-                    document.getElementById("results").textContent = "Error. Please try again.";
+                    document.getElementById("results").textContent = "エラー。もう一回してください。";
                 }
             }
         
         function winner() {
             if (playerWins > computerWins) {
-                document.getElementById("results").textContent = "YOU HAVE WON THE MATCH " + playerWins +
-                    " TO " + computerWins;
+                document.getElementById("results").textContent =  playerWins +
+                    "対" + computerWins + "で勝ちました！";
             } else {
-                document.getElementById("results").textContent = "YOU HAVE LOST THE MATCH " + computerWins +
-                    " TO " + playerWins;
+                document.getElementById("results").textContent = computerWins +
+                    "対" + playerWins + "で負けてしまいました！";
             }
-            setTimeout(scoreReset, 3000);
+            setTimeout(scoreReset, 5000);
         }
         
         function scoreReset() {
