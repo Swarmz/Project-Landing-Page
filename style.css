@@ -17,10 +17,6 @@ body {
     background-color: #DDD0C8;
 }
 
-#etchasketch-page .background {
-    background-color: #fff;
-}
-
 .body-container {
     margin: 0;
     margin-right: auto;
@@ -618,7 +614,7 @@ ul.quote-list {
 }
 
 .etchasketch-main {
-    background-color: #fff;
+    background-color: #DDD0C8;
     display: flex;
     flex-flow: column;
     flex: 1;
