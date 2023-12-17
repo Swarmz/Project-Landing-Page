@@ -307,7 +307,7 @@ ul.quote-list {
 .modal {
     color: #323232;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     justify-content: space-evenly;
     text-align: center;
 }
@@ -655,7 +655,7 @@ ul.quote-list {
     color: black;
     background-color: #ededed;
     border: 1px solid #323232;
-    border-radius: 0px;
+    border-radius: 50%;
     box-shadow: 0 9px #323232;
     transition: none;
     font-size: 24px;
@@ -667,7 +667,7 @@ ul.quote-list {
 
 .erase-button:active {
   background-color: darkgray;
-  box-shadow: 0 5px #323232;
+  box-shadow: 0 3px #323232;
   transform: translateY(4px);
 }
 
@@ -680,7 +680,7 @@ ul.quote-list {
     flex-flow: row wrap;
     border: 1px solid #323232;
     align-self: center;
-    background-color: lightgray;
+    background-color: #ededed;
 }
 
 .grid-button-container {
@@ -914,7 +914,7 @@ ul.quote-list {
 
 /*background*/
 .welcome-popup {
-    display: block;
+    display: none;
     position: fixed;
     cursor: pointer;
     z-index: 1;
@@ -942,10 +942,6 @@ ul.quote-list {
     top: 20%;
     text-align: center;
     border-radius: 8px;
-}
-
-#welcome {
-    display: block;
 }
 
 .language-selector-container {
@@ -1019,7 +1015,7 @@ ul.quote-list {
     background-color: #fff;
 }
   
-.show {display:block;}
+.show {display: block;}
 
 @media only screen and (min-width: 769px) {
     /*For larger screens to display index as horizontal layout*/

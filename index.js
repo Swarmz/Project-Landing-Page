@@ -62,7 +62,7 @@ function splashScreen() {
     document.getElementById("welcome").classList.add("show");
 }
 // Once the window is loaded...
-document.addEventListener("DOMContentLoaded", function(){
+window.addEventListener("load", function(){
 
     // Check sessionStorage to see if the splash screen 
     // has NOT already been displayed
