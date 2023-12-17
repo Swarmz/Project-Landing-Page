@@ -137,6 +137,9 @@
                 document.getElementById("results").textContent = computerWins +
                     "対" + playerWins + "で負けてしまいました！";
             }
+            document.getElementById('rock').classList.add('disable-button');
+            document.getElementById('paper').classList.add('disable-button');
+            document.getElementById('scissors').classList.add('disable-button');
             setTimeout(scoreReset, 5000);
         }
         
@@ -146,6 +149,9 @@
             document.getElementById("computerScore").textContent = computerWins;
             document.getElementById("playerScore").textContent = playerWins;
             document.getElementById("results").textContent = "Play again!"
+            document.getElementById('rock').classList.add('enable-button');
+            document.getElementById('paper').classList.add('enable-button');
+            document.getElementById('scissors').classList.add('enable-button');
         }
 
         // to do

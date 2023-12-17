@@ -126,7 +126,10 @@
                 document.getElementById("results").textContent = "YOU HAVE LOST THE MATCH " + computerWins +
                     " TO " + playerWins;
             }
-            setTimeout(scoreReset, 3000);
+            document.getElementById('rock').classList.add('disable-button');
+            document.getElementById('paper').classList.add('disable-button');
+            document.getElementById('scissors').classList.add('disable-button');
+            setTimeout(scoreReset, 5000);
         }
         
         function scoreReset() {
@@ -134,7 +137,10 @@
             computerWins = 0;
             document.getElementById("computerScore").textContent = computerWins;
             document.getElementById("playerScore").textContent = playerWins;
-            document.getElementById("results").textContent = "Play again!"
+            document.getElementById("results").textContent = "Click to play again!"
+            document.getElementById('rock').classList.add('enable-button');
+            document.getElementById('paper').classList.add('enable-button');
+            document.getElementById('scissors').classList.add('enable-button');
         }
 
         // to do

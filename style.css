@@ -605,6 +605,14 @@ ul.quote-list {
     text-align: center;
     padding: 36px;
 }
+
+.disable-button {
+    pointer-events: none;
+}
+
+.enable-button {
+    pointer-events: auto;
+}
 /* END OF ROCK PAPER SCISSORS GAME */
 
 /* ETCHASKETCH GAME */
