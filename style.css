@@ -307,7 +307,7 @@ ul.quote-list {
 .modal {
     color: #323232;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
     justify-content: space-evenly;
     text-align: center;
 }
@@ -321,7 +321,6 @@ ul.quote-list {
 .modal-header {
     font-weight: bold;
     font-size: 36px;
-    white-space: nowrap;
 }
 
 .modal-text {
@@ -331,6 +330,7 @@ ul.quote-list {
 }
 
 .copy-link {
+    width: 100%;
     --height: 36px;
     display: flex;
     justify-content: center;
@@ -1028,8 +1028,8 @@ ul.quote-list {
 
     .modal {
         flex: 1;
+        flex-flow: column wrap;
         padding: 32px;
-        justify-content: space-between;
         box-shadow:  0 0 0 2px #323232, 0.3em 0.3em 1em rgb(0 0 0 / 30%);
     }
 
@@ -1037,10 +1037,6 @@ ul.quote-list {
         padding: 32px;
         box-shadow:  0 0 0 2px #323232, 0.3em 0.3em 1em rgb(0 0 0 / 30%);
         visibility: hidden;
-    }
-
-    .modal-header {
-        white-space: normal;
     }
 
     .quote-panel {
