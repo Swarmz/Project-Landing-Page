@@ -27,32 +27,35 @@
         </div>
     </div>
     <div class="body-container">
-    <div class="rps-main">
-        <h1 class="rps-title">じゃんけん</h1>
-        <div class="rps-container">
-            <div id="results">&darr; クリックして開始 &darr;</div>
-            <div class="rps-button-container">
-                <button class="rpsSelection" type="button" id="rock">
-                    <img class="rps-icons" src="./img/rock.png" alt="rock">
-                </button>
-                <button class="rpsSelection" type="button" id="paper">
-                    <img class="rps-icons" src="./img/paper.png" alt="paper">
-                </button>
-                <button class="rpsSelection" type="button" id="scissors">
-                    <img class="rps-icons" src="./img/scissors.png" alt="paper">
-                </button>
-            </div>
-            
-            <div class="scoreNames">
-                <p id="playerName">YOU</p>
-                <p id="computerName">COMPUTER</p>
-            </div>
-            <div class="scorePoints">
-                <p id="playerScore">0</p>
-                <p id="computerScore">0</p>
-            </div>
+        <div class="rps-main">
+            <h1 class="rps-title">じゃんけん</h1>
+            <div class="rps-container">
+                <div id="computer-selection">
+                    <img id="computer-selection-img" src="img/empty.png" alt="empty yellow square">
+                </div>
+                <div class="scoreNames">
+                    <p id="computerName">COMPUTER</p>
+                </div>
+                <div class="scorePoints">
+                    <p id="computerScore">0</p>
+                    <p id="playerScore">0</p>
+                </div>
+                <div class="scoreNames">
+                    <p id="playerName">YOU</p>
+                </div>
+                <div class="rps-button-container">
+                    <button class="rpsSelection" id="rock-button" type="button">
+                        <img class="rps-icons" id="rock" src="./img/rock.png" alt="rock">
+                    </button>
+                    <button class="rpsSelection" id="paper-button" type="button">
+                        <img class="rps-icons" id="paper" src="./img/paper.png" alt="paper">
+                    </button>
+                    <button class="rpsSelection" id="scissors-button" type="button">
+                        <img class="rps-icons" id="scissors" src="./img/scissors.png" alt="paper">
+                    </button>
+                </div>
+                <div id="results">&uarr; クリックして開始 &uarr;</div>  
         </div>
-    </div>
 </div>
 <div class="footer">
     ギャビン・サットン作<br>
@@ -66,113 +69,178 @@
     </div>
 </div>
 </div>            
-    <script>
+<script>
+    function getComputerChoice() {  // get random choice of RPS for computer
+        const rockPaperScissors = ["rock", "paper", "scissors"];
+        const random = rockPaperScissors[Math.floor(Math.random() * rockPaperScissors.length)]; // random select of rock, paper or scissors from rockPaperScissors array
+        return random;
+    }
 
-        function getComputerChoice() {  // get random choice of RPS for computer
-            const rockPaperScissors = ["rock", "paper", "scissors"];
-            const random = rockPaperScissors[Math.floor(Math.random() * rockPaperScissors.length)]; // random select of rock, paper or scissors from rockPaperScissors array
-            return random;
-        }
+    
+    let computerSelectionImage = document.getElementById("computer-selection-img");
+    let playerWins = 0;
+    let computerWins = 0;
 
-        let playerWins = 0;
-        let computerWins = 0;
+    // green highlight on players selection if winner
+    let highlightWin = function(playerSelection) {
+        let highlightThisChoice = document.getElementById(playerSelection);
+        highlightThisChoice.classList.add("highlight-win");
+    }
 
-        function getScore() {
-            document.getElementById("computerScore").textContent = computerWins;
-            document.getElementById("playerScore").textContent = playerWins;
-        }
-        
-        function playRound(playerSelection) {    // generates player choice via prompt vs random comp choice to determine winner
-            const computerSelection = getComputerChoice();  // get random comp choice
-                if (playerSelection === "rock") {  
-                    if (computerSelection === "paper") {
-                        document.getElementById("results").textContent = "負け";
-                        return computerWins += 1, getScore(); 
-                    }
-                    else if (computerSelection === "scissors") {
-                        document.getElementById("results").textContent = "勝ち";
-                        return playerWins += 1, getScore();
-                    }
-                    else {
-                        document.getElementById("results").textContent = "あいこ";
-                    }
-                }
-                else if (playerSelection === "paper") {
-                    if (computerSelection === "scissors") {
-                        document.getElementById("results").textContent = "負け";
-                        return computerWins += 1, getScore();
-                    }
-                    else if (computerSelection === "rock") {
-                        document.getElementById("results").textContent = "勝ち";
-                        return playerWins += 1, getScore();
-                    }
-                    else {
-                        document.getElementById("results").textContent = "あいこ";
-                    }
-                }
-                else if (playerSelection === "scissors") {
-                    if (computerSelection === "rock") {
-                        document.getElementById("results").textContent = "負け";
-                        return computerWins += 1, getScore();
-                        
-                    }
-                    else if (computerSelection === "paper") {
-                        document.getElementById("results").textContent = "勝ち";
-                        return playerWins += 1, getScore();
-                    }
-                    else {
-                        document.getElementById("results").textContent = "あいこ";
-                    }
-                }
-                else {
-                    document.getElementById("results").textContent = "エラー。もう一回してください。";
-                }
+    // red highlight on players selection if loser
+    let highlightLoss = function(playerSelection) {
+        let highlightThisChoice = document.getElementById(playerSelection);
+        highlightThisChoice.classList.add("highlight-loss");
+    }    
+
+    // white highlight on players selection if tie
+    let highlightTie = function(playerSelection) {
+        let highlightThisChoice = document.getElementById(playerSelection);
+        highlightThisChoice.classList.add("highlight-tie");
+    }
+
+    let eraseHighlight = function() {
+        document.querySelectorAll('.rps-icons').forEach(e => e.classList.remove('highlight-win','highlight-loss','highlight-tie'));
+    }
+
+
+    // computer selection animation
+    let animateOnSelection = function() {
+        computerSelectionImage.classList.remove("score-increase");
+        computerSelectionImage.offsetHeight; // Repaint DOM in order to replay animation.
+        computerSelectionImage.classList.add("score-increase");
+    }
+
+    function getScore() {
+        document.getElementById("computerScore").textContent = computerWins;
+        document.getElementById("playerScore").textContent = playerWins;
+    }
+    
+    function playRound(playerSelection) {    // generates player choice via prompt vs random comp choice to determine winn
+        animateOnSelection();
+        eraseHighlight();
+        let computerSelection = getComputerChoice();
+        if (playerSelection === "rock") {  
+            if (computerSelection === "paper") {
+                computerSelectionImage.src = "img/paper.png";
+                document.getElementById("results").textContent = "負け！";
+                return computerWins += 1, highlightLoss(playerSelection), getScore(); 
             }
-        
-        function winner() {
-            if (playerWins > computerWins) {
-                document.getElementById("results").textContent =  playerWins +
-                    "対" + computerWins + "で勝ちました！";
-            } else {
-                document.getElementById("results").textContent = computerWins +
-                    "対" + playerWins + "で負けてしまいました！";
+            else if (computerSelection === "scissors") {
+                computerSelectionImage.src = "img/scissors.png";
+                document.getElementById("results").textContent = "勝ち！";
+                return playerWins += 1, highlightWin(playerSelection), getScore();
             }
-            document.getElementById('rock').classList.add('disable-button');
-            document.getElementById('paper').classList.add('disable-button');
-            document.getElementById('scissors').classList.add('disable-button');
-            setTimeout(scoreReset, 5000);
+            else {
+                computerSelectionImage.src = "img/rock.png";
+                document.getElementById("results").textContent = "あいこ！";
+                highlightTie(playerSelection);
+            }
         }
+        else if (playerSelection === "paper") {
+            if (computerSelection === "scissors") {
+                computerSelectionImage.src = "img/scissors.png";
+                document.getElementById("results").textContent = "負け！";
+                return computerWins += 1, highlightLoss(playerSelection), getScore();
+            }
+            else if (computerSelection === "rock") {
+                computerSelectionImage.src = "img/rock.png";
+                document.getElementById("results").textContent = "勝ち！";
+                return playerWins += 1, highlightWin(playerSelection), getScore();
+            }
+            else {
+                computerSelectionImage.src = "img/paper.png";
+                document.getElementById("results").textContent = "あいこ！";
+                highlightTie(playerSelection);
+            }
+        }
+        else if (playerSelection === "scissors") {
+            if (computerSelection === "rock") {
+                computerSelectionImage.src = "img/rock.png";
+                document.getElementById("results").textContent = "負け！";
+                return computerWins += 1, highlightLoss(playerSelection), getScore();
+                
+            }
+            else if (computerSelection === "paper") {
+                computerSelectionImage.src = "img/paper.png";
+                document.getElementById("results").textContent = "勝ち！";
+                return playerWins += 1, highlightWin(playerSelection), getScore();
+            }
+            else {
+                computerSelectionImage.src = "img/scissors.png";
+                document.getElementById("results").textContent = "あいこ！";
+                highlightTie(playerSelection);
+            }
+        }
+        else {
+            document.getElementById("results").textContent = "エラーです。もう一回してください。";
+        }
+        }
+    
+    function winner() {
+        if (playerWins > computerWins) {
+            document.getElementById("results").textContent =  playerWins +
+                " 対 " + computerWins + " に勝ちました！";
+        } else {
+            document.getElementById("results").textContent = playerWins +
+                " 対 " + computerWins + " に負けてしまいました。";
+        }
+        togglePointerEvent();
+        removeOnClickFunctionality();
+        setTimeout(scoreReset, 5000);
+    }
+    
+    function scoreReset() {
+        addOnClickFunctionality ();
+        computerSelectionImage.src = "img/empty.png";
+        eraseHighlight();
+        playerWins = 0;
+        computerWins = 0;
+        document.getElementById("computerScore").textContent = computerWins;
+        document.getElementById("playerScore").textContent = playerWins;
+        document.getElementById("results").textContent = "↑ クリックしてまた遊べます！ ↑"
+        togglePointerEvent();
+    }
+
+    // to do
+    // function replay() {
+    //      display pop up
+    //      if (retryButton = true) {
+    //          close pop up
+    //          id="results">&darr; Click to Play! &darr;
+    //          playerWins = 0;
+    //          computerWins = 0;
         
-        function scoreReset() {
-            playerWins = 0;
-            computerWins = 0;
-            document.getElementById("computerScore").textContent = computerWins;
-            document.getElementById("playerScore").textContent = playerWins;
-            document.getElementById("results").textContent = "Play again!"
-            document.getElementById('rock').classList.add('enable-button');
-            document.getElementById('paper').classList.add('enable-button');
-            document.getElementById('scissors').classList.add('enable-button');
-        }
-
-        // to do
-        // function replay() {
-        //      display pop up
-        //      if (retryButton = true) {
-        //          close pop up
-        //          id="results">&darr; Click to Play! &darr;
-        //          playerWins = 0;
-        //          computerWins = 0;
-            
 
 
-        //     }
-        // }
+    //     }
+    // }
+    
+    function togglePointerEvent() {
+        let rock = document.getElementById("rock-button");
+        rock.classList.toggle("disable-button");
+        let paper = document.getElementById("paper-button");
+        paper.classList.toggle("disable-button");
+        let scissors = document.getElementById("scissors-button");
+        scissors.classList.toggle("disable-button");
+    }    
 
-        document.getElementById("rock").addEventListener("click", function(){ playRound("rock"); if(playerWins === 5 || computerWins === 5) {winner();} });
-        document.getElementById("paper").addEventListener("click", function(){ playRound("paper"); if(playerWins === 5 || computerWins === 5) {winner();}  });
-        document.getElementById("scissors").addEventListener("click", function(){ playRound("scissors"); if(playerWins === 5 || computerWins === 5) {winner();}  });
+    let addOnClickFunctionality = function() {
+        document.getElementById("rock").onclick = function(){ playRound('rock'); if(playerWins === 5 || computerWins === 5) {winner();} };
+        document.getElementById("paper").onclick = function(){ playRound('paper'); if(playerWins === 5 || computerWins === 5) {winner();} };
+        document.getElementById("scissors").onclick = function(){ playRound('scissors'); if(playerWins === 5 || computerWins === 5) {winner();} };
+    }
 
-    </script>
+    let removeOnClickFunctionality = function() {
+        document.getElementById('rock').onclick='';
+        document.getElementById('paper').onclick='';
+        document.getElementById('scissors').onclick='';
+    }
+
+    addOnClickFunctionality();
+    
+
+</script>
 
 </body>
     

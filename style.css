@@ -551,8 +551,8 @@ ul.quote-list {
 }
 
 .rps-container {
+    margin-top: 36px;
     font-size:  24px;
-    
 }
 
 .rps-title {
@@ -562,15 +562,14 @@ ul.quote-list {
 }
 
 .rps-button-container {
+    gap: 48px;
     display: flex;
     flex-flow: row;
     justify-content: center;
-    padding: 24px;
 }
 
 .rpsSelection {
     all: unset;
-    margin: 24px;
     border: none;
     padding: 0px;
     cursor: pointer;
@@ -579,8 +578,21 @@ ul.quote-list {
     height: 150px;
 }
 
+#computer-selection-img {
+    display: block;
+    width: 150px;
+    height: 150px;
+    background-color: #faea04;
+    margin: auto;
+}
+
+#computer-selection {
+    margin: auto;
+}
+
 .rps-icons {
     width: 150px;
+    box-sizing: border-box;
 }
 
 .rpsSelection:hover, .rpsSelection:active {
@@ -589,10 +601,14 @@ ul.quote-list {
 
 .scorePoints, .scoreNames {
     display: flex;
-    flex-flow: row;
     text-align: center;
     padding: 10px;
     justify-content: center;   
+}
+
+.scorePoints {
+    flex-flow: column wrap;
+    align-content: center;
 }
 
 #playerName, #computerName, #computerScore, #playerScore {
@@ -602,6 +618,7 @@ ul.quote-list {
 }
 
 #results {
+    font-size: 2em;
     text-align: center;
     padding: 36px;
 }
@@ -610,125 +627,28 @@ ul.quote-list {
     pointer-events: none;
 }
 
-.enable-button {
-    pointer-events: auto;
-}
-/* END OF ROCK PAPER SCISSORS GAME */
-
-/* ETCHASKETCH GAME */
-.etchasketch-main * {
-    font-family: 'Times New Roman', Times, serif;
-    color: #323232;
+.highlight-win {
+    outline: 8px solid green;
 }
 
-.etchasketch-main {
-    background-color: #DDD0C8;
-    display: flex;
-    flex-flow: column;
-    flex: 1;
+.highlight-loss {
+    outline: 8px solid red;
 }
 
-.etchasketch-main .main-title h1 {
-    font-size: 48px;
+.highlight-tie {
+    outline: 8px solid white;
 }
 
-.main-container {
-    display: grid;
-    grid-template-columns: 1fr repeat(1, auto) 1fr;
-    justify-items: center;
+.score-increase {
+    animation-name: score-increase;
+    animation-duration: 1.5s;
 }
 
-.controls {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 20px;
-    width: 200px;
-    padding: 32px;
-    margin-left: auto;
-}
-
-.erase-button {
-    padding: 25px;
-    width: 150px;
-    cursor: pointer;
-    color: black;
-    background-color: #ededed;
-    border: 1px solid #323232;
-    border-radius: 50%;
-    box-shadow: 0 9px #323232;
-    transition: none;
-    font-size: 24px;
-}
-
-.erase-button:hover {
-    background-color: darkgray;
-}
-
-.erase-button:active {
-  background-color: darkgray;
-  box-shadow: 0 3px #323232;
-  transform: translateY(4px);
-}
-
-.etchasketch-container {
-    margin: 32px;
-    box-sizing: content-box;
-    display: flex;
-    width: 512px;
-    height: 512px;
-    flex-flow: row wrap;
-    border: 1px solid #323232;
-    align-self: center;
-    background-color: #ededed;
-}
-
-.grid-button-container {
-    text-align: center;
-    margin: 32px auto;
-    width: 50%;
-    font-size: 24px;
-}
-
-.grid-size-button {
-    border-radius: 0px;
-    font-size: 24px;
-    padding: 18px;
-    margin: 5px;
-    color: #323232;
-    border: 1px solid #323232;
-    background-color: #ededed;
-    transition: none;
-}
-
-.grid-size-button:hover, .grid-size-button:active {
-    background-color:darkgray;
-    cursor: pointer;
-}
-
-.grid-size-button-selected {
-    background-color: darkgray;
-}
-
-.color-container {
-    width: 150px;
-    height: 88px;
-    background-color: #ededed;
-    border-radius: 0px;
-    border: 1px solid #323232;
-    overflow: hidden;
-    text-align: center;
-    font-size: 18px;
-}
-
-#color-picker {
-    cursor: pointer;
-    display: block;
-    outline: none;
-    border: none;
-    width: 200%;
-    height: 200%;
-    transform: translateX(-10px);
+@keyframes score-increase {
+    from {scale: 1}
+    to {scale: 1.5}
+    from {scale: 1.5}
+    to {scale: 1.0}
 }
 
 /* END OF ETCHASKETCH GAME */
@@ -1221,18 +1141,37 @@ ul.quote-list {
 
     /* rock paper scissors */
     #playerName, #computerName {
-        font-size: 24px;
+        font-size: 1.5em;
     }
 
-    .rpsSelection {
+    .rpsSelection, #computer-selection {
         width: 75px;
         height: 75px;
     }
+    
+    #results {
+        font-size: 1em;
+    }
 
-    .rps-icons {
+    .rps-icons, #computer-selection-img {
         max-width:fit-content;
         height: 100%;
     }
+
+    .rps-button-container {
+        gap: 0px;
+        justify-content: space-around;
+    }
+
+    #computerScore, #playerScore {
+        margin: 12px;
+    }
+
+    .scorePoints {
+        padding: 0px;
+    }
+
+    /*      RPS END      */
 
     .welcome-popup-content {
         padding: 0px;
