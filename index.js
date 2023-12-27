@@ -66,7 +66,8 @@ window.addEventListener("load", function(){
 
     // Check sessionStorage to see if the splash screen 
     // has NOT already been displayed
-    if(!localStorage.getItem("language-check")){
+    setTimeout(function(){
+        if(!localStorage.getItem("language-check")){
  
       // Splash has not been displayed, so show it:
       splashScreen();
@@ -75,7 +76,7 @@ window.addEventListener("load", function(){
       // has now been displayed
       localStorage.setItem("language-check", "true");
     
-    } else closeAndStart();
+    } else closeAndStart();}, 4000)
  });
 
 // Close language pop up
