@@ -956,12 +956,17 @@ ul.quote-list {
   }
   
   .quote-panel {
-    -webkit-animation-delay: 2;
+    -webkit-animation-delay: 2s;
     animation-delay: 2s;
   }
 
   
   #img-panel, .sign-up-panel, .footer {
+    -webkit-animation-delay: 3s;
+    animation-delay: 3s;
+  }
+
+  .sign-up-panel, .footer {
     -webkit-animation-delay: 1s;
     animation-delay: 1s;
   }
