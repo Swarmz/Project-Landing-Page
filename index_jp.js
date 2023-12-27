@@ -39,14 +39,14 @@ window.addEventListener('click', function(event) {
 })
 
 
-// When the user scrolls the page, execute myFunction
-window.onscroll = function() {myFunction()};
+// // When the user scrolls the page, execute myFunction
+// window.onscroll = function() {myFunction()};
 
-// Get the header
-let header = document.getElementById("index-header");
+// // Get the header
+// let header = document.getElementById("index-header");
 
-// Get the offset position of the navbar
-let sticky = header.offsetTop;
+// // Get the offset position of the navbar
+// let sticky = header.offsetTop;
 
 /////////////////////// TEMP REMOVAL ////////////////////////////
 // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
@@ -59,17 +59,17 @@ let sticky = header.offsetTop;
 // }
 
 
-// Beginning animations for index
-function closeAndStart() {
-    document.getElementById('welcome').style.display='none';
-    document.getElementById('quote-left').classList.add('slide-in');
-    document.getElementById('quote-right').classList.add('slide-in');
-    document.getElementById('quote-panel-container').classList.add('div-fade-in');
-}
+// // Beginning animations for index
+// function closeAndStart() {
+//     document.getElementById('welcome').style.display='none';
+//     document.getElementById('quote-left').classList.add('slide-in');
+//     document.getElementById('quote-right').classList.add('slide-in');
+//     document.getElementById('quote-panel-container').classList.add('div-fade-in');
+// }
 
-// Japanese page doesn't have the onclick to fire closeAndStart function
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById('quote-left').classList.add('slide-in');
-    document.getElementById('quote-right').classList.add('slide-in');
-    document.getElementById('quote-panel-container').classList.add('div-fade-in');
-  });
+// // Japanese page doesn't have the onclick to fire closeAndStart function
+// document.addEventListener("DOMContentLoaded", function() {
+//     document.getElementById('quote-left').classList.add('slide-in');
+//     document.getElementById('quote-right').classList.add('slide-in');
+//     document.getElementById('quote-panel-container').classList.add('div-fade-in');
+//   });
