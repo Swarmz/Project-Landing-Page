@@ -279,7 +279,8 @@ ul.quote-list {
     text-align: center;
 }
 
-.quote-right {
+/* TEMP REMOVAL */
+/* .quote-right {
     font-style: italic;
     transform: translateX(1500%);
     -webkit-transform: translateX(1500%);
@@ -288,7 +289,7 @@ ul.quote-list {
 .quote-left {
     transform: translateX(-1500%);
     -webkit-transform: translateX(-1500%);
-}
+} */
 
 .quote-center > .quote-list {
     font-size: 0px;
@@ -913,12 +914,11 @@ ul.quote-list {
     display: none;
     position: absolute;
     background-color: #323232;
-    width: 100.3%;
-    overflow: hidden;
+    width: calc(100% + 1.6px);
     z-index: 1;
     text-align: center;
     top: 100%; /* drops below the 'more' button */
-    right: -0.2%;
+    right: -0.8px;
 }
   
 .dropdown-content a {
@@ -936,6 +936,57 @@ ul.quote-list {
 }
   
 .show {display: block;}
+
+.header, .hero, .quote-panel, #img-panel, .sign-up-panel, .footer {
+    opacity: 0;
+    -webkit-animation: fadeIn 0.9s 1;
+    animation: fadeIn 0.9s 1;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+  }
+  
+  .header {
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+  }
+  
+  .hero {
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+  }
+  
+  .quote-panel {
+    -webkit-animation-delay: 2;
+    animation-delay: 2s;
+  }
+
+  
+  #img-panel, .sign-up-panel, .footer {
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+  }
+  
+
+  
+  /* Animation steps */
+  
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0.0;
+    }
+    100% {
+      opacity: 1.0;
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0.0;
+    }
+    100% {
+      opacity: 1.0;
+    }
+}
 
 @media only screen and (min-width: 769px) {
     /*For larger screens to display index as horizontal layout*/
@@ -960,12 +1011,10 @@ ul.quote-list {
     .quote-panel-container {
         padding: 32px;
         box-shadow:  0 0 0 2px #323232, 0.3em 0.3em 1em rgb(0 0 0 / 30%);
-        visibility: hidden;
     }
 
     .quote-panel {
         border-bottom: none;
-        
         flex: 1;
     }
 
