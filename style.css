@@ -937,7 +937,9 @@ ul.quote-list {
   
 .show {display: block;}
 
-.header, .hero, .quote-panel, #img-panel, .sign-up-panel, .footer {
+
+/*      PAGE LOAD FADE IN       */
+.header, .hero, .quote-panel, #img-panel {
     opacity: 0;
     -webkit-animation: fadeIn 0.9s 1;
     animation: fadeIn 0.9s 1;
@@ -964,11 +966,6 @@ ul.quote-list {
   #img-panel, .sign-up-panel, .footer {
     -webkit-animation-delay: 3s;
     animation-delay: 3s;
-  }
-
-  .sign-up-panel, .footer {
-    -webkit-animation-delay: 1s;
-    animation-delay: 1s;
   }
   
 
