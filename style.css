@@ -1031,11 +1031,11 @@ ul.quote-list {
     display: none;
     position: absolute;
     background-color: #323232;
-    width: calc(100% + 1.6px);
+    width: calc(100% + 2px);
     z-index: 1;
     text-align: center;
     top: 100%; /* drops below the 'more' button */
-    right: -0.8px;
+    right: -1px;
 }
   
 .dropdown-content a {
