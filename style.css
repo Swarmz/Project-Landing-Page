@@ -652,7 +652,124 @@ ul.quote-list {
     to {scale: 1.0}
 }
 
-/* END OF ETCHASKETCH GAME */
+/* END OF ROCK PAPER SCISSORS GAME */
+
+/* ETCHASKETCH GAME */
+
+.etchasketch-main * {
+    font-family: 'Times New Roman', Times, serif;
+    color: #323232;
+}
+
+.etchasketch-main {
+    background-color: #DDD0C8;
+    display: flex;
+    flex-flow: column;
+    flex: 1;
+}
+
+.etchasketch-main .main-title h1 {
+    font-size: 48px;
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr repeat(1, auto) 1fr;
+    justify-items: center;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+    width: 200px;
+    padding: 32px;
+    margin-left: auto;
+}
+
+.erase-button {
+    padding: 25px;
+    width: 150px;
+    cursor: pointer;
+    color: black;
+    background-color: #ededed;
+    border: 1px solid #323232;
+    border-radius: 50%;
+    box-shadow: 0 9px #323232;
+    transition: none;
+    font-size: 24px;
+}
+
+.erase-button:hover {
+    background-color: darkgray;
+}
+
+.erase-button:active {
+  background-color: darkgray;
+  box-shadow: 0 3px #323232;
+  transform: translateY(4px);
+}
+
+.etchasketch-container {
+    margin: 32px;
+    box-sizing: content-box;
+    display: flex;
+    width: 512px;
+    height: 512px;
+    flex-flow: row wrap;
+    border: 1px solid #323232;
+    align-self: center;
+    background-color: #ededed;
+}
+
+.grid-button-container {
+    text-align: center;
+    margin: 32px auto;
+    width: 50%;
+    font-size: 24px;
+}
+
+.grid-size-button {
+    border-radius: 0px;
+    font-size: 24px;
+    padding: 18px;
+    margin: 5px;
+    color: #323232;
+    border: 1px solid #323232;
+    background-color: #ededed;
+    transition: none;
+}
+
+.grid-size-button:hover, .grid-size-button:active {
+    background-color:darkgray;
+    cursor: pointer;
+}
+
+.grid-size-button-selected {
+    background-color: darkgray;
+}
+
+.color-container {
+    width: 150px;
+    height: 88px;
+    background-color: #ededed;
+    border-radius: 0px;
+    border: 1px solid #323232;
+    overflow: hidden;
+    text-align: center;
+    font-size: 18px;
+}
+
+#color-picker {
+    cursor: pointer;
+    display: block;
+    outline: none;
+    border: none;
+    width: 200%;
+    height: 200%;
+    transform: translateX(-10px);
+}
 
 /* START OF CALCULATOR */
 
