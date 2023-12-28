@@ -1250,6 +1250,7 @@ ul.quote-list {
         align-self: auto;
         margin-top: 16px;
         border-bottom: 1px solid #323232;
+        flex: 0;
     }
 
     .text-slides {
