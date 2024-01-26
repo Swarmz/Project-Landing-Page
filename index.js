@@ -97,3 +97,5 @@ function closeAndStart() {
     document.getElementById('welcome').style.display='none';
 }
 
+// Close the mobile side panel when switching to a new page from that menu
+window.addEventListener("unload", closeNav());
