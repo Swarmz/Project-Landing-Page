@@ -82,6 +82,52 @@ button {
     padding-top: 102px;
 }
 
+.mobile-header {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #323232;
+    color:#ffffff;  
+}
+
+.sidepanel {
+    height: 100vh; /* Specify a height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    text-align: center;
+    right: 0;
+    opacity: 0.95;
+    background-color: #323232; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+  }
+
+  .sidepanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    z-index: 1;
+    padding: 8px 12px;
+  }
+
+  .sidepanel a {
+    padding: 32px 8px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    white-space: nowrap; /* Prevents wrapping behavior when closing the sidepanel */
+  }
+
+  .sidepanel:nth-child(2) {
+    padding-top: 20vh;
+  }
+
 .header {
     display: flex;
     justify-content: center;
@@ -1070,19 +1116,19 @@ ul.quote-list {
   }
   
   .hero {
-    -webkit-animation-delay: 1s;
-    animation-delay: 1s;
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
   }
   
   .quote-panel {
-    -webkit-animation-delay: 2s;
-    animation-delay: 2s;
+    -webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s;
   }
 
   
   #img-panel, .sign-up-panel, .footer {
-    -webkit-animation-delay: 3s;
-    animation-delay: 3s;
+    -webkit-animation-delay: 0.6s;
+    animation-delay: 0.6s;
   }
   
 
@@ -1160,12 +1206,16 @@ ul.quote-list {
     .text-slides {
         flex: 1.5;
     }
+
+    .mobile-header {
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 768px) {
     /* For mobile */
     .body-container {
-      width: 100%;
+        width: 100%;
     }
 
     .hero > .header {
@@ -1193,11 +1243,13 @@ ul.quote-list {
     .dropdown-content > a {
         padding: 5vw 2vw;
         font-size: 16px;
+        border: none;
+        border-top: 1px solid white;
     }
 
     .dropdown-content {
         margin-top: 0;
-        width: 150%;
+        width: 175%;
     }
 
     h1 {
@@ -1375,6 +1427,14 @@ ul.quote-list {
         height: 20vw;
         padding: 0px;
         margin: 4px;
+    }
+
+    .header {
+        display: none;
+    }
+
+    .dropbtn {
+        flex: 0 100px;
     }
     
 }

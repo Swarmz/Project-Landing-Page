@@ -1,85 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>About</title>
-        <script src="about.js" defer></script>
-        <link rel="stylesheet" href="style.css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          rel="stylesheet">
-    </head>
-    <body>
-        <div class="background">
-            <div class="header">
-                <div class="header-links">
-                    <a class="a-header prevent-select" href="/">Home</a>
-                    <a class="a-header prevent-select" href="./about.html">About</a>
-                    <a class="a-header prevent-select" href="/#img-panel">Work</a>
-                    <div class="dropbtn prevent-select" onclick="dropdownToggle()">More<span class="material-icons inline-material-icons prevent-select">expand_more</span>
-                        <div class="dropdown-content" id="myDropdown">
-                            <!-- <a class="prevent-select" href="./document/resume.pdf" target="_blank">Resumé<span class="material-icons inline-material-icons">file_download</span></a> -->
-                            <a class="prevent-select" href="https://github.com/Swarmz/project-landing-page" target="_blank">My GitHub <span class="material-icons inline-material-icons">open_in_new</span></a>
-                            <a class="prevent-select" href="https://www.theodinproject.com/about" target="_blank">The Odin Project <span class="material-icons inline-material-icons">open_in_new</span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="body-container">
-                <div class="about-main">
-                    <div class="about-nav">
-                        <div class="about-card img-slides fade">
-                            <div class="about-card-text">Where I'm From</div>
-                            <img class="about-img" src="./img/canada-flag-circle.png" alt="flag of canada">
-                        </div>
-                        <div class="about-card img-slides fade">
-                            <div class="about-card-text">Hobbies & Interests</div>
-                            <img class="about-img" src="./img/hobbies-icon.png" alt="various hobbies">
-                        </div>
-                        <div class="about-card img-slides fade">
-                            <div class="about-card-text">My Life Now</div>
-                            <img class="about-img" src="./img/flag-of-japan.png" alt="flag of japan">
-                        </div>
-                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                        
-                        <div style="text-align:center">
-                            <span class="dot" onclick="currentSlide(1)"></span>
-                            <span class="dot" onclick="currentSlide(2)"></span>
-                            <span class="dot" onclick="currentSlide(3)"></span>
-                        </div>
-                    </div>
-                        <div class="text-slides fade">
-                            <p><img class="about-text-img" src="./img/victoria.jpg" alt="side of an old building">                     
-                            Born January 26th, 1993 in Victoria, British Columbia. A city of approximately 350,000 people it is well known for its quiet atmosphere, gardens, and a place where many come to retire. A short trip just across the water is the  vibrant city of Vancouver where you can experience, in many ways, a completely different atmosphere. For the younger generations Victoria is said to be a bit of a boring place, and while I can agree with that notion, it is no doubt somewhere I could comfortably live my whole life.
-                            I grew up as an only child, in a middle class household. My father and mother divorced when I was very young, leaving me with no real memories of my Dad other than seeing pictures of us. My mother was born in Belfast, Northern Ireland. Yes, there is a north and south and yes they are different countries. Anyway, she moved to Canada by herself in her 20's. It took some time but eventually ended up settling in Victoria.  </p>
-                        </div>
-                        <div class="text-slides fade">                       
-                            <p><img class="about-text-img" src="./img/playstation-controller.jpg" alt="a playstation controller on a desk">
-                            There's three things I cannot get enough of in life: coffee, alcohol, and video games. Some might say I have an addictive personality, and I would say to those people, you're probably right. Ever since I was young child I was always enticed by games, possibly stemming from my dad's love for them. In fact I remember a picture of myself as an infant sitting on my dad's lap while he sits at the computer playing Command & Conquer. When I got older I undoubtedly loved those series of games. To this day I still have captivating experiences with new games and hope I can enjoy them for a long time to come.</p>
-                            <p><img class="about-text-img" src="./img/coffee.jpg" alt="a coffee cup and coffee beans">
-                            When it comes to my other two vices, err-- I mean "favorite beverages", these are more recent likes, as you could imagine. Like many people, coffee and alcohol were definitely acquired tastes and to this day I'm still in the process of attempting to enjoy it all. Unlike alcohol, coffee is a two-part love, drinking AND brewing. Being able to control so many aspects of the flavor through just simple steps is a very satisfying process for me. It's really quite apparent how much power you have when you do mess it up and the result is an awful bitter, or watery cup. As much as I love it, maybe surprisingly, I do tend to only drink one cup a day in the mornings. Only one? Yes, because...</p>
-                            <p><img class="about-text-img" src="./img/beer.jpg" alt="a glass of beer">
-                            The night is for drinking! I wasn't much of a drinker back in Canada, in fact, hardly at all. But it's impossible to ignore the huge culture of alcohol in Japan. It all started with a beer and by the time you know it I'm considering work in the line of sake brewing. I'm honestly surprised at myself how much I have come to appreciate the flavors of spirits, wines and beer. </p>
-                        </div>
-                         <div class="text-slides fade">                       
-                            <p><img class="about-text-img" src="./img/about-japan1.jpg" alt="picture in japan">
-                            It was August of 2016 when I had my first visit to Japan, but it wasn't until two years later in May of 2018 that I had officially moved here. Japan has always been fascinating for me and I think for most westerners, as we are often shown sensationalist headlines of their news and the exposure of "whacky" customs. This goes both ways of course, as not everything shown to Japanese people about western culture is considered normal to actual westerners. Regardless, I was interested in the country and intent on exploring it for myself. To which I should then add, I was not alone nor was exploration my only goal in coming to Japan. My now wife, Hanako, was the main reason I came to Japan. Originally meeting each other in my hometown of Victoria we had now finally reunited in Japan after 2 years of a long distance relationship.
-                            </p>                           
-                        </div>
-                </div>
-            </div>
-            <div class="footer">
-                Created by Gavin Sutton<br>
-                Images provided by freepik.com
-                <div class="language-select-box">
-                    <div>言語を選ぶ</div>
-                    <div class="language-options" onclick="window.location.href='./about_jp.html';">
-                        <a>日本語</a>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <script src="about.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <div class="background">
+        <div class="header">
+            <div class="header-links">
+                <a class="a-header prevent-select" href="/">Home</a>
+                <a class="a-header prevent-select" href="./about.html">About</a>
+                <a class="a-header prevent-select" href="/#img-panel">Work</a>
+                <div class="dropbtn prevent-select" onclick="dropdownToggle()">More<span class="material-icons inline-material-icons prevent-select">expand_more</span>
+                    <div class="dropdown-content" id="myDropdown">
+                        <!-- <a class="prevent-select" href="./document/resume.pdf" target="_blank">Resumé<span class="material-icons inline-material-icons">file_download</span></a> -->
+                        <a class="prevent-select" href="https://github.com/Swarmz/project-landing-page" target="_blank">My GitHub <span class="material-icons inline-material-icons">open_in_new</span></a>
+                        <a class="prevent-select" href="https://www.theodinproject.com/about" target="_blank">The Odin Project <span class="material-icons inline-material-icons">open_in_new</span></a>
                     </div>
                 </div>
             </div>
         </div>
-    </body>
+        <!--Mobile Header-->
+        <div class="mobile-header">
+            <div class="dropbtn prevent-select" onclick="openNav()"><span id="hamburger" class="material-symbols-outlined prevent-select">menu</span></div>
+            <div id="mySidepanel" class="sidepanel">
+                <a href="javascript:void(0)" class="prevent-select closebtn" onclick="closeNav()">&times;</a>
+                <a class="prevent-select" href="/">Home</a>
+                <a class="prevent-select" href="./about.html">About</a>
+                <a class="prevent-select" href="/#img-panel" onclick="closeNav()">Work</a>
+                <a class="prevent-select" href="https://github.com/Swarmz/project-landing-page" target="_blank">My GitHub <span class="material-icons inline-material-icons">open_in_new</span></a>
+                <a class="prevent-select" href="https://www.theodinproject.com/about" target="_blank">The Odin Project <span class="material-icons inline-material-icons">open_in_new</span></a>
+            </div>
+        </div>
+        <div class="body-container">
+            <div class="about-main">
+                <div class="about-nav">
+                    <div class="about-card img-slides fade">
+                        <div class="about-card-text">Where I'm From</div>
+                        <img class="about-img" src="./img/canada-flag-circle.png" alt="flag of canada">
+                    </div>
+                    <div class="about-card img-slides fade">
+                        <div class="about-card-text">Hobbies & Interests</div>
+                        <img class="about-img" src="./img/hobbies-icon.png" alt="various hobbies">
+                    </div>
+                    <div class="about-card img-slides fade">
+                        <div class="about-card-text">My Life Now</div>
+                        <img class="about-img" src="./img/flag-of-japan.png" alt="flag of japan">
+                    </div>
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    
+                    <div style="text-align:center">
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                    </div>
+                </div>
+                    <div class="text-slides fade">
+                        <p><img class="about-text-img" src="./img/victoria.jpg" alt="side of an old building">                     
+                        Born January 26th, 1993 in Victoria, British Columbia. A city of approximately 350,000 people it is well known for its quiet atmosphere, gardens, and a place where many come to retire. A short trip just across the water is the  vibrant city of Vancouver where you can experience, in many ways, a completely different atmosphere. For the younger generations Victoria is said to be a bit of a boring place, and while I can agree with that notion, it is no doubt somewhere I could comfortably live my whole life.
+                        I grew up as an only child, in a middle class household. My father and mother divorced when I was very young, leaving me with no real memories of my Dad other than seeing pictures of us. My mother was born in Belfast, Northern Ireland. Yes, there is a north and south and yes they are different countries. Anyway, she moved to Canada by herself in her 20's. It took some time but eventually ended up settling in Victoria.  </p>
+                    </div>
+                    <div class="text-slides fade">                       
+                        <p><img class="about-text-img" src="./img/playstation-controller.jpg" alt="a playstation controller on a desk">
+                        There's three things I cannot get enough of in life: coffee, alcohol, and video games. Some might say I have an addictive personality, and I would say to those people, you're probably right. Ever since I was young child I was always enticed by games, possibly stemming from my dad's love for them. In fact I remember a picture of myself as an infant sitting on my dad's lap while he sits at the computer playing Command & Conquer. When I got older I undoubtedly loved those series of games. To this day I still have captivating experiences with new games and hope I can enjoy them for a long time to come.</p>
+                        <p><img class="about-text-img" src="./img/coffee.jpg" alt="a coffee cup and coffee beans">
+                        When it comes to my other two vices, err-- I mean "favorite beverages", these are more recent likes, as you could imagine. Like many people, coffee and alcohol were definitely acquired tastes and to this day I'm still in the process of attempting to enjoy it all. Unlike alcohol, coffee is a two-part love, drinking AND brewing. Being able to control so many aspects of the flavor through just simple steps is a very satisfying process for me. It's really quite apparent how much power you have when you do mess it up and the result is an awful bitter, or watery cup. As much as I love it, maybe surprisingly, I do tend to only drink one cup a day in the mornings. Only one? Yes, because...</p>
+                        <p><img class="about-text-img" src="./img/beer.jpg" alt="a glass of beer">
+                        The night is for drinking! I wasn't much of a drinker back in Canada, in fact, hardly at all. But it's impossible to ignore the huge culture of alcohol in Japan. It all started with a beer and by the time you know it I'm considering work in the line of sake brewing. I'm honestly surprised at myself how much I have come to appreciate the flavors of spirits, wines and beer. </p>
+                    </div>
+                        <div class="text-slides fade">                       
+                        <p><img class="about-text-img" src="./img/about-japan1.jpg" alt="picture in japan">
+                        It was August of 2016 when I had my first visit to Japan, but it wasn't until two years later in May of 2018 that I had officially moved here. Japan has always been fascinating for me and I think for most westerners, as we are often shown sensationalist headlines of their news and the exposure of "whacky" customs. This goes both ways of course, as not everything shown to Japanese people about western culture is considered normal to actual westerners. Regardless, I was interested in the country and intent on exploring it for myself. To which I should then add, I was not alone nor was exploration my only goal in coming to Japan. My now wife, Hanako, was the main reason I came to Japan. Originally meeting each other in my hometown of Victoria we had now finally reunited in Japan after 2 years of a long distance relationship.
+                        </p>                           
+                    </div>
+            </div>
+        </div>
+        <div class="footer">
+            Created by Gavin Sutton<br>
+            Images provided by freepik.com
+            <div class="language-select-box">
+                <div>言語を選ぶ</div>
+                <div class="language-options" onclick="window.location.href='./about_jp.html';">
+                    <a>日本語</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 </html>
