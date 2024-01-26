@@ -52,7 +52,7 @@ window.addEventListener('click', function(event) {
     }
 })
 
-/* Set the width of the sidebar to 250px (show it) */
+/* Set the width of the sidebar (show it) */
 function openNav() {
     document.getElementById("mySidepanel").style.width = "100vw";
     document.getElementById("hamburger").style.opacity = "0";
